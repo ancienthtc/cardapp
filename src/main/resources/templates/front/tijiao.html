@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/front/Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+    <script type="text/javascript" src="/public/js/form.js"></script>
+    <link rel="stylesheet" href="/front/Content/style.css">
+    <link rel="stylesheet" href="/front/Content/commons.css">
+    <link rel="stylesheet" href="/front/Content/tijiao.css">
+
+    <style>
+        .jiajian-btn{
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px;
+            line-height: 40px;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+<div th:include="front/header"></div>
+<form id="subForm" action="/card/add.do" method="post" enctype ="multipart/form-data">
+<div class="banner1"></div>
+<div class="xtxx">
+
+    <div class="xtxx_top">
+        <div class="xtxx_tit"><p><a href="">名片宝库</a></p></div>
+    </div>
+
+    <div class="wdda input-box">
+
+        <!--<input type="hidden" id="session_" th:value="${session.user.id}">-->
+
+        <div class="clearfix">
+            <p class="input-text"><em>*</em>请输入买家名片上的邮箱和网址（用于平台检验其有效性）</p>
+            <div class="clearfix">
+                <p class="fl input-input" style="margin-right: 60px;">
+                    <input type="text" id="cardmail" name="cardmail" placeholder="输入邮箱，如：info@textilecards.com">
+                </p>
+                <p class="fl input-input"><input type="text" name="weburl" placeholder="输入网址，如：www.trdemanager.com"></p>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="fl" style="margin-right: 60px;">
+                <p class="input-text"><em>*</em>请输入名片上的公司名称</p>
+                <p class="input-input"><input type="text" id="company" name="company"></p>
+                <p class="input-text"><em>*</em>请输入名片上的联系人</p>
+                <p class="input-input"><input type="text" id="contact1" name="contact1"></p>
+                <p class="input-text"><em>*</em>请选择所属领域</p>
+                <p class="input-input">
+                    <select name="belong">
+                        <option value="原料纱线">原料纱线</option>
+                        <option value="面料布匹">面料布匹</option>
+                        <option value="成衣服饰">成衣服饰</option>
+                        <option value="家居家纺">家居家纺</option>
+                        <option value="辅料包装">辅料包装</option>
+                        <option value="纺机印染">纺机印染</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </p>
+            </div>
+            <div class="fl">
+                <p class="input-text"><em>*</em>请输入名片上的公司名称</p>
+                <div>
+                    <div class="clearfix jiajian">
+                        <input id="min" class="fl jianjian-l" name="" type="button" value="-"/>
+                        <input id="text_box" name="buy" class="fl jianjian-c" type="text" value="1"
+                               style="width:30px;text-align: center"/>
+                        <input id="add" name="" class="fr jianjian-r" type="button" value="+"/>
+                    </div>
+                    <div class="jiajian-text">价格区间，0-50元</div>
+                    <div class="jiajian-btn">
+                        <input name="checkbox" id="ischange" type="checkbox" value="checkbox"  /><!--checked="checked"-->
+                        我想免费发布
+                    </div>
+                </div>
+                <div class="jiajian-text2">如名片上网址或邮箱有无效的，价格不等高于1元</div>
+
+                <p class="input-text" style="margin-top: 11px"><em></em>请输入名片上的联系人2</p>
+                <p class="input-input"><input type="text" name="contact2"></p>
+                <p class="input-text"><em>*</em>请输入采购产品</p>
+                <p class="input-input"><input type="text" id="goods" name="goods"></p>
+            </div>
+        </div>
+    </div>
+    <div class="title">以上填写信息须和名片保持一致，否则无法通过审核</div>
+    <div class="wdda title-h2">
+            <textarea style="width: 1120px;height: auto;border: 3px solid #0093dd;">采购产品【非必填】若不填写，用户只能通过公司名称搜索到该名片\填写产品或公司介绍，以及其它备注说明，让用户更快速检索到你的名片
+            </textarea>
+    </div>
+    <div class="wdda upload-img">
+        <div class="input-text"><em>*</em>上传买家名片审核 <em>（审核通过，永久受益！）</em></div>
+        <div class="clearfix upload-img-file">
+            <label class="fl">
+                <input type="file" name="file1" style="display: none;">
+                <img src="/front/Content/images/file1.png" alt="">
+            </label>
+            <label class="fr">
+                <input type="file" name="file2" style="display: none;">
+                <img src="/front/Content/images/file2.png" alt="">
+            </label>
+        </div>
+        <label class="upload-img-text"><input id="agree" type="checkbox">点击“提交审核”代表您同意并遵守<em>《发布买家协议》</em></label>
+        <input class="submit" type="submit" id="sub" value="提交审核">
+
+    </div>
+    <!--<script type="text/javascript">
+        jQuery(".wdda_left").slide({
+            type: "menu", //效果类型
+            titCell: ".ma", // 鼠标触发对象
+            targetCell: ".fbnrbox", // 效果对象，必须被titCell包含
+            effect: "slideDown",//下拉效果
+            delayTime: 300, // 效果时间
+            triggerTime: 0, //鼠标延迟触发时间
+            returnDefault: true  //返回默认状态
+        });
+    </script>-->
+    <!--<script>
+        $(".wdda .wdda_left h3").each(function (index) {
+            $(this).click(function () {
+                $(".on5").removeClass("on5");
+                $(this).addClass("on5");
+                $(".wdda .wdda_right .danr:eq(" + index + ")").show().siblings().hide();
+            });
+        });
+    </script>-->
+
+</div>
+</form>
+<div th:include="front/footer"></div>
+
+<script>
+    $(document).ready(function () {
+        //获得文本框对象
+        var t = $("#text_box");
+        //初始化数量为1,并失效减
+        $('#min').attr('disabled', true);
+        //数量增加操作
+        $("#add").click(function () {
+            // 给获取的val加上绝对值，避免出现负数
+            t.val(Math.abs(parseInt(t.val())) + 1);
+            if (parseInt(t.val()) != 1) {
+                $('#min').attr('disabled', false);
+            }
+        });
+        //数量减少操作
+        $("#min").click(function () {
+            t.val(Math.abs(parseInt(t.val())) - 1);
+            if (parseInt(t.val()) == 1) {
+                $('#min').attr('disabled', true);
+            }
+        });
+
+
+        $("#ischange").click(function () {
+            var isChecked = $('#ischange').prop('checked');
+            //console.log( isChecked );
+            if( isChecked==true )
+            {
+                $("#text_box").val(0);
+            }
+        });
+
+
+    });
+</script>
+
+<script>
+
+    $(function () {
+
+        $("#sub").click(function () {
+
+            // var uid = $("#session_").val();
+            // if( uid=="" || uid==null )
+            // {
+            //     alert("请先登录");
+            //     window.location.href = "/login/login.php";
+            //     return false;
+            // }
+
+            //检查
+            var cardmail = $("#cardmail").val();
+            var company = $("#company").val();
+            var contact1 = $("#contact1").val();
+            var goods = $("#goods").val();
+            if( cardmail.length<=0 || company.length<=0 || contact1.length<=0 || goods.length<=0 )
+            {
+                alert("请填写完整");
+                return false;
+            }
+
+            var agree = $('#agree').prop('checked');
+            if( agree == false )
+            {
+                alert("请同意协议");
+                return false;
+            }
+
+            $("#subForm").ajaxSubmit({
+                beforeSubmit: function () {
+                    var isChecked = $('#ischange').prop('checked');
+                    //console.log( isChecked );
+                    if( isChecked==true )
+                    {
+                        $("#text_box").val(0);
+                    }
+                    if( $("#text_box").val() < 0 )
+                    {
+                        $("#text_box").val(0);
+                    }
+                    else if($("#text_box").val() >50)
+                    {
+                        $("#text_box").val(50);
+                    }
+                    //alert($("#text_box").val());
+
+                },
+                success:function (date) {
+                    console.log(date.msg);
+                    alert("t"+date);
+                    // if(date=="true")
+                    //     alert("添加成功");
+                    // else
+                    //     alert("添加失败");
+                    //window.location.href = "/login/login.php";
+                },
+                error : function(data) {
+                    console.log(date.msg);
+                    alert("f"+data);
+                }
+            })
+
+        });
+
+    })
+
+
+</script>
+
+</body>
+</html>

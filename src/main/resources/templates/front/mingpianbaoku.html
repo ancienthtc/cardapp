@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>纺织名片宝-名片宝库</title>
+        <script type="text/javascript" src="/front/Scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+        <link rel="stylesheet" href="/front/Content/commons.css">
+        <link rel="stylesheet" href="/front/Content/mingpianbaoku.css">
+
+        <link href="/front/Content/style.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="/front/Scripts/index.js"></script>
+        <script src="/front/Scripts/wangEditor.min.js"></script>
+        <script src="/public/js/layer/layer.js"></script>
+    </head>
+    <body>
+    <div th:include="front/header"></div>
+        <div class="banner1"></div>
+        <div class="xtxx">
+            <div class="xtxx_top">
+                <div class="xtxx_tit"><p><a href="">名片宝库</a>&nbsp;>&nbsp;<a href="">买家综合</a></p></div>
+            </div>
+            <input type="hidden" id="pagetype" th:value="${page}">
+            <div class="maijianav">
+                <div class="mpbk_tit">
+                <ul class="clearfix maijia-nav ">
+                    <li class="fl navdown1">买家综合</li>
+                    <li class="fl">原料纱线</li>
+                    <li class="fl">面料布匹</li>
+                    <li class="fl">成衣服饰</li>
+                    <li class="fl">家居家纺</li>
+                    <li class="fl">辅料包装</li>
+                    <li class="fl">纺机印染</li>
+                    <li class="fl">其他</li>
+                </ul>
+                </div>
+                <div class="content-maijia">
+                    <div class=" ct">
+                        <div class="mpbk_nr">
+                            <div class="mpbkbox">
+                                <div class="mjzh_ss">
+                                    <a th:href="@{/card/cardPost.php}" class="btn4 fr">我也要发布</a>
+                                    <div class="ssnr">
+                                        <input name="" type="text" class="wby4"/>
+                                        <input name="" type="submit" class="btn3" value="搜索"/>
+                                    </div>
+                                </div>
+                                <div class="lbgs">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bgys1">
+
+                                        <tr>
+                                            <td bgcolor="#009ee7">
+                                                <div align="center" class="STYLE1">发布时间</div>
+                                            </td>
+                                            <td bgcolor="#009ee7">
+                                                <div align="center" class="STYLE1">公司名称</div>
+                                            </td>
+                                            <td bgcolor="#009ee7">
+                                                <div align="center" class="STYLE1">联系人职称</div>
+                                            </td>
+                                            <td bgcolor="#009ee7">
+                                                <div align="center" class="STYLE1">网址</div>
+                                            </td>
+                                            <td bgcolor="#009ee7">
+                                                <div align="center" class="STYLE1">备注（产品说明、其它介绍）</div>
+                                            </td>
+                                            <td bgcolor="#009ee7">
+                                                <div align="center" class="STYLE1">查看</div>
+                                            </td>
+                                        </tr>
+                                        <tbody id="tbody">
+                                        <tr>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">2017-08-25</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">阿里网络</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">CEO</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">www.alibaba.com</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">这家公司出品了一款新产口</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center"><a href="#" class="btn5">免费查看</a></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">2017-08-25</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">阿里网络</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">CEO</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">www.alibaba.com</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">这家公司出品了一款新产口</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center"><a href="#" class="btn5">免费查看</a></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">2017-08-25</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">阿里网络</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">CEO</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">www.alibaba.com</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">这家公司出品了一款新产口</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center"><a href="#" class="btn5">免费查看</a></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">2017-08-25</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">阿里网络</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">CEO</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">www.alibaba.com</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">这家公司出品了一款新产口</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center"><a href="#" class="btn5">免费查看</a></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">2017-08-25</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">阿里网络</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">CEO</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">www.alibaba.com</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center">这家公司出品了一款新产口</div>
+                                            </td>
+                                            <td bgcolor="#c2ebff">
+                                                <div align="center"><a href="#" class="btn5">免费查看</a></div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <input type="hidden" id="pageNo" value="1">
+                                    <input type="hidden" id="pages" value="1">
+                                </div>
+                                <div class="dede_pages">
+                                    <ul class="pagelist">
+                                        <li><a href="#">上一页</a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li class="thisclass"><a href="#">2</a></li>
+                                        <li><a href="#">下一页</a>
+                                        <li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+      <div id="gray"></div>
+      <div class="popup" id="popup">
+          <div class="top_nav" id='top_nav'>
+              <div align="center">
+                  <span>需求</span>
+                  <a class="guanbi"></a>
+              </div>
+          </div>
+          <div class="min">
+              <div class="slides">
+                  <ul class="slide-pic">
+                      <li class="current"><a href="#"><img alt="" src="../Content/images/a8.jpg" /></a></li>
+                      <li><a href="#"><img  alt=" " src="../Content/images/a211.jpg" /></a></li>
+                  </ul>
+                  <ul class="slide-li op">
+                      <li class="current"></li>
+                      <li></li>
+
+                  </ul>
+                  <ul class="slide-li slide-txt">
+                      <li class="current"><a href="#">正面</a></li>
+                      <li><a href="#">反面</a></li>
+
+                  </ul>
+              </div>
+          </div>
+      </div>
+    <div th:include="front/footer"></div>
+    </body>
+</html>
+<script>
+
+    $(function () {
+        //判断页面
+        var pagetype = $(".navdown1").val();
+        var pageNo = $("#pageNo").val();
+        var key = $(".wby4").val();
+        var url = "/card/getCardByPart";
+        if(pagetype==0)
+        {
+            var info = {pageNo:pageNo,keys:key}
+        }
+        else
+        {
+            var info = {type:pagetype,pageNo:pageNo,keys:key}
+        }
+        send_post(url,info);
+
+        $(".btn3").click(function () {
+            var url = "/card/getCardByPart";
+            if(pagetype==0)
+            {
+                var info = {pageNo:pageNo,keys:key}
+            }
+            else
+            {
+                var info = {pagetype:pagetype,pageNo:pageNo,keys:key}
+            }
+            send_post(url,info);
+        });
+    });
+
+
+    function send_post(url, info) {
+        $.post(url,info,function (data) {
+            var tb = $("#tbody");
+            tb.empty();
+            var html = '';
+            $.each(data.list,function(i,row){
+                html += '<tr cid="'+row.id+'">';
+                html += '<td bgcolor="#c2ebff"><div align="center">'+row.createtime+'</div></td>';
+                html += '<td bgcolor="#c2ebff"><div align="center">'+row.company+'</div></td>';
+                html += '<td bgcolor="#c2ebff"><div align="center">'+row.position1+'</div></td>';
+                html += '<td bgcolor="#c2ebff"><div align="center">'+row.weburl+'</div></td>';
+                html += '<td bgcolor="#c2ebff"><div align="center">'+row.goods+'</div></td>';
+                if(row.buy==0)
+                {
+                    html += '<td bgcolor="#c2ebff"><div align="center"><a cid="'+row.id+'" class="btn5 free">免费查看</a></div></td>';
+                }
+                else {
+                    html += '<td bgcolor="#c2ebff"><div align="center"><a cid="'+row.id+'" class="btn5 pay">付费查看</a></div></td>';
+                }
+                html += '</tr>';
+            });
+            tb.html(html);
+
+            $("#pageNo").val(data.pageNum);
+            $("#pages").val(data.pages);
+
+            var pg = $(".dede_pages");
+            pg.empty();
+            var html2 = '<ul class="pagelist">';
+            html2 += '<li class="pre"><a href="javascript:;">上一页</a></li>';
+
+            for( var i=1;i<=data.pages;i++ )
+            {
+                if(i==data.pageNum)
+                {
+                    html2 += '<li class="thisclass pg" ><a href="javascript:;">'+i+'</a></li>';
+                }
+                else
+                {
+                    html2 += '<li class="pg" pgs="'+i+'"><a href="javascript:;">'+i+'</a></li>';
+                }
+            }
+            html2 += '<li class="next"><a href="javascript:;">下一页</a> <li>';
+            html2 += '</ul>';
+            pg.html(html2);
+            after();
+        },"json");
+    }
+
+    function after() {
+        $('.btn5.free').on('click', function(){//免费
+            var cid = $(this).attr("cid");
+            layer.open({
+                type: 2,
+                title: '名片',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area : ['640px' , '395px'],
+                content: '/card/cardPic.php?cid='+cid
+            });
+        });
+        $('.btn5.pay').on('click', function(){//付费
+            var cid = $(this).attr("cid");
+            $.ajax({
+                url: "/card/check.do",
+                type: 'post',
+                dataType: 'text',
+                data: {cid:cid},
+                success: function (data) {
+                    var jsondata = $.parseJSON(data);
+                    //alert(jsondata + "/" + jsondata.status);
+                    if( jsondata.status==0 )
+                    {
+                        layer.open({
+                            type: 2,
+                            title: '名片',
+                            maxmin: true,
+                            shadeClose: true, //点击遮罩关闭层
+                            area : ['640px' , '395px'],
+                            content: '/card/cardPic.php?cid='+cid
+                        });
+                    }
+                    else
+                    {
+                        if( jsondata.status == 1 )
+                        {
+                            window.location.href = "/login/login.php";
+                        }
+                        else
+                        {
+                            //跳转购买
+                            layer.msg('确定购买?', {
+                                time: 0 //不自动关闭
+                                ,btn: ['买', '再等等']
+                                ,yes: function(index){
+                                    layer.close(index);
+                                    //购买
+                                    $.post("/trade/buyCard",{cid:cid},function(result){
+                                        if( result.status==0 )
+                                        {
+                                            layer.open({
+                                                type: 2,
+                                                title: '名片',
+                                                maxmin: true,
+                                                shadeClose: true, //点击遮罩关闭层
+                                                area : ['640px' , '395px'],
+                                                content: '/card/cardPic.php?cid='+cid
+                                            });
+                                        }
+                                        else
+                                        {
+                                            layer.msg(result.msg);
+                                        }
+                                    },"json");
+                                }
+                            });
+                        }
+                    }
+                },
+                error: function () {
+                    alert('服务器繁忙..请稍后重试！');
+                }
+            });
+
+
+        });
+
+
+        $(".next").click(function () {
+            var pagetype = $(".navdown1").val();
+            var pageNo = $("#pageNo").val();
+            var pages = $("#pages").val();
+            pageNo = parseInt(pageNo) + 1;
+            if(pageNo>pages)
+            {
+                return;
+            }
+
+            var key = $(".wby4").val();
+            var url = "/card/getCardByPart";
+            if(pagetype==0)
+            {
+                var info = {pageNo:pageNo,keys:key}
+            }
+            else
+            {
+                var info = {type:pagetype,pageNo:pageNo,keys:key}
+            }
+
+            send_post(url,info);
+        });
+
+        $(".pre").click(function () {
+            var pagetype = $(".navdown1").val();
+            var pageNo = $("#pageNo").val();
+            pageNo = parseInt(pageNo) - 1;
+            if(pageNo<=0)
+            {
+                return;
+            }
+            var key = $(".wby4").val();
+            var url = "/card/getCardByPart";
+            if(pagetype==0)
+            {
+                var info = {pageNo:pageNo,keys:key}
+            }
+            else
+            {
+                var info = {type:pagetype,pageNo:pageNo,keys:key}
+            }
+            send_post(url,info);
+        });
+
+        $(".pg").click(function () {
+            var pagetype = $(".navdown1").val();
+            var pageNo = $(this).attr("pgs");
+            if(pageNo==null || typeof(pageNo) == "undefined")
+            {
+                return;
+            }
+
+            var key = $(".wby4").val();
+            var url = "/card/getCardByPart";
+            if(pagetype==0)
+            {
+                var info = {pageNo:pageNo,keys:key}
+            }
+            else
+            {
+                var info = {type:pagetype,pageNo:pageNo,keys:key}
+            }
+            send_post(url,info);
+        });
+
+
+    };
+
+</script>
+
+<script type="text/javascript">
+    //窗口效果
+    //点击登录class为tc 显示
+
+    //点击关闭按钮
+    $("a.guanbi").click(function(){
+        $("#gray").hide();
+        $("#popup").hide();//查找ID为popup的DIV hide()隐藏
+    })
+
+//    窗口水平居中
+    $(window).resize(function(){
+        tc_center();
+    });
+
+    function tc_center(){
+        var _top=($(window).height()-$(".popup").height())/2;
+        var _left=($(window).width()-$(".popup").width())/2;
+
+        $(".popup").css({top:_top,left:_left});
+    }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $(".top_nav").mousedown(function(e){
+            $(this).css("cursor","move");//改变鼠标指针的形状
+            var offset = $(this).offset();//DIV在页面的位置
+            var x = e.pageX - offset.left;//获得鼠标指针离DIV元素左边界的距离
+            var y = e.pageY - offset.top;//获得鼠标指针离DIV元素上边界的距离
+            $(document).bind("mousemove",function(ev){ //绑定鼠标的移动事件，因为光标在DIV元素外面也要有效果，所以要用doucment的事件，而不用DIV元素的事件
+
+                $(".popup").stop();//加上这个之后
+
+                var _x = ev.pageX - x;//获得X轴方向移动的值
+                var _y = ev.pageY - y;//获得Y轴方向移动的值
+
+                $(".popup").animate({left:_x+"px",top:_y+"px"},10);
+            });
+
+        });
+
+        $(document).mouseup(function() {
+            $(".popup").css("cursor","default");
+            $(this).unbind("mousemove");
+        });
+    })
+</script>
+
+<script type="text/javascript">
+		$(".nav li h3 a").eq(1).css("color","#000");
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        // $('.ct:gt(0)').hide()
+        $('.maijianav .maijia-nav li').click(function(){
+
+            $(this).addClass("navdown1")
+                .siblings().removeClass();
+            //获取当前标签的索引值
+            // var content_idnex = $('.maijianav .maijia-nav li').index(this);
+            // $('.ct').eq(content_idnex).show()
+            //     .siblings().hide();
+
+            var pagetype = $(this).text();
+            if( pagetype =="买家综合" )
+            {
+                pagetype==0;
+            }
+
+            var pageNo = $("#pageNo").val();
+            var key = $(".wby4").val();
+            var url = "/card/getCardByPart";
+            if(pagetype==0)
+            {
+                var info = {pageNo:pageNo,keys:key}
+            }
+            else
+            {
+                var info = {type:pagetype,pageNo:pageNo,keys:key}
+            }
+            send_post(url,info);
+
+
+            // var s = $(this).text();
+            // alert(s);
+            // if(s == "买家综合")
+            // {
+            //     window.location.href = "/card/cardStock.php";
+            // }
+            // else
+            // {
+            //     window.location.href = "/card/cardStock.php?belong="+s;
+            // }
+
+        });
+
+    });
+
+
+</script>
+
+
+
+<script type="text/javascript">
+    $(function() {
+
+
+
+//图片淡隐淡现
+        var defaultOpts = {interval: 5000, fadeInTime: 300, fadeOutTime: 200};
+
+        var _titles = $("ul.slide-txt li");
+        var _titles_bg = $("ul.op li");
+        var _bodies = $("ul.slide-pic li");
+        var _count = _titles.length;
+        var _current = 0;
+        var _intervalID = null;
+
+        var stop = function () {
+            window.clearInterval(_intervalID);
+        };
+
+        var slide = function (opts) {
+            if (opts) {
+                _current = opts.current || 0;
+            } else {
+                _current = (_current >= (_count - 1)) ? 0 : (++_current);
+            }
+            ;
+            _bodies.filter(":visible").fadeOut(defaultOpts.fadeOutTime, function () {
+                _bodies.eq(_current).fadeIn(defaultOpts.fadeInTime);
+                _bodies.removeClass("current").eq(_current).addClass("current");
+            });
+            _titles.removeClass("current").eq(_current).addClass("current");
+            _titles_bg.removeClass("current").eq(_current).addClass("current");
+        };
+
+        var go = function () {
+            stop();
+            _intervalID = window.setInterval(function () {
+                slide();
+            }, defaultOpts.interval);
+        };
+
+        var itemMouseOver = function (target, items) {
+            stop();
+            var i = $.inArray(target, items);
+            slide({current: i});
+        };
+
+        _titles.hover(function () {
+            if ($(this).attr('class') != 'current') {
+                itemMouseOver(this, _titles);
+            } else {
+                stop();
+            }
+        }, go);
+
+        _bodies.hover(stop, go);
+
+        go();
+    })
+</script>

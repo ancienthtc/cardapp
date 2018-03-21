@@ -1,0 +1,39 @@
+.jilv{
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+ width: 1050px;
+    margin: 23px auto 109px;
+}
+
+.jilv p{
+    height: 76px;
+    line-height: 76px;
+    border-bottom: 1px solid #cfcfcf;
+    padding-left: 60px;
+    font-size: 20px;
+    color: #aaaaaa;
+}
+.jilv div{
+    height: 260px;
+    padding: 30px 60px;
+}
+.jilv div ul li{
+    height: 58px;
+    line-height: 58px;
+    font-size: 16px;
+    color: #aaaaaa;
+}
+.jilv em{
+    width: 560px;
+    display: inline-block;
+}
+.jilv i{
+    width: 260px;
+    display: inline-block;
+    text-align: center;
+}
+.jilv span{
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+}

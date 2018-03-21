@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>纺织名片宝-修改密码</title>
+        <script type="text/javascript" src="/front/Scripts/jquery1.42.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+        <link rel="stylesheet" href="/front/Content/commons.css">
+        <link href="/front/Content/style.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="/front/Scripts/index.js"></script>
+    </head>
+
+    <body>
+        <div th:include="front/header"></div>
+        <div class="banner1"></div>
+        <div class="zhmm">
+            <h2>找回密码</h2>
+            <div class="zhmm_jd">
+
+                <ul>
+                    <li style="width:100px; padding-right:265px"><p>输入登录帐号</p><span class="dqzt">1</span></li>
+                    <li style="width:100px; padding-right:265px"><p>验证身份</p><span>2</span></li>
+                    <li style="width:100px; padding-right:265px"><p>修改密码</p><span>3</span></li>
+                    <li style="width:100px;"><p>完成</p><span>4</span></li>
+                </ul>
+                <div class="bjt"></div>
+            </div>
+            <div class="dlxq">
+                <ul>
+                    <li><span>登录帐号</span><i><input name="" type="text" class="wby1" placeholder="请输入您的手机号"/></i></li>
+                    <li><span>图片验证码</span><i><input name="" type="text" class="wby3"/></i><i><img src="../Content/images/a11.jpg"/></i>
+                    </li>
+                    <li><a href="zhmmtwo.php"><input name="" type="button" class="btn1" value="下一步"/></a></li>
+                </ul>
+            </div>
+        </div>
+        <div th:include="front/footer"></div>
+
+    </body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>纺织名片宝-注册</title>
+    <script type="text/javascript" src="/front/Scripts/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+    <link rel="stylesheet" href="/front/Content/commons.css">
+    <link href="/front/Content/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/front/Scripts/index.js"></script>
+
+    <style type="text/css">
+        .hyz {
+            margin-left: 110px;
+        }
+
+        .code {
+            font-family: Arial;
+            font-style: italic;
+            color: #039cec;
+            font-size: 25px;
+            border: 0;
+            letter-spacing: 3px;
+            font-weight: bolder;
+            float: left;
+            cursor: pointer;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 12px;
+            color: #288bc4;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #gray {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0px;
+            display: none;
+            z-index: 99;
+        }
+
+        .popup {
+            width: 650px;
+            height: auto;
+            background-color: #fff;
+            position: absolute;
+            z-index: 100;
+            border: 1px solid #ebeaea;
+            left: 200px;
+            top: 96px;
+            display: none;
+        }
+
+        .popup .top_nav {
+            width: 650px;
+            height: 46px;
+            background-image: url(/front/Content/ images / popup_top_bj.jpg);
+            border-bottom: 1px solid #ebeaea;
+            position: relative;
+            cursor: move;
+        }
+
+        .popup .top_nav i {
+            width: 35px;
+            height: 35px;
+            background: url(/front/Content/images/sucai_tubiao.png) -314px -5px;
+            position: absolute;
+            top: 6px;
+            left: 8px;
+            display: block;
+        }
+
+        .popup .top_nav span {
+            font: 18px/18px 'microsoft yahei';
+            color: #707070;
+            display: block;
+            position: absolute;
+            top: 13px;
+            left: 50px;
+        }
+
+        .popup .top_nav a.guanbi {
+            background: url(/front/Content/images/popup_guanbi.png) repeat 0px 0px;
+            width: 35px;
+            height: 35px;
+            display: block;
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .popup .top_nav a.guanbi span {
+            display: none;
+        }
+
+        .popup .top_nav a.guanbi:hover {
+            background: url(../Content/images/popup_guanbi.png) repeat 0px -35px;
+        }
+
+        .popup .min {
+            width: 630px;
+            height: auto;
+            padding: 10px;
+        }
+
+    </style>
+    <script language="javascript" type="text/javascript">
+
+        var code;
+        function createCode() {
+            code = "";
+            var codeLength = 6; //验证码的长度
+            var checkCode = document.getElementById("checkCode");
+            var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+            for (var i = 0; i < codeLength; i++) {
+                var charNum = Math.floor(Math.random() * 52);
+                code += codeChars[charNum];
+            }
+            if (checkCode) {
+                checkCode.className = "code";
+                checkCode.innerHTML = code;
+            }
+        }
+
+        function validateCode() {
+            var inputCode = document.getElementById("inputCode").value;
+            if (inputCode.length <= 0) {
+                alert("请输入验证码！");
+                return false;
+            }
+            else if (inputCode.toUpperCase() != code.toUpperCase()) {
+                alert("验证码输入有误！");
+                createCode();
+                return false;
+            }
+            else {
+                alert("验证码正确！");
+                return true;
+            }
+        }
+
+
+        //验证手机号码
+        function checkTel(phone) {
+            var reg = /^1[3|4|5|7|8](\d){9}$/;
+            if (reg.test(phone)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        //检查手机号重复
+        function checkRepeat(phone) {
+            var tel = $("#tel").val();
+            var s = false;
+            $.ajax({
+                url: "/login/repeat.do",
+                type: 'post',
+                dataType: 'json',
+                data: { tel: tel },
+                success: function (data) {
+                    if(data==true)
+                    {
+                        s = "true";
+                    }
+                    else
+                    {
+                        s = "false";
+                    }
+                },
+                error: function () {
+                    //alert('服务器繁忙..请稍后重试！');
+                    s = "false";
+                }
+            });
+            return s;
+        }
+
+        //注册
+        function reg() {
+            var tel = $("#tel").val();//手机号
+            var password = $("#pwd").val();
+            var returnCode = $("#returnCode").val();
+            var agree = $("#agree").prop("checked");
+            if( agree==false )
+            {
+                alert("请同意");
+                return false;
+            }
+
+            //检查验证
+            if( validateCode() )
+            {
+                if(password.length>=4 && password.length<15 )
+                {
+                    $.ajax({
+                        url: "/login/reg.do",
+                        type: 'post',
+                        dataType: 'json',
+                        data: { tel: tel , password:password , code:returnCode },
+                        success: function (data) {
+                            if(data.status==0)
+                            {
+                                alert("注册成功");
+                                window.location.href = "/login/login.php";
+                            }
+                            else
+                            {
+                                alert(data.msg);
+                            }
+                        },
+                        error: function () {
+                            alert('服务器繁忙..请稍后重试！');
+                        }
+                    });
+                }
+                else
+                {
+                    alert("密码太长或太短");
+                }
+            }
+            else {
+                alert("填写验证码");
+            }
+        }
+
+        $(function () {
+            //发送验证码
+            $(".btn2").click(function () {
+                var tel = $("#tel").val();
+                if( !checkTel(tel) )
+                {
+                    alert("手机号错误");
+                    return false;
+                }
+                $.ajax({
+                    url: "/login/repeat.do",
+                    type: 'post',
+                    dataType: 'json',
+                    data: { tel: tel },
+                    success: function (data) {
+                        if(data==true)
+                        {
+                            //发送验证码
+                            $.ajax({
+                                url: "/login/send.do",
+                                type: 'post',
+                                dataType: 'json',
+                                data: { tel: tel },
+                                success: function (data) {
+                                    if(data==true)
+                                    {
+                                        alert("发送成功");
+                                    }
+                                    else
+                                    {
+                                        alert("发送失败");
+                                    }
+                                },
+                                error: function () {
+                                    alert('服务器繁忙..请稍后重试！');
+                                }
+                            });
+                        }
+                        else
+                        {
+                            alert("手机号已经注册");
+                            return false;
+                        }
+                    },
+                    error: function () {
+                        //alert('服务器繁忙..请稍后重试！');
+                        return false;
+                    }
+                });
+
+
+            });
+
+
+        })
+
+
+
+    </script>
+</head>
+
+<body onload="createCode()">
+<div th:include="front/header"></div>
+<div class="banner1"></div>
+<div class="dlxq">
+    <h2>注册</h2>
+    <form id="form1" runat="server" onsubmit="validateCode()">
+        <ul>
+            <li><span>手机号码</span><i><input name="" id="tel" type="text" class="wby1" placeholder="请输入您的手机号"/></i></li>
+
+            <li><span>验证码</span><i><input name="" style="float:left;" type="text" id="inputCode" class="wby3"/></i><i>
+                <div class="code" id="checkCode" onclick="createCode()"></div>
+            </i></li>
+            <li><a class="hyz" href="#" onclick="createCode()">看不清换一张</a></li>
+            <li><span>手机验证码</span>
+                <i><input name="" id="returnCode" type="text" class="wby2"/></i>
+                <i><input name="" type="button" class="btn2" value="发送手机验证码"/></i>
+            </li>
+            <li><span>密码</span><i><input name="" id="pwd" type="password" class="wby1" placeholder="请设置密码"/></i></li>
+            <li><p><input name="" id="agree" type="checkbox" value=""/>
+                我已阅读并同意<a href="#" class="btnxy">《纺织品名片宝用户协议》</a></p>
+            </li>
+            <li><i><input name="" id="Button1" onclick="reg();" type="button" class="btn1" value="注册"/></i>
+            </li>
+        </ul>
+    </form>
+</div>
+<div th:include="front/footer"></div>
+
+<div id="gray"></div>
+<div class="popup" id="popup">
+    <div class="top_nav" id='top_nav'>
+        <div align="center">
+            <span>查看详情</span>
+            <a class="guanbi"></a>
+        </div>
+    </div>
+    <div class="min">
+
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+
+</script>
+<script type="text/javascript">
+    //窗口效果
+    //点击登录class为 显示
+    $(".btnxy").click(function () {
+        $("#gray").show();
+        $("#popup").show();//查找ID为popup的DIV show()显示#gray
+        tc_center();
+    });
+    //点击关闭按钮
+    $("a.guanbi").click(function () {
+        $("#gray").hide();
+        $("#popup").hide();//查找ID为popup的DIV hide()隐藏
+    })
+
+    //    窗口水平居中
+    $(window).resize(function () {
+        tc_center();
+    });
+
+    function tc_center() {
+        var _top = ($(window).height() - $(".popup").height()) / 2;
+        var _left = ($(window).width() - $(".popup").width()) / 2;
+
+        $(".popup").css({top: _top, left: _left});
+    }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".top_nav").mousedown(function (e) {
+            $(this).css("cursor", "move");//改变鼠标指针的形状
+            var offset = $(this).offset();//DIV在页面的位置
+            var x = e.pageX - offset.left;//获得鼠标指针离DIV元素左边界的距离
+            var y = e.pageY - offset.top;//获得鼠标指针离DIV元素上边界的距离
+            $(document).bind("mousemove", function (ev) { //绑定鼠标的移动事件，因为光标在DIV元素外面也要有效果，所以要用doucment的事件，而不用DIV元素的事件
+
+                $(".popup").stop();//加上这个之后
+
+                var _x = ev.pageX - x;//获得X轴方向移动的值
+                var _y = ev.pageY - y;//获得Y轴方向移动的值
+
+                $(".popup").animate({left: _x + "px", top: _y + "px"}, 10);
+            });
+
+        });
+
+        $(document).mouseup(function () {
+            $(".popup").css("cursor", "default");
+            $(this).unbind("mousemove");
+        });
+    })
+</script>

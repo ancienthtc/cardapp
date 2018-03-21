@@ -1,0 +1,101 @@
+.mail_list table tr td{
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-color: #eef1f3;
+}
+/*联系人*/
+.contacts{
+    border-bottom: 2px solid #e5e9ee;
+    margin-bottom: 10px;
+}
+.ctas_left{
+    float: left;
+    width: 175px;
+    height: 80px;
+    background: #3da9f7;
+    border-top: 2px solid #e5e9ee;
+    border-left: 2px solid #e5e9ee;
+    border-right: 2px solid #e5e9ee;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 80px;
+}
+.ctas_right{
+    float: right;
+    border-top: 2px solid #e5e9ee;
+    border-right: 2px solid #e5e9ee;
+    width: 989px;
+    display: inline-block;
+    font-size: 14px;
+}
+.ctas_right p{
+    height: 40px;
+    line-height: 40px;
+}
+.ctas_right p span{
+    color: #ffab55;
+}
+
+/*参考联系人*/
+.reference{
+    position: relative;
+    border-bottom: 2px solid #e5e9ee;
+}
+.reference_left{
+    width: 175px;
+    background: #3da9f7;
+    text-align: center;
+    border: 2px solid #e5e9ee;
+    border-bottom: none;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+.reference_left p{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+}
+.reference_right{
+    width: 990px;
+    border-top: 2px solid #e5e9ee;
+    border-right: 2px solid #e5e9ee;
+    padding-top: 10px;
+}
+.reference_right ul li{
+    float: left;
+    width: 339px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+.reference_right ul li em{
+    color: #ff9124;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

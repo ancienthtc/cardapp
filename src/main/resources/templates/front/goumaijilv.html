@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/front/Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+    <script src="/front/Scripts/highcharts.js"></script>
+    <link href="/front/Content/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/front/Content/commons.css">
+    <link rel="stylesheet" href="/front/Content/goumaijilv.css">
+</head>
+<body>
+<div th:include="front/header"></div>
+<div class="banner1"></div>
+<div class="xtxx">
+    <div class="xtxx_top">
+        <div class="xtxx_tit"><p><a th:href="@{/user/personal.php}">个人中心</a>&nbsp;>&nbsp;<a th:href="@{/user/buyRecord.php}">购买记录</a></p></div>
+    </div>
+    <div class="wdda">
+        <div class="jilv">
+            <p>
+                <em>购买种类</em>
+                <i>时间</i>
+                <span>价格</span>
+            </p>
+            <div>
+                <ul id="tbody">
+                    <li>
+                        <em>购买记录购买记录购买记录购买记录</em>
+                        <i>2017/11/5</i>
+                        <span>50￥</span>
+                    </li>
+                    <li><em>购买记录购买记录购买记录购买记录</em><i>2017/11/5</i><span>50￥</span></li>
+                    <li><em>购买记录购买记录购买记录购买记录</em><i>2017/11/5</i><span>50￥</span></li>
+                    <li><em>购买记录购买记录购买记录购买记录</em><i>2017/11/5</i><span>50￥</span></li>
+                    <li><em>购买记录购买记录购买记录购买记录</em><i>2017/11/5</i><span>50￥</span></li>
+                </ul>
+                <div class="dede_pages">
+                    <ul class="pagelist">
+                        <li><a href="#">上一页</a></li>
+                        <li><a href="#">1</a></li>
+                        <li class="thisclass"><a href="#">2</a></li>
+                        <li><a href="#">下一页</a>
+                        <li>
+                    </ul>
+                </div>
+                <input type="hidden" id="pageNo" value="1">
+                <input type="hidden" id="pages" value="1">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        jQuery(".wdda_left").slide({
+            type: "menu", //效果类型
+            titCell: ".ma", // 鼠标触发对象
+            targetCell: ".fbnrbox", // 效果对象，必须被titCell包含
+            effect: "slideDown",//下拉效果
+            delayTime: 300, // 效果时间
+            triggerTime: 0, //鼠标延迟触发时间
+            returnDefault: true  //返回默认状态
+        });
+    </script>
+    <script>
+        $(".wdda .wdda_left h3").each(function (index) {
+            $(this).click(function () {
+                $(".on5").removeClass("on5");
+                $(this).addClass("on5");
+                $(".wdda .wdda_right .danr:eq(" + index + ")").show().siblings().hide();
+            });
+        });
+    </script>
+</div>
+<div th:include="front/footer"></div>
+</body>
+</html>
+<script>
+
+    $(function () {
+        var pageNo = $("#pageNo").val();
+        var url = "/user/buyList";
+        var info = {pageNo:pageNo,pageSize:8}
+        send_post(url,info);
+
+    });
+
+    function send_post(url, info) {
+        $.post(url,info,function (data) {
+            var tb = $("#tbody");
+            tb.empty();
+            var html = '';
+            $.each(data.list,function(i,row){
+                html += '<li>';
+                html += '<em bid="'+row.id+'" class="details" >';
+
+                html += '名片购买';
+
+                html += '</em>';
+                html += '<i>';
+                if( row.createtime!="" && row.createtime!=undefined )
+                {
+                    /*将时间戳转化为日期*/
+                    var time = new Date(row.createtime);
+                    row.createtime = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
+                }else{
+                    row.createtime="";
+                }
+                html += row.createtime;
+
+                html += '</i>';
+                html += '<span>';
+                html += row.pay;
+                html += '</span>';
+
+                html += '</li>';
+            });
+            tb.html(html);
+
+            $("#pageNo").val(data.pageNum);
+            $("#pages").val(data.pages);
+
+            var pg = $(".dede_pages");
+            pg.empty();
+            var html2 = '<ul class="pagelist">';
+            html2 += '<li class="pre"><a href="javascript:;">上一页</a></li>';
+
+            for( var i=1;i<=data.pages;i++ )
+            {
+                if(i==data.pageNum)
+                {
+                    html2 += '<li class="thisclass pg" ><a href="javascript:;">'+i+'</a></li>';
+                }
+                else
+                {
+                    html2 += '<li class="pg" pgs="'+i+'"><a href="javascript:;">'+i+'</a></li>';
+                }
+            }
+            html2 += '<li class="next"><a href="javascript:;">下一页</a> <li>';
+            html2 += '</ul>';
+            pg.html(html2);
+            after();
+        },"json");
+    }
+
+    function after() {
+            $(".next").click(function () {
+                var pageNo = $("#pageNo").val();
+                var pages = $("#pages").val();
+                pageNo = parseInt(pageNo) + 1;
+                if(pageNo>pages)
+                {
+                    return;
+                }
+                var url = "/user/buyList";
+                var info = {pageNo:pageNo,pageSize:8}
+
+                send_post(url,info);
+            });
+
+            $(".pre").click(function () {
+                var pageNo = $("#pageNo").val();
+                pageNo = parseInt(pageNo) - 1;
+                if(pageNo<=0)
+                {
+                    return;
+                }
+                var url = "/user/buyList";
+                var info = {pageNo:pageNo,pageSize:8}
+                send_post(url,info);
+            });
+
+            $(".pg").click(function () {
+                var pageNo = $(this).attr("pgs");
+                if(pageNo==null || typeof(pageNo) == "undefined")
+                {
+                    return;
+                }
+                var url = "/user/buyList";
+                var info = {pageNo:pageNo,pageSize:8}
+                send_post(url,info);
+            });
+
+            $(".details").click(function () {
+
+                var bid = $(this).attr("bid");
+                window.location.href = "/user/buyRecordDetail.php?bid="+bid;
+            });
+
+    }
+
+</script>

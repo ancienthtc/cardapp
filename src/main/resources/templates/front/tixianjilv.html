@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript" src="/front/Scripts/jquery1.42.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+        <script type="text/javascript" src="/front/Scripts/index.js"></script>
+        <link rel="stylesheet" href="/front/Content/commons.css">
+        <link rel="stylesheet" href="/front/Content/style.css">
+        <link rel="stylesheet" href="/front/Content/zhanghuchongzhi.css">
+        <link rel="stylesheet" href="/front/Content/tixianjilv.css">
+    </head>
+    <body>
+        <div th:include="front/header"></div>
+        <div class="banner1"></div>
+        <div class="xtxx">
+            <div class="xtxx_top">
+                <div class="xtxx_tit"><p><a th:href="@{/user/personal.php}">个人中心</a>&nbsp;>&nbsp;<a th:href="@{/user/withdrawRecord.php}">提现记录</a></p></div>
+            </div>
+            <div class="wdda wdda_profit">
+                <div class="wdda_left fl" style="width: 230px">
+                    <ul class="wdda-left">
+                        <li><a th:href="@{/user/recharge.php}">账户充值</a></li>
+                        <li><a th:href="@{/user/income.php}">名片收益</a></li>
+                        <li><a th:href="@{/user/withdraw.php}" class="tixian">申请提现</a></li>
+                        <li><a th:href="@{/user/withdrawRecord.php}" class="on">提现记录</a></li>
+                    </ul>
+                </div>
+                <div class="profit_right mt60 mb238" style="width: 910px;">
+                    <table border="1" style="border-collapse: collapse; color: #6f6f6f;">
+                        <thead>
+                            <tr>
+                                <th>申请时间</th>
+                                <th>提现账号</th>
+                                <th class="w535">提现金额</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 300px;">2017-11-29  15：25</td>
+                                <td style="width: 380px">9999999999999999999999</td>
+                                <td>50.00元</td>
+                                <td>到账</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 300px;">2017-11-29  15：25</td>
+                                <td style="width: 380px">9999999999999999999999</td>
+                                <td>50.00元</td>
+                                <td>到账</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 300px;">2017-11-29  15：25</td>
+                                <td style="width: 380px">9999999999999999999999</td>
+                                <td>50.00元</td>
+                                <td>到账</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 300px;">2017-11-29  15：25</td>
+                                <td style="width: 380px">9999999999999999999999</td>
+                                <td>50.00元</td>
+                                <td>到账</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 300px;">2017-11-29  15：25</td>
+                                <td style="width: 380px">9999999999999999999999</td>
+                                <td>50.00元</td>
+                                <td>到账</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 300px;">2017-11-29  15：25</td>
+                                <td style="width: 380px">9999999999999999999999</td>
+                                <td>50.00元</td>
+                                <td>到账</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 300px;">2017-11-29  15：25</td>
+                                <td style="width: 380px">9999999999999999999999</td>
+                                <td>50.00元</td>
+                                <td>到账</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--<script type="text/javascript">
+                jQuery(".wdda_left").slide({
+                    type: "menu", //效果类型
+                    titCell: ".ma", // 鼠标触发对象
+                    targetCell: ".fbnrbox", // 效果对象，必须被titCell包含
+                    effect: "slideDown",//下拉效果
+                    delayTime: 300, // 效果时间
+                    triggerTime: 0, //鼠标延迟触发时间
+                    returnDefault: true  //返回默认状态
+                });
+            </script>-->
+            <!--<script>
+                $(".wdda .wdda_left h3").each(function (index) {
+                    $(this).click(function () {
+                        $(".on5").removeClass("on5");
+                        $(this).addClass("on5");
+                        $(".wdda .wdda_right .danr:eq(" + index + ")").show().siblings().hide();
+                    });
+                });
+            </script>-->
+        </div>
+        <div th:include="front/footer"></div>
+    </body>
+</html>

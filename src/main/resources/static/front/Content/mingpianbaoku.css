@@ -1,0 +1,60 @@
+#gray{width:100%;height:100%;background:rgba(0,0,0,0.3);position:fixed;top:0px;display:none;z-index:99;}
+
+.popup{
+    width:650px;
+    height:auto;
+    background-color:#fff;
+    position:absolute;
+    z-index:100;
+    border:1px solid #ebeaea;
+    left:200px;
+    top:96px;
+    display:none;
+}
+.popup .top_nav{
+    width:650px;
+    height:46px;
+    background-image: url(../Content/images/popup_top_bj.jpg);
+    border-bottom:1px solid #ebeaea;
+    position:relative;
+    cursor:move;
+}
+.popup .top_nav i{width:35px;height:35px;background:url(../Content/images/sucai_tubiao.png) -314px -5px;position:absolute;top:6px;left:8px;display:block; }
+.popup .top_nav span{font:18px/18px 'microsoft yahei';color:#707070;display:block;position:absolute;top:13px;left:50px;}
+
+.popup .top_nav a.guanbi { background:url(../Content/images/popup_guanbi.png) repeat 0px 0px; width:35px; height: 35px; display: block; position:absolute;top:8px;right:10px;cursor:pointer;}
+.popup .top_nav a.guanbi span { display: none;}
+.popup .top_nav a.guanbi:hover { background: url(../Content/images/popup_guanbi.png) repeat 0px -35px; }
+.popup .min{width:532px;height:auto;padding:10px;}
+
+
+
+
+/* slidebox */
+.slidebox{width:620px;height:340px;overflow:hidden;position:relative;border:solid 1px #ddd;margin:20px auto;}
+.slidepic{position:absolute;}/* 必要元素 */
+.slidepic li{height:340px;overflow:hidden;}
+
+.slidebtn{position:absolute;bottom:10px;right:10px;float:right;}
+.slidebtn li{background:#fff;border:1px solid #D00000;cursor:pointer;float:left;font-family:arial;height:18px;line-height:18px;width:18px;margin:4px;text-align:center;color:#D00000;}
+.slidebtn li.current{background:#FF0000;border:1px solid #D00000;height:24px;line-height:24px;width:24px;margin:0 2px;color:#fff;font-weight:800;}
+/* slidepic-01 */
+.slidebox-01{width:620px;height:340px;overflow:hidden;position:relative;border:solid 1px #ddd;margin:20px auto;}
+.slidepic-01{position:absolute;width:9999em;}/* 必要元素 */
+.slidepic-01 li{height:340px;overflow:hidden;float:left;}
+.slidebtn-01{position:absolute;bottom:10px;right:10px;float:right;}
+.slidebtn-01 li{background:#fff;border:1px solid #D00000;cursor:pointer;float:left;font-family:arial;height:18px;line-height:18px;width:18px;margin:4px;text-align:center;color:#D00000;}
+.slidebtn-01 li.current{background:#FF0000;border:1px solid #D00000;height:24px;line-height:24px;width:24px;margin:0 2px;color:#fff;font-weight:800;}
+/* slides */
+.slides{position:relative;width:620px;height:340px;overflow:hidden;margin:0 auto;border:solid 1px #ddd;}
+.slide-pic{overflow:hidden;width:620px;}
+.slide-pic li{display:none;}/* 必要元素 */
+.slide-pic li.current{display:block;width: 620px;height: 340px;}/* 必要元素 */
+.slide-pic li img{width: 100%;height: 100%;}
+.slide-li{left:25%;bottom:1px;position:absolute;}/* 必要元素 */
+.slide-li li{float:left;width:154px;line-height:30px;margin-right:1px;height:30px;text-align:center;}
+.slide-li a{display:block;font-size:14px;color:#fff;height:30px;text-decoration:none;}
+.slide-li li.current a{color:#333;text-decoration:none;}
+.op{filter:alpha(opacity=60);opacity:0.6;}
+.op li{background:#666;}
+.op li.current{background:#fff;}

@@ -1,0 +1,189 @@
+﻿@charset "UTF-8";
+/**
+ * @author: xgc-whj
+ * @date: 2018-02-05
+ * @version: v1.6
+ * @description: 请务必保留作者、日期及版本号
+ */
+
+/*ccs-1*/
+.whj_jqueryPaginationCss-1 {
+    display: inline-block;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.whj_jqueryPaginationCss-1 div {
+    display: inline-block;
+    vertical-align: bottom;
+    height: 24px;
+    line-height: 24px;
+}
+
+.whj_jqueryPaginationCss-1 .whj_padding {
+    padding: 1px 9px;
+}
+
+.whj_jqueryPaginationCss-1 .whj_bgc {
+    background-color: #fff;
+    color: #698ca9;
+}
+
+.whj_jqueryPaginationCss-1 .whj_border {
+    border: 1px solid #5b9fd6;
+}
+
+.whj_jqueryPaginationCss-1 .whj_color {
+    color: #698ca9;
+}
+
+.whj_jqueryPaginationCss-1 .whj_hover:hover {
+    background-color: #d4f1ff;
+    color: #698ca9;
+    cursor: pointer;
+}
+
+.whj_jqueryPaginationCss-1 .whj_checked {
+    background-color: #d4f1ff;
+    color: #698ca9;
+}
+
+.whj_jqueryPaginationCss-1 .whj_hoverDisable {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.whj_jqueryPaginationCss-1 select {
+    height: 28px;
+    vertical-align: bottom;
+    padding: 0px;
+    outline: none;
+}
+
+.whj_jqueryPaginationCss-1 input {
+    padding: 0px;
+    height: 26px;
+    outline: none;
+    text-align: center;
+    width: 60px;
+    vertical-align: bottom;
+}
+
+.whj_jqueryPaginationCss-1 div, .whj_jqueryPaginationCss-1 input, .whj_jqueryPaginationCss-1 select {
+    margin: 2px;
+}
+
+
+
+/*ccs-3*/
+#pagination_3{
+    width: 500px;
+    margin: 15px auto 0;
+}
+.whj_jqueryPaginationCss-3 {
+    display: inline-block;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.whj_jqueryPaginationCss-3 div {
+    display: inline-block;
+    vertical-align: bottom;
+    height: 24px;
+    line-height: 24px;
+}
+
+.whj_jqueryPaginationCss-3 .whj_padding {
+    padding: 1px 9px;
+}
+
+.whj_jqueryPaginationCss-3 .whj_bgc {
+    background-color: #7a7b7b;
+    color: #fff;
+}
+
+.whj_jqueryPaginationCss-3 .whj_border {
+    border: 1px solid #929292;
+}
+
+.whj_jqueryPaginationCss-3 .whj_color {
+    color: #929292;
+}
+
+.whj_jqueryPaginationCss-3 .whj_hover:hover {
+    background-color: #e0dddd;
+    color: #7a7b7b;
+    cursor: pointer;
+}
+
+.whj_jqueryPaginationCss-3 .whj_checked {
+    background-color: #e0dddd;
+    color: #7a7b7b;
+}
+
+.whj_jqueryPaginationCss-3 .whj_hoverDisable {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.whj_jqueryPaginationCss-3 select {
+    height: 28px;
+    vertical-align: bottom;
+    padding: 0px;
+    outline: none;
+}
+
+.whj_jqueryPaginationCss-3 input {
+    padding: 0px;
+    height: 26px;
+    outline: none;
+    text-align: center;
+    width: 60px;
+    vertical-align: bottom;
+}
+
+.whj_jqueryPaginationCss-3 div, .whj_jqueryPaginationCss-3 input, .whj_jqueryPaginationCss-3 select {
+    margin: 2px;
+}
+
+/*自定义*/
+.cib {
+	padding: 5px 2px;
+}
+
+.cib input {
+	vertical-align: bottom;
+	height: 20px;
+	color: #567e84;
+	margin: 2px 0px;
+}
+
+.cib button {
+	vertical-align: bottom;
+	height: 26px;
+	cursor: pointer;
+	background-color: #cbefff;
+	border: 1px solid #44a8d6;
+	color: #567e84;
+	margin: 2px 0px;
+}
+
+.desc {
+	padding-left: 2px;
+	color: #657e9a;
+}
+
+.code-con{
+	font-size: 18px;
+}
+
+.hr-c{
+	background-color: #2196F3;
+	height: 5px;
+	border: 0px;
+}
+

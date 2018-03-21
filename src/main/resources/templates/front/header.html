@@ -1,0 +1,104 @@
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+<div id="header">
+    <div class="headerbox">
+        <h1 class="logo"><a href=""><img src="/front/Content/images/a_03.png"></a></h1>
+        <div class="lxdh">
+            <h2>400-625-0083</h2>
+        </div>
+
+        <div class="navBar">
+            <ul class="nav clearfix">
+                <li class="m ">
+                    <h3><a th:href="@{/user/home.php}">首页</a></h3>
+                </li>
+
+                <li class="m">
+                    <h3><a th:href="@{/card/cardStock.php}">名片宝库</a></h3>
+                    <ul class="sub">
+                        <li><a th:href="@{/card/cardStock.php}">买家综合</a></li>
+                        <li><a th:href="@{/card/cardStock.php}">原料纱线</a></li>
+                        <li><a th:href="@{/card/cardStock.php}">面料布匹</a></li>
+                        <li><a th:href="@{/card/cardStock.php}">成衣服饰</a></li>
+                        <li><a th:href="@{/card/cardStock.php}">家居家纺</a></li>
+                        <li><a th:href="@{/card/cardStock.php}">辅料包装</a></li>
+                        <li><a th:href="@{/card/cardStock.php}">纺机印染</a></li>
+                        <li><a th:href="@{/card/cardStock.php}">其他</a></li>
+                    </ul>
+                </li>
+                <li class="m">
+                    <h3><a th:href="@{/user/platform.php}">供需平台</a></h3>
+                    <ul class="sub">
+                        <li><a th:href="@{/user/platform.php}">买家需求</a></li>
+                        <li><a th:href="@{/user/platform.php}">卖家发布</a></li>
+                        <li><a th:href="@{/user/platform.php}">人才招聘</a></li>
+                    </ul>
+                </li>
+
+                <li class="m">
+                    <h3><a th:href="@{/news/newsCenter.php}">行业资讯</a></h3>
+                    <ul class="sub">
+                        <li><a th:href="@{/news/newsCenter.php}">国际资讯</a></li>
+                        <li><a th:href="@{/news/newsCenter.php}">国内资讯</a></li>
+                        <li><a th:href="@{/news/newsCenter.php}">商业资讯</a></li>
+                        <li><a th:href="@{/news/newsCenter.php}">会务会展</a></li>
+                    </ul>
+                </li>
+
+                <li class="m">
+                    <h3><a th:href="@{/user/dataService.php}">数据服务</a></h3>
+                    <ul class="sub">
+                        <li><a href="#">买家数据</a></li>
+                        <li><a th:href="@{/user/downReport.php}">报告下载</a></li>
+                        <li><a th:href="@{/user/message.php}">其 它</a></li>
+                    </ul>
+                </li>
+
+                <li class="m">
+                    <h3><a th:href="@{/user/about.php}">关于我们</a></h3>
+                    <ul class="sub">
+                        <li><a th:href="@{/user/about.php}">公司介绍</a></li>
+                        <li><a th:href="@{/user/about.php}">职业发展</a></li>
+                        <li><a th:href="@{/user/about.php}">联系我们</a></li>
+                    </ul>
+                </li>
+
+                <li class="m">
+                    <h3><a th:href="@{/user/join.php}">加入我们</a></h3>
+                    <ul class="sub">
+                        <li><a th:href="@{/user/join.php}">第一社群</a></li>
+                        <li><a th:href="@{/user/join.php}">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li class="m">
+                    <h3><a th:href="@{/user/personal.php}">个人中心</a></h3>
+                    <ul class="sub">
+                        <li><a th:href="@{/user/personal.php}">我的档案</a></li>
+                        <li><a th:href="@{/user/recharge.php}">名片宝库</a></li>
+                        <li><a th:href="@{/user/myCard.php}">我要发布</a></li>
+                        <li><a th:href="@{/user/dataCenter.php}">我的数据</a></li>
+                        <li><a th:href="@{/user/buyRecord.php}">购买记录</a></li>
+                        <li><a th:href="@{/login/out.do}">退出</a></li>
+                    </ul>
+                </li>
+                <li class="m" style="padding-left:20px;width: 45px;" th:unless="${session.user!=null}">
+                    <h3><a th:href="@{/login/login.php}">登录</a> / </h3>
+                </li>
+                <li class="m" style="width:30px;margin-left:.5%;" th:unless="${session.user!=null}">
+                    <h3><a th:href="@{/login/register.php}">注册</a></h3>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.nav li').hover(function () {
+                    $('ul', this).slideDown(200);
+                    $(this).children('a:first').addClass("on");
+                }, function () {
+                    $('ul', this).slideUp(100);
+                    $(this).children('a:first').removeClass("on");
+                });
+            });
+        </script>
+    </div>
+</div>
+</html>

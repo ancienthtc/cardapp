@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jd.cardapp.dao.CardMapper" >
+  <resultMap id="BaseResultMap" type="com.jd.cardapp.model.Card" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="cardmail" property="cardmail" jdbcType="VARCHAR" />
+    <result column="weburl" property="weburl" jdbcType="VARCHAR" />
+    <result column="company" property="company" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="belong" property="belong" jdbcType="VARCHAR" />
+    <result column="goods" property="goods" jdbcType="VARCHAR" />
+    <result column="contact1" property="contact1" jdbcType="VARCHAR" />
+    <result column="position1" property="position1" jdbcType="VARCHAR" />
+    <result column="tel1" property="tel1" jdbcType="VARCHAR" />
+    <result column="contact2" property="contact2" jdbcType="VARCHAR" />
+    <result column="position2" property="position2" jdbcType="VARCHAR" />
+    <result column="tel2" property="tel2" jdbcType="VARCHAR" />
+    <result column="contact3" property="contact3" jdbcType="VARCHAR" />
+    <result column="position3" property="position3" jdbcType="VARCHAR" />
+    <result column="tel3" property="tel3" jdbcType="VARCHAR" />
+    <result column="pic1" property="pic1" jdbcType="VARCHAR" />
+    <result column="pic2" property="pic2" jdbcType="VARCHAR" />
+    <result column="folder1" property="folder1" jdbcType="VARCHAR" />
+    <result column="folder2" property="folder2" jdbcType="VARCHAR" />
+    <result column="buy" property="buy" jdbcType="DOUBLE" />
+    <result column="review" property="review" jdbcType="INTEGER" />
+    <result column="viewtimes" property="viewtimes" jdbcType="INTEGER" />
+    <result column="buytimes" property="buytimes" jdbcType="INTEGER" />
+    <result column="user" property="user" jdbcType="INTEGER" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, cardmail, weburl, company, address, belong, goods, contact1, position1, tel1, 
+    contact2, position2, tel2, contact3, position3, tel3, pic1, pic2, folder1, folder2, 
+    buy, review, viewtimes, buytimes, user, updatetime, createtime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jd.cardapp.model.CardExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from t_card
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_card
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_card
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.jd.cardapp.model.CardExample" >
+    delete from t_card
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jd.cardapp.model.Card" >
+    insert into t_card (id, cardmail, weburl, 
+      company, address, belong, 
+      goods, contact1, position1, 
+      tel1, contact2, position2, 
+      tel2, contact3, position3, 
+      tel3, pic1, pic2, folder1, 
+      folder2, buy, review, 
+      viewtimes, buytimes, user, 
+      updatetime, createtime)
+    values (#{id,jdbcType=INTEGER}, #{cardmail,jdbcType=VARCHAR}, #{weburl,jdbcType=VARCHAR}, 
+      #{company,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{belong,jdbcType=VARCHAR}, 
+      #{goods,jdbcType=VARCHAR}, #{contact1,jdbcType=VARCHAR}, #{position1,jdbcType=VARCHAR}, 
+      #{tel1,jdbcType=VARCHAR}, #{contact2,jdbcType=VARCHAR}, #{position2,jdbcType=VARCHAR}, 
+      #{tel2,jdbcType=VARCHAR}, #{contact3,jdbcType=VARCHAR}, #{position3,jdbcType=VARCHAR}, 
+      #{tel3,jdbcType=VARCHAR}, #{pic1,jdbcType=VARCHAR}, #{pic2,jdbcType=VARCHAR}, #{folder1,jdbcType=VARCHAR}, 
+      #{folder2,jdbcType=VARCHAR}, #{buy,jdbcType=DOUBLE}, #{review,jdbcType=INTEGER}, 
+      #{viewtimes,jdbcType=INTEGER}, #{buytimes,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jd.cardapp.model.Card" >
+    insert into t_card
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="cardmail != null" >
+        cardmail,
+      </if>
+      <if test="weburl != null" >
+        weburl,
+      </if>
+      <if test="company != null" >
+        company,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="belong != null" >
+        belong,
+      </if>
+      <if test="goods != null" >
+        goods,
+      </if>
+      <if test="contact1 != null" >
+        contact1,
+      </if>
+      <if test="position1 != null" >
+        position1,
+      </if>
+      <if test="tel1 != null" >
+        tel1,
+      </if>
+      <if test="contact2 != null" >
+        contact2,
+      </if>
+      <if test="position2 != null" >
+        position2,
+      </if>
+      <if test="tel2 != null" >
+        tel2,
+      </if>
+      <if test="contact3 != null" >
+        contact3,
+      </if>
+      <if test="position3 != null" >
+        position3,
+      </if>
+      <if test="tel3 != null" >
+        tel3,
+      </if>
+      <if test="pic1 != null" >
+        pic1,
+      </if>
+      <if test="pic2 != null" >
+        pic2,
+      </if>
+      <if test="folder1 != null" >
+        folder1,
+      </if>
+      <if test="folder2 != null" >
+        folder2,
+      </if>
+      <if test="buy != null" >
+        buy,
+      </if>
+      <if test="review != null" >
+        review,
+      </if>
+      <if test="viewtimes != null" >
+        viewtimes,
+      </if>
+      <if test="buytimes != null" >
+        buytimes,
+      </if>
+      <if test="user != null" >
+        user,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cardmail != null" >
+        #{cardmail,jdbcType=VARCHAR},
+      </if>
+      <if test="weburl != null" >
+        #{weburl,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="belong != null" >
+        #{belong,jdbcType=VARCHAR},
+      </if>
+      <if test="goods != null" >
+        #{goods,jdbcType=VARCHAR},
+      </if>
+      <if test="contact1 != null" >
+        #{contact1,jdbcType=VARCHAR},
+      </if>
+      <if test="position1 != null" >
+        #{position1,jdbcType=VARCHAR},
+      </if>
+      <if test="tel1 != null" >
+        #{tel1,jdbcType=VARCHAR},
+      </if>
+      <if test="contact2 != null" >
+        #{contact2,jdbcType=VARCHAR},
+      </if>
+      <if test="position2 != null" >
+        #{position2,jdbcType=VARCHAR},
+      </if>
+      <if test="tel2 != null" >
+        #{tel2,jdbcType=VARCHAR},
+      </if>
+      <if test="contact3 != null" >
+        #{contact3,jdbcType=VARCHAR},
+      </if>
+      <if test="position3 != null" >
+        #{position3,jdbcType=VARCHAR},
+      </if>
+      <if test="tel3 != null" >
+        #{tel3,jdbcType=VARCHAR},
+      </if>
+      <if test="pic1 != null" >
+        #{pic1,jdbcType=VARCHAR},
+      </if>
+      <if test="pic2 != null" >
+        #{pic2,jdbcType=VARCHAR},
+      </if>
+      <if test="folder1 != null" >
+        #{folder1,jdbcType=VARCHAR},
+      </if>
+      <if test="folder2 != null" >
+        #{folder2,jdbcType=VARCHAR},
+      </if>
+      <if test="buy != null" >
+        #{buy,jdbcType=DOUBLE},
+      </if>
+      <if test="review != null" >
+        #{review,jdbcType=INTEGER},
+      </if>
+      <if test="viewtimes != null" >
+        #{viewtimes,jdbcType=INTEGER},
+      </if>
+      <if test="buytimes != null" >
+        #{buytimes,jdbcType=INTEGER},
+      </if>
+      <if test="user != null" >
+        #{user,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jd.cardapp.model.CardExample" resultType="java.lang.Integer" >
+    select count(*) from t_card
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_card
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.cardmail != null" >
+        cardmail = #{record.cardmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weburl != null" >
+        weburl = #{record.weburl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.company != null" >
+        company = #{record.company,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.belong != null" >
+        belong = #{record.belong,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goods != null" >
+        goods = #{record.goods,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contact1 != null" >
+        contact1 = #{record.contact1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.position1 != null" >
+        position1 = #{record.position1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel1 != null" >
+        tel1 = #{record.tel1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contact2 != null" >
+        contact2 = #{record.contact2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.position2 != null" >
+        position2 = #{record.position2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel2 != null" >
+        tel2 = #{record.tel2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contact3 != null" >
+        contact3 = #{record.contact3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.position3 != null" >
+        position3 = #{record.position3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel3 != null" >
+        tel3 = #{record.tel3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pic1 != null" >
+        pic1 = #{record.pic1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pic2 != null" >
+        pic2 = #{record.pic2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.folder1 != null" >
+        folder1 = #{record.folder1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.folder2 != null" >
+        folder2 = #{record.folder2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buy != null" >
+        buy = #{record.buy,jdbcType=DOUBLE},
+      </if>
+      <if test="record.review != null" >
+        review = #{record.review,jdbcType=INTEGER},
+      </if>
+      <if test="record.viewtimes != null" >
+        viewtimes = #{record.viewtimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.buytimes != null" >
+        buytimes = #{record.buytimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.user != null" >
+        user = #{record.user,jdbcType=INTEGER},
+      </if>
+      <if test="record.updatetime != null" >
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_card
+    set id = #{record.id,jdbcType=INTEGER},
+      cardmail = #{record.cardmail,jdbcType=VARCHAR},
+      weburl = #{record.weburl,jdbcType=VARCHAR},
+      company = #{record.company,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      belong = #{record.belong,jdbcType=VARCHAR},
+      goods = #{record.goods,jdbcType=VARCHAR},
+      contact1 = #{record.contact1,jdbcType=VARCHAR},
+      position1 = #{record.position1,jdbcType=VARCHAR},
+      tel1 = #{record.tel1,jdbcType=VARCHAR},
+      contact2 = #{record.contact2,jdbcType=VARCHAR},
+      position2 = #{record.position2,jdbcType=VARCHAR},
+      tel2 = #{record.tel2,jdbcType=VARCHAR},
+      contact3 = #{record.contact3,jdbcType=VARCHAR},
+      position3 = #{record.position3,jdbcType=VARCHAR},
+      tel3 = #{record.tel3,jdbcType=VARCHAR},
+      pic1 = #{record.pic1,jdbcType=VARCHAR},
+      pic2 = #{record.pic2,jdbcType=VARCHAR},
+      folder1 = #{record.folder1,jdbcType=VARCHAR},
+      folder2 = #{record.folder2,jdbcType=VARCHAR},
+      buy = #{record.buy,jdbcType=DOUBLE},
+      review = #{record.review,jdbcType=INTEGER},
+      viewtimes = #{record.viewtimes,jdbcType=INTEGER},
+      buytimes = #{record.buytimes,jdbcType=INTEGER},
+      user = #{record.user,jdbcType=INTEGER},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jd.cardapp.model.Card" >
+    update t_card
+    <set >
+      <if test="cardmail != null" >
+        cardmail = #{cardmail,jdbcType=VARCHAR},
+      </if>
+      <if test="weburl != null" >
+        weburl = #{weburl,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="belong != null" >
+        belong = #{belong,jdbcType=VARCHAR},
+      </if>
+      <if test="goods != null" >
+        goods = #{goods,jdbcType=VARCHAR},
+      </if>
+      <if test="contact1 != null" >
+        contact1 = #{contact1,jdbcType=VARCHAR},
+      </if>
+      <if test="position1 != null" >
+        position1 = #{position1,jdbcType=VARCHAR},
+      </if>
+      <if test="tel1 != null" >
+        tel1 = #{tel1,jdbcType=VARCHAR},
+      </if>
+      <if test="contact2 != null" >
+        contact2 = #{contact2,jdbcType=VARCHAR},
+      </if>
+      <if test="position2 != null" >
+        position2 = #{position2,jdbcType=VARCHAR},
+      </if>
+      <if test="tel2 != null" >
+        tel2 = #{tel2,jdbcType=VARCHAR},
+      </if>
+      <if test="contact3 != null" >
+        contact3 = #{contact3,jdbcType=VARCHAR},
+      </if>
+      <if test="position3 != null" >
+        position3 = #{position3,jdbcType=VARCHAR},
+      </if>
+      <if test="tel3 != null" >
+        tel3 = #{tel3,jdbcType=VARCHAR},
+      </if>
+      <if test="pic1 != null" >
+        pic1 = #{pic1,jdbcType=VARCHAR},
+      </if>
+      <if test="pic2 != null" >
+        pic2 = #{pic2,jdbcType=VARCHAR},
+      </if>
+      <if test="folder1 != null" >
+        folder1 = #{folder1,jdbcType=VARCHAR},
+      </if>
+      <if test="folder2 != null" >
+        folder2 = #{folder2,jdbcType=VARCHAR},
+      </if>
+      <if test="buy != null" >
+        buy = #{buy,jdbcType=DOUBLE},
+      </if>
+      <if test="review != null" >
+        review = #{review,jdbcType=INTEGER},
+      </if>
+      <if test="viewtimes != null" >
+        viewtimes = #{viewtimes,jdbcType=INTEGER},
+      </if>
+      <if test="buytimes != null" >
+        buytimes = #{buytimes,jdbcType=INTEGER},
+      </if>
+      <if test="user != null" >
+        user = #{user,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jd.cardapp.model.Card" >
+    update t_card
+    set cardmail = #{cardmail,jdbcType=VARCHAR},
+      weburl = #{weburl,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      belong = #{belong,jdbcType=VARCHAR},
+      goods = #{goods,jdbcType=VARCHAR},
+      contact1 = #{contact1,jdbcType=VARCHAR},
+      position1 = #{position1,jdbcType=VARCHAR},
+      tel1 = #{tel1,jdbcType=VARCHAR},
+      contact2 = #{contact2,jdbcType=VARCHAR},
+      position2 = #{position2,jdbcType=VARCHAR},
+      tel2 = #{tel2,jdbcType=VARCHAR},
+      contact3 = #{contact3,jdbcType=VARCHAR},
+      position3 = #{position3,jdbcType=VARCHAR},
+      tel3 = #{tel3,jdbcType=VARCHAR},
+      pic1 = #{pic1,jdbcType=VARCHAR},
+      pic2 = #{pic2,jdbcType=VARCHAR},
+      folder1 = #{folder1,jdbcType=VARCHAR},
+      folder2 = #{folder2,jdbcType=VARCHAR},
+      buy = #{buy,jdbcType=DOUBLE},
+      review = #{review,jdbcType=INTEGER},
+      viewtimes = #{viewtimes,jdbcType=INTEGER},
+      buytimes = #{buytimes,jdbcType=INTEGER},
+      user = #{user,jdbcType=INTEGER},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      createtime = #{createtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="getCardList" resultType="com.jd.cardapp.model.Card">
+    select
+    <include refid="Base_Column_List" />
+    from t_card
+    <trim prefix="where" prefixOverrides="and|or">
+      <if test="key!=null">
+        (
+        <foreach collection="key" item="item" index="index"  separator="OR">
+          company LIKE CONCAT('%',#{item},'%')
+          OR contact1 LIKE CONCAT('%',#{item},'%')
+        </foreach>
+        )
+      </if>
+      <choose>
+        <when test=" (begin!=null and end==null) or (begin!='' and end=='') ">
+          AND createtime >= #{begin,jdbcType=VARCHAR}
+        </when>
+        <when test=" (end!=null and begin==null) or (end!='' and begin=='') ">
+          AND #{end,jdbcType=VARCHAR} >= createtime
+        </when>
+        <when test=" (begin!=null and end!=null) and (begin!='' and end!='') ">
+          AND createtime >= #{begin,jdbcType=VARCHAR} AND #{end,jdbcType=VARCHAR} >= createtime
+        </when>
+      </choose>
+      AND review = #{status,jdbcType=INTEGER}
+    </trim>
+  </select>
+
+  <select id="getCards" resultType="com.jd.cardapp.model.Card">
+    select
+    <include refid="Base_Column_List" />
+    from t_card
+    <trim prefix="where" prefixOverrides="and|or">
+      <if test="key!=null">
+        (
+        <foreach collection="key" item="item" index="index"  separator="OR">
+          company LIKE CONCAT('%',#{item},'%')
+          OR contact1 LIKE CONCAT('%',#{item},'%')
+        </foreach>
+        )
+      </if>
+      <if test="belong!=null">
+        AND belong = #{belong,jdbcType=VARCHAR}
+      </if>
+      AND review = 1
+    </trim>
+    ORDER BY createtime DESC
+  </select>
+
+</mapper>

@@ -1,0 +1,1339 @@
+2018-03-14 09:21:03,071 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 09:21:03,217 INFO (StartupInfoLogger.java:48)- Starting CardAppApplicationTests on PC-20171205FOMO with PID 3988 (started by Administrator in E:\Project\IntelliJ1\cardapp)
+2018-03-14 09:21:03,217 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 09:21:03,729 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 09:21:09,041 INFO (StartupInfoLogger.java:57)- Started CardAppApplicationTests in 6.408 seconds (JVM running for 7.803)
+2018-03-14 10:04:32,921 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 10:04:32,977 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 5548 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 10:04:32,977 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 10:04:33,087 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 10:04:34,514 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 10:04:34,515 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 10:04:34,591 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 10:04:37,899 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:04:37,907 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:04:37,916 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 10:04:37,934 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.205 seconds (JVM running for 7.236)
+2018-03-14 10:05:14,528 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 10:05:14,533 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 10:05:14,631 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 10:05:14,679 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 10:05:14,679 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 10:05:14,680 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 10:05:14,680 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 10:05:14,683 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 10:05:14,683 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 10:07:00,648 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 10:07:00,714 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 7944 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 10:07:00,715 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 10:07:00,846 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 10:07:02,231 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 10:07:02,232 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 10:07:02,298 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 10:07:04,224 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:07:04,246 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:07:04,255 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 10:07:04,271 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.051 seconds (JVM running for 5.937)
+2018-03-14 10:09:41,302 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=F64CDD804AD6EB0FC7BECC7731629EEB] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 10:09:41,324 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 10:09:41,373 INFO (AdminAspect.java:86)- -------------用户没有登录-------------
+2018-03-14 10:09:41,407 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 10:09:41,439 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 10:09:41,440 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 10:09:41,440 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 10:09:41,440 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 10:09:41,442 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 10:09:41,443 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 10:10:57,350 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 10:10:57,419 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 7956 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 10:10:57,420 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 10:10:57,556 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 10:10:58,921 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 10:10:58,922 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 10:10:58,980 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 10:11:01,041 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:11:01,049 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:11:01,061 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 10:11:01,080 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.119 seconds (JVM running for 4.731)
+2018-03-14 10:11:01,120 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=79D3075D7D5C5671C19B7F7B5A540DD9] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 10:11:01,127 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 10:11:01,170 INFO (AdminAspect.java:86)- -------------用户没有登录-------------
+2018-03-14 10:11:01,202 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 10:11:01,230 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 10:11:01,231 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 10:11:01,231 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 10:11:01,231 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 10:11:01,233 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 10:11:01,233 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 10:33:42,685 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 10:33:42,754 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 1612 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 10:33:42,754 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 10:33:42,867 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 10:33:44,219 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 10:33:44,220 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 10:33:44,279 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 10:33:46,337 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:33:46,344 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:33:46,354 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 10:33:46,369 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.095 seconds (JVM running for 4.713)
+2018-03-14 10:33:49,119 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=0F8127C580A584A27B8453491B83B15F] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 10:33:49,124 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 10:33:49,168 INFO (AdminAspect.java:86)- -------------用户没有登录-------------
+2018-03-14 10:33:49,203 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 10:33:49,233 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 10:33:49,233 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 10:33:49,234 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 10:33:49,234 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 10:33:49,236 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 10:33:49,236 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 10:38:48,804 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 10:38:48,866 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 7144 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 10:38:48,866 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 10:38:48,972 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 10:38:50,251 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 10:38:50,251 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 10:38:50,321 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 10:38:52,329 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:38:52,336 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 10:38:52,345 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 10:38:52,361 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 3.926 seconds (JVM running for 4.733)
+2018-03-14 10:39:06,250 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=87A976C10FF70EFA6C61E95E41DCC350] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 10:39:06,263 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 10:39:06,333 INFO (AdminAspect.java:86)- -------------用户没有登录-------------
+2018-03-14 10:39:06,367 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 10:39:06,395 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 10:39:06,395 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 10:39:06,395 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 10:39:06,395 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 10:39:06,397 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 10:39:06,398 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 14:02:45,225 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 14:02:45,282 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 9380 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 14:02:45,283 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 14:02:45,405 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 14:02:46,723 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 14:02:46,724 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 14:02:46,784 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 14:02:48,798 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 14:02:48,806 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 14:02:48,815 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 14:02:48,832 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.003 seconds (JVM running for 4.614)
+2018-03-14 14:04:07,579 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=7236EC9C11C92ADFDC35FA1F4E4BB570] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 14:04:07,585 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 14:04:07,633 INFO (AdminAspect.java:86)- -------------用户没有登录-------------
+2018-03-14 14:04:07,668 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 14:04:07,695 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 14:04:07,695 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 14:04:07,695 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 14:04:07,696 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 14:04:07,698 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 14:04:07,698 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 14:58:19,802 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 14:58:19,889 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 2348 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 14:58:19,890 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 14:58:20,019 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 14:58:21,401 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 14:58:21,402 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 14:58:21,463 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 14:58:23,561 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 14:58:23,569 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 14:58:23,579 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 14:58:23,596 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.215 seconds (JVM running for 4.981)
+2018-03-14 15:01:53,580 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=190D87F29A9272A34BB824A8B2FA1D00] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 15:01:53,586 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 15:01:53,633 INFO (AdminAspect.java:86)- -------------用户没有登录-------------
+2018-03-14 15:01:53,668 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 15:01:53,697 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 15:01:53,697 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 15:01:53,698 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 15:01:53,698 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 15:01:53,700 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 15:01:53,700 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 15:07:05,423 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 15:07:05,543 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 9968 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 15:07:05,544 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 15:07:05,716 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 15:07:07,217 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 15:07:07,218 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 15:07:07,288 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 15:07:09,351 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 15:07:09,361 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 15:07:09,371 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 15:07:09,389 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.451 seconds (JVM running for 5.345)
+2018-03-14 15:07:21,198 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=12BFC3F333D3C00257DAD422F03D633B] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 15:07:21,206 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 15:07:21,254 INFO (AdminAspect.java:86)- -------------用户没有登录-------------
+2018-03-14 15:07:21,288 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 15:07:21,315 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 15:07:21,316 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 15:07:21,316 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 15:07:21,316 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 15:07:21,319 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 15:07:21,319 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 15:19:17,764 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 15:19:17,846 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 9984 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 15:19:17,847 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 15:19:17,975 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 15:19:19,434 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 15:19:19,435 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 15:19:19,497 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 15:19:21,602 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 15:19:21,611 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 15:19:21,621 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 15:19:21,639 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.306 seconds (JVM running for 5.626)
+2018-03-14 15:19:22,981 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=B6EFE2B212DBB51D37C1F457384C34C7] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 15:19:22,988 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 15:19:23,041 INFO (AdminAspect.java:86)- -------------用户没有登录-------------
+2018-03-14 15:19:23,075 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 15:19:23,106 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 15:19:23,106 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 15:19:23,106 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 15:19:23,107 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 15:19:23,109 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 15:19:23,109 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 15:23:44,294 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 15:23:44,363 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 9580 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 15:23:44,363 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 15:23:44,472 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 15:23:45,819 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 15:23:45,820 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 15:23:45,883 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 15:23:47,907 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 15:23:47,914 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 15:23:47,923 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 15:23:47,939 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.133 seconds (JVM running for 4.818)
+2018-03-14 15:41:17,410 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 15:41:17,483 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 8320 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 15:41:17,483 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 15:41:17,672 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 15:41:19,006 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 15:41:19,007 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 15:41:19,077 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 15:41:21,109 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 15:41:21,117 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 15:41:21,126 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 15:41:21,146 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.119 seconds (JVM running for 5.03)
+2018-03-14 16:31:42,493 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 16:31:42,558 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 7552 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 16:31:42,558 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 16:31:42,722 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 16:31:44,761 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 16:31:44,763 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 16:31:44,841 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 16:31:47,212 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 16:31:47,221 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 16:31:47,230 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 16:31:47,248 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.017 seconds (JVM running for 6.096)
+2018-03-14 16:31:51,145 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 16:31:51,151 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 16:31:51,222 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 16:31:51,256 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 16:31:51,257 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 16:31:51,257 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 16:31:51,257 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 16:31:51,260 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 16:31:51,261 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 16:36:00,595 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 16:36:00,661 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 10100 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 16:36:00,661 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 16:36:00,811 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 16:36:03,006 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 16:36:03,007 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 16:36:03,086 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 16:36:05,566 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 16:36:05,574 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 16:36:05,584 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 16:36:05,602 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.32 seconds (JVM running for 6.893)
+2018-03-14 16:36:08,032 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 16:36:08,040 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 16:36:08,102 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 16:36:08,131 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 16:36:08,131 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 16:36:08,131 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 16:36:08,131 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 16:36:08,134 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 16:36:08,134 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 17:02:14,110 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 17:02:14,166 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 11260 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 17:02:14,166 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 17:02:14,317 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 17:02:16,881 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 17:02:16,882 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 17:02:16,964 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 17:02:19,259 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:02:19,267 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:02:19,275 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 17:02:19,293 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.554 seconds (JVM running for 6.755)
+2018-03-14 17:02:23,715 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 17:02:23,721 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 17:02:23,782 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 17:02:23,810 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 17:02:23,810 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 17:02:23,811 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 17:02:23,811 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 17:02:23,814 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 17:02:23,814 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 17:02:53,182 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 17:02:53,240 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 8348 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 17:02:53,240 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 17:02:53,360 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 17:02:54,781 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 17:02:54,781 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 17:02:54,854 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 17:02:56,970 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:02:56,978 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:02:56,988 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 17:02:57,006 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.241 seconds (JVM running for 5.257)
+2018-03-14 17:04:39,338 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 17:04:39,345 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 17:04:39,409 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 17:04:39,437 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 17:04:39,438 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 17:04:39,438 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 17:04:39,438 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 17:04:39,442 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 17:04:39,442 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 17:06:08,176 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 17:06:08,233 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 8976 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 17:06:08,233 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 17:06:08,343 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 17:06:09,755 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 17:06:09,755 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 17:06:09,815 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 17:06:12,122 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:06:12,131 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:06:12,140 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 17:06:12,158 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.481 seconds (JVM running for 5.831)
+2018-03-14 17:06:12,399 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 17:06:12,406 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 17:06:12,472 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 17:06:12,508 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 17:06:12,509 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 17:06:12,509 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 17:06:12,509 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 17:06:12,513 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 17:06:12,514 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 17:15:16,835 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 17:15:16,892 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 10256 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 17:15:16,893 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 17:15:17,045 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 17:15:19,155 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 17:15:19,156 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 17:15:19,237 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 17:15:21,760 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:15:21,771 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:15:21,781 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 17:15:21,801 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.298 seconds (JVM running for 6.756)
+2018-03-14 17:20:12,668 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 17:20:12,726 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 11724 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 17:20:12,726 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 17:20:12,861 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 17:20:15,114 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 17:20:15,115 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 17:20:15,192 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 17:20:17,785 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:20:17,793 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:20:17,804 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 17:20:17,820 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.515 seconds (JVM running for 6.753)
+2018-03-14 17:20:26,810 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 17:20:26,816 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 17:20:26,904 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 17:20:26,948 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 17:20:26,948 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 17:20:26,948 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 17:20:26,948 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 17:20:26,952 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 17:20:26,952 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 17:20:37,863 WARN (AbstractHandlerExceptionResolver.java:189)- Resolved exception caused by Handler execution: org.springframework.web.multipart.support.MissingServletRequestPartException: Required request part 'file1' is not present
+2018-03-14 17:20:37,935 INFO (CardController.java:74)- {"belong":"原料纱线","buy":50.0,"company":"","contact1":"","contact2":"","goods":""}
+2018-03-14 17:20:56,498 INFO (CardController.java:76)- 0 0  
+2018-03-14 17:44:32,044 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 17:44:32,103 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 12236 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 17:44:32,103 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 17:44:32,252 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 17:44:34,402 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 17:44:34,403 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 17:44:34,471 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 17:44:37,206 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:44:37,215 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:44:37,225 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 17:44:37,244 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.542 seconds (JVM running for 6.768)
+2018-03-14 17:45:20,329 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 17:45:20,335 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 17:52:26,343 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 17:52:26,399 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 12060 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 17:52:26,400 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 17:52:26,549 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 17:52:28,855 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 17:52:28,857 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 17:52:28,941 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 17:52:31,369 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:52:31,378 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:52:31,391 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 17:52:31,410 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.406 seconds (JVM running for 6.948)
+2018-03-14 17:52:35,076 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 17:52:35,083 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 17:52:35,153 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 17:52:35,212 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 17:52:35,213 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 17:52:35,213 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 17:52:35,213 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 17:52:35,218 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 17:52:35,218 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 17:52:42,678 INFO (CardController.java:74)- {"belong":"原料纱线","buy":1.0,"cardmail":"","company":"","contact1":"","contact2":"","goods":""}
+2018-03-14 17:52:43,597 INFO (CardController.java:76)- 0 0  
+2018-03-14 17:54:01,696 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 17:54:01,786 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 11200 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 17:54:01,786 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 17:54:02,007 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 17:54:03,499 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 17:54:03,499 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 17:54:03,556 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 17:54:05,790 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:54:05,798 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:54:05,809 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 17:54:05,826 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.611 seconds (JVM running for 5.462)
+2018-03-14 17:54:10,019 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 17:54:10,026 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 17:54:10,087 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 17:54:10,116 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 17:54:10,117 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 17:54:10,117 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 17:54:10,117 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 17:54:10,120 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 17:54:10,120 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 17:54:34,813 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 17:54:34,901 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 11120 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 17:54:34,901 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 17:54:35,134 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 17:54:36,636 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 17:54:36,637 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 17:54:36,698 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 17:54:38,816 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:54:38,823 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 17:54:38,833 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 17:54:38,849 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.378 seconds (JVM running for 5.149)
+2018-03-14 17:59:57,898 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 17:59:57,908 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 17:59:57,985 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 17:59:58,025 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 17:59:58,025 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 17:59:58,026 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 17:59:58,026 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 17:59:58,029 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 17:59:58,029 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 18:01:30,640 INFO (CardController.java:74)- {"belong":"面料布匹","buy":0.0,"cardmail":"sad","company":"adssad","contact1":"asd","contact2":"sad","goods":"asd"}
+2018-03-14 18:01:30,640 INFO (CardController.java:74)- {"belong":"面料布匹","buy":0.0,"cardmail":"sad","company":"adssad","contact1":"asd","contact2":"sad","goods":"asd"}
+2018-03-14 18:01:31,640 INFO (CardController.java:76)- 17987 0 anneitupian.png 
+2018-03-14 18:01:32,251 ERROR (GlobalExceptionHandler.java:51)- null
+java.lang.NullPointerException: null
+	at com.jd.cardapp.controller.CardController.addCard(CardController.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-03-14 18:01:32,278 ERROR (DirectJDKLog.java:182)- Servlet.service() for servlet [dispatcherServlet] threw exception
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'timestamp' cannot be found on object of type 'java.util.HashMap' - maybe not public?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:226)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:94)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:81)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:121)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:262)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$ExpressionResolver.resolvePlaceholder(ErrorMvcAutoConfiguration.java:288)
+	at org.springframework.boot.autoconfigure.web.NonRecursivePropertyPlaceholderHelper$NonRecursivePlaceholderResolver.resolvePlaceholder(NonRecursivePropertyPlaceholderHelper.java:56)
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:147)
+	at org.springframework.boot.autoconfigure.web.NonRecursivePropertyPlaceholderHelper.parseStringValue(NonRecursivePropertyPlaceholderHelper.java:38)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$SpelView.render(ErrorMvcAutoConfiguration.java:226)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:728)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:470)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:395)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+	at com.jd.cardapp.common.GlobalExceptionHandler.runtimeExceptionHandler(GlobalExceptionHandler.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:384)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:59)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:136)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:76)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1222)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1034)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-03-14 18:01:32,282 WARN (ExceptionHandlerExceptionResolver.java:391)- Failed to invoke @ExceptionHandler method: public void com.jd.cardapp.common.GlobalExceptionHandler.runtimeExceptionHandler(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.Exception) throws java.lang.Exception
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'timestamp' cannot be found on object of type 'java.util.HashMap' - maybe not public?
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:982)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:728)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:470)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:395)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+	at com.jd.cardapp.common.GlobalExceptionHandler.runtimeExceptionHandler(GlobalExceptionHandler.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:384)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:59)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:136)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:76)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1222)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1034)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'timestamp' cannot be found on object of type 'java.util.HashMap' - maybe not public?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:226)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:94)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:81)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:121)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:262)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$ExpressionResolver.resolvePlaceholder(ErrorMvcAutoConfiguration.java:288)
+	at org.springframework.boot.autoconfigure.web.NonRecursivePropertyPlaceholderHelper$NonRecursivePlaceholderResolver.resolvePlaceholder(NonRecursivePropertyPlaceholderHelper.java:56)
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:147)
+	at org.springframework.boot.autoconfigure.web.NonRecursivePropertyPlaceholderHelper.parseStringValue(NonRecursivePropertyPlaceholderHelper.java:38)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$SpelView.render(ErrorMvcAutoConfiguration.java:226)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	... 83 common frames omitted
+2018-03-14 18:01:32,288 ERROR (DirectJDKLog.java:182)- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.jd.cardapp.controller.CardController.addCard(CardController.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-03-14 18:06:25,480 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 18:06:25,535 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 1608 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 18:06:25,535 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 18:06:25,687 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 18:06:27,629 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 18:06:27,630 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 18:06:27,700 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 18:06:30,229 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:06:30,237 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:06:30,247 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 18:06:30,272 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.288 seconds (JVM running for 6.251)
+2018-03-14 18:06:30,986 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 18:06:30,992 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 18:06:31,057 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 18:06:31,086 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 18:06:31,087 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 18:06:31,087 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 18:06:31,087 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 18:06:31,091 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 18:06:31,091 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 18:06:31,259 ERROR (TemplateEngine.java:1085)- [THYMELEAF][http-nio-8080-exec-1] Exception processing template "front/tijiao": Exception evaluating SpringEL expression: "session.user.id" (front/tijiao)
+2018-03-14 18:06:31,262 ERROR (DirectJDKLog.java:182)- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session.user.id" (front/tijiao)] with root cause
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'id' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:222)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:94)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:46)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:379)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:121)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:324)
+	at org.thymeleaf.spring4.expression.SpelVariableExpressionEvaluator.evaluate(SpelVariableExpressionEvaluator.java:140)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariable(VariableExpression.java:154)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:59)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:103)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:133)
+	at org.thymeleaf.standard.processor.attr.AbstractStandardSingleAttributeModifierAttrProcessor.getTargetAttributeValue(AbstractStandardSingleAttributeModifierAttrProcessor.java:86)
+	at org.thymeleaf.spring4.processor.attr.SpringValueAttrProcessor.getTargetAttributeValue(SpringValueAttrProcessor.java:71)
+	at org.thymeleaf.processor.attr.AbstractSingleAttributeModifierAttrProcessor.getModifiedAttributeValues(AbstractSingleAttributeModifierAttrProcessor.java:59)
+	at org.thymeleaf.processor.attr.AbstractAttributeModifierAttrProcessor.processAttribute(AbstractAttributeModifierAttrProcessor.java:62)
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87)
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212)
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017)
+	at org.thymeleaf.dom.Node.processNode(Node.java:972)
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695)
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668)
+	at org.thymeleaf.dom.Node.processNode(Node.java:990)
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695)
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668)
+	at org.thymeleaf.dom.Node.processNode(Node.java:990)
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695)
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668)
+	at org.thymeleaf.dom.Node.processNode(Node.java:990)
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695)
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668)
+	at org.thymeleaf.dom.Node.processNode(Node.java:990)
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695)
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668)
+	at org.thymeleaf.dom.Node.processNode(Node.java:990)
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695)
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668)
+	at org.thymeleaf.dom.Node.processNode(Node.java:990)
+	at org.thymeleaf.dom.Document.process(Document.java:93)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-03-14 18:11:38,282 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 18:11:38,348 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 8640 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 18:11:38,348 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 18:11:38,489 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 18:11:40,485 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 18:11:40,497 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 18:11:40,567 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 18:11:43,009 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:11:43,017 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:11:43,027 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 18:11:43,048 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.222 seconds (JVM running for 6.103)
+2018-03-14 18:11:46,637 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=FB4A4998A3C5FE40A4E73E57F287AA22] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 18:11:46,643 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 18:11:46,695 INFO (UserAspect.java:57)- -------------用户没有登录-------------
+2018-03-14 18:11:46,733 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 18:11:46,763 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 18:11:46,763 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 18:11:46,764 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 18:11:46,764 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 18:11:46,767 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 18:11:46,767 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 18:17:57,548 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 18:17:57,600 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 11608 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 18:17:57,600 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 18:17:57,864 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 18:17:59,817 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 18:17:59,818 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 18:17:59,883 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 18:18:02,202 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:18:02,217 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:18:02,229 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 18:18:02,245 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 5.065 seconds (JVM running for 5.931)
+2018-03-14 18:18:04,048 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=192210032CBE68D01E928778B1B63C70] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 18:18:04,053 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 18:18:04,113 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 18:18:04,143 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 18:18:04,143 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 18:18:04,143 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 18:18:04,143 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 18:18:04,146 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 18:18:04,147 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 18:18:35,345 WARN (AbstractHandlerExceptionResolver.java:189)- Resolved exception caused by Handler execution: org.springframework.web.multipart.support.MissingServletRequestPartException: Required request part 'file1' is not present
+2018-03-14 18:18:35,435 INFO (CardController.java:82)- {"belong":"辅料包装","buy":1.0,"cardmail":"fdbfdbdf","company":"sdvdssd","contact1":"sdv","contact2":"sdf","goods":"sdv"}
+2018-03-14 18:18:36,157 INFO (CardController.java:84)- 0 0  
+2018-03-14 18:20:41,047 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 18:20:41,143 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 10028 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 18:20:41,143 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 18:20:41,293 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 18:20:42,663 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 18:20:42,664 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 18:20:42,721 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 18:20:44,831 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:20:44,839 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:20:44,849 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 18:20:44,867 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.227 seconds (JVM running for 4.842)
+2018-03-14 18:20:48,766 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=AD61C3F95A321D9EAB8BB473A013CF03] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 18:20:48,772 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 18:20:52,969 INFO (UserAspect.java:57)- -------------用户没有登录-------------
+2018-03-14 18:20:53,010 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 18:20:53,040 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 18:20:53,040 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 18:20:53,041 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 18:20:53,041 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 18:20:53,044 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 18:20:53,044 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 18:22:23,898 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.jd.cardapp.dao'
+2018-03-14 18:22:23,963 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 12136 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-14 18:22:23,963 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-14 18:22:24,086 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-14 18:22:25,457 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-14 18:22:25,458 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-14 18:22:25,519 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-14 18:22:27,617 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:22:27,625 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-14 18:22:27,636 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-14 18:22:27,654 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 4.167 seconds (JVM running for 5.054)
+2018-03-14 18:22:34,716 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902; Hm_lvt_080836300300be57b7f34f4b3e97d911=1520827278; JSESSIONID=71402E6208C0D35132BA5ACDE82BADDA] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-14 18:22:34,722 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-14 18:22:34,772 INFO (UserAspect.java:57)- -------------用户没有登录-------------
+2018-03-14 18:22:34,804 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-14 18:22:34,832 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-14 18:22:34,832 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-14 18:22:34,832 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-14 18:22:34,833 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-14 18:22:34,835 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-14 18:22:34,836 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-14 18:23:00,860 WARN (AbstractHandlerExceptionResolver.java:189)- Resolved exception caused by Handler execution: org.springframework.web.multipart.support.MissingServletRequestPartException: Required request part 'file1' is not present
+2018-03-14 18:23:11,136 WARN (AbstractHandlerExceptionResolver.java:189)- Resolved exception caused by Handler execution: org.springframework.web.multipart.support.MissingServletRequestPartException: Required request part 'file1' is not present
+2018-03-14 18:23:39,343 WARN (AbstractHandlerExceptionResolver.java:189)- Resolved exception caused by Handler execution: org.springframework.web.multipart.support.MissingServletRequestPartException: Required request part 'file1' is not present

@@ -1,0 +1,46 @@
+/*----------------申请提现----------------------*/
+.profit_right{
+    color: #6f6f6f;
+    padding: 60px 0 100px 0;
+}
+.profit_right p{
+    height: 26px;
+    line-height: 26px;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+.profit_right p em{
+    font-style: normal;
+    width: 160px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+}
+.profit_right p i{
+    color: #e60012;
+    font-style: normal;
+}
+.profit_right div.apply{
+    width: 165px;
+    height: 36px;
+    line-height: 36px;
+    background: #0093dd;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+
+
+.globalLoginBtn{display:block;  }
+#KFLOGO,#iconDivMain2{overflow:hidden;width:0 !important;height:0 !important}
+#iconDivMain1{width:0 !important;height:0 !important}
+#div_company_mini{right:0 !important}
+#loginModal .modal-content{border-radius:0}
+
+#loginModal .globalLogin{height:30px;width: 100px; background:#009ee7;color:#fff;font-size:14px;margin: 0 auto;}
+
+
+
+.good-tips{text-align: center;margin-bottom:20px;  }

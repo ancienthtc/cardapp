@@ -1,0 +1,79 @@
+/*账户充值*/
+.profit_right p{
+    height: 34px;
+    line-height: 34px;
+    color: #6f6f6f;
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+.profit_right p.mb79{
+    margin-bottom: 79px;
+}
+.profit_right p input{
+    width: 176px;
+    height: 32px;
+    padding-left: 10px;
+}
+.profit_right p strong{
+    color: #42a4e2;
+}
+.profit_right p span{
+    width: 24px;
+    height: 24px;
+    background: url(../Content/images/21v.png) no-repeat center center;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.profit_right div.apply{
+    width: 165px;
+    height: 36px;
+    line-height: 36px;
+    background: #0093dd;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+.profit_right i{
+    color: #e60012;
+}
+
+.cz{
+    position: relative;
+
+}
+.czimg{
+    width: 367px;
+    height: 133px;
+    position: absolute;
+    z-index: 999;
+    margin-left: 50px;
+    margin-top: -22px;
+}
+.bor{
+    background:url("../Content/images/prompt.png") ;
+}
+
+
+.wdda-left li a {
+    font-weight: 400;
+    font-size: 18px;
+    display: block;
+    line-height: 52px;
+    font-size: 18px;
+    height: 50px;
+    padding-left: 80px;
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+    border-left: 5px solid #fff;
+    border-top: 1px solid #fff;
+    color: #212529;
+}
+
+
+.on{    border-bottom: 1px solid #009ee7!important;
+    border-top: 1px solid #009ee7!important;
+    border-left: 5px solid #009ee7!important;
+    background: #f3f3f3;
+
+    color: #009ee7!important;}

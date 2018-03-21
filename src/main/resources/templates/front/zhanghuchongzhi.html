@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript" src="/front/Scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+        <script type="text/javascript" src="/front/Scripts/index.js"></script>
+        <link rel="stylesheet" href="/front/Content/commons.css">
+        <link rel="stylesheet" href="/front/Content/style.css">
+        <link rel="stylesheet" href="/front/Content/zhanghuchongzhi.css">
+    </head>
+    <body>
+        <div th:include="front/header"></div>
+        <div class="banner1"></div>
+        <div class="xtxx">
+            <div class="xtxx_top">
+                <div class="xtxx_tit"><p><a th:href="@{/user/personal.php}">个人中心</a>&nbsp;>&nbsp;<a th:href="@{/user/recharge.php}">账户充值</a></p></div>
+            </div>
+            <div class="wdda wdda_profit">
+                <div class="wdda_left fl">
+                    <ul class="wdda-left ">
+                        <li><a th:href="@{/user/recharge.php}" class="on">账户充值</a></li>
+                        <li><a th:href="@{/user/income.php}">名片收益</a></li>
+                        <li><a th:href="@{/user/withdraw.php}" class="tixian">申请提现</a></li>
+                        <li><a th:href="@{/user/withdrawRecord.php}">提现记录</a></li>
+                    </ul>
+                </div>
+                <div class="profit_right mt60 mb210">
+                    <p><em>当前账户余额</em> <i>0</i> 元</p>
+                    <p class="cz"><em>输入充值金额</em> <input type="text"> 元  ( ≥ 50元)
+                        <div class="czimg"></div></p>
+                    <p class="mb79">特别说明：一旦充值成功，仅可用于查看买家名片之用，不可退款</p>
+                    <p><span></span>点击“马上充值”，则代表您同意 <strong>《名片宝用户协议》</strong></p>
+                    <div class="apply"><a href="chongzhi.php">马上充值</a></div>
+                </div>
+            </div>
+
+
+        </div>
+        <div th:include="front/footer"></div>
+        <script>
+            $(document).ready(function(){
+                $("input").focus(function(){
+                    $('.czimg').addClass("bor");
+                });
+                $("input").blur(function(){
+                    $('.czimg').removeClass("bor");
+                });
+            });
+        </script>
+    </body>
+</html>

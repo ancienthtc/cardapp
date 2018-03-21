@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>纺织名片宝</title>
+        <script type="text/javascript" src="/front/Scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+        <link rel="stylesheet" href="/front/Content/commons.css">
+        <link href="/front/Content/shuojufuwu.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="/front/Content/caigoushangbaobiao.css">
+        <script type="text/javascript" src="/front/Scripts/index.js"></script>
+        <script type="text/javascript" src="/front/Scripts/highcharts.js"></script>
+    </head>
+    <body>
+    <div th:include="front/header"></div>
+        <div class="banner1"></div>
+        <div class="xtxx">
+            <div class="xtxx_top">
+                <div class="xtxx_tit"><p><a href="">数据服务</a></p></div>
+            </div>
+
+            <div class="wdda zuonav">
+
+                    <ul class="clearfix nav-nav">
+                        <li class="fl navdown">采购商报表</li>
+                        <li  class="fl">联系方式</li>
+                        <li  class="fl">快速查询</li>
+                    </ul>
+
+                <div class="content-neirong">
+                    <div class=" ct">
+                        <div class="mail_list">
+                            <h2>买家交易分析报告</h2>
+                            <div class="analysis">
+                                <table style="border-collapse: collapse;">
+                                    <tr>
+                                        <td style="width: 177px;">采购商名称</td>
+                                        <td colspan="3">THE ROBERT ALLEN GROUP</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 177px;">采购商地址</td>
+                                        <td colspan="3">225 FOXBORO FOXBORO FOXBORO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 177px;">交易时间段</td>
+                                        <td>2016-01-2017-06</td>
+                                        <td>采购商品名</td>
+                                        <td>textile</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 177px;">交易次数</td>
+                                        <td>?次（平均每月采购次数：？次）</td>
+                                        <td>交易重量</td>
+                                        <td>？kg （平均每月采购重量：？次）</td>
+                                    </tr>
+                                </table>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="statistics clearfix mb30">
+                            <div class="statistics_left fl">国别港口统计分析</div>
+                            <div class="statistics_right fr">
+                                <p>买家交易分析报告买家交易分析报告<i>4</i>买家交易分析报告 <i>95.86</i>买家交易分析报告</p>
+                                <p>交易分析报告买家交易分析 <i>报告买家</i>交易分析报告买家交易 <i>分析报告买</i>家交易分析报告 <i>买家交</i>易分析报告</p>
+                            </div>
+                        </div>
+                        <div class="port">
+                            <div id="port_left" class="fl" style="width: 550px;height: 500px;">
+
+                            </div>
+                            <div id="port_right" class="fr" style="width: 550px; height: 500px;">
+
+                            </div>
+                            <script>
+                                $(function () {
+                                    $('#port_left').highcharts({
+                                        chart: {
+                                            plotBackgroundColor: null,
+                                            plotBorderWidth: null,
+                                            plotShadow: false
+                                        },
+                                        title: {
+                                            text: '原产国'
+                                        },
+                                        tooltip: {
+                                            headerFormat: '{series.name}<br>',
+                                            pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                                        },
+                                        plotOptions: {
+                                            pie: {
+                                                allowPointSelect: true,
+                                                cursor: 'pointer',
+                                                dataLabels: {
+                                                    enabled: true,
+                                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                                    style: {
+                                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        series: [{
+                                            type: 'pie',
+                                            name: '浏览器访问量占比',
+                                            data: [
+                                                ['Firefox',   45.0],
+                                                ['IE',       26.8],
+                                                {
+                                                    name: 'Chrome',
+                                                    y: 12.8,
+                                                    sliced: true,
+                                                    selected: true
+                                                },
+                                                ['Safari',    8.5],
+                                                ['Opera',     6.2],
+                                                ['其他',   0.7]
+                                            ]
+                                        }]
+                                    });
+                                    $('#port_right').highcharts({
+                                        chart: {
+                                            plotBackgroundColor: null,
+                                            plotBorderWidth: null,
+                                            plotShadow: false
+                                        },
+                                        title: {
+                                            text: '起运港'
+                                        },
+                                        tooltip: {
+                                            headerFormat: '{series.name}<br>',
+                                            pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                                        },
+                                        plotOptions: {
+                                            pie: {
+                                                allowPointSelect: true,
+                                                cursor: 'pointer',
+                                                dataLabels: {
+                                                    enabled: true,
+                                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                                    style: {
+                                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        series: [{
+                                            type: 'pie',
+                                            name: '浏览器访问量占比',
+                                            data: [
+                                                ['Firefox',   45.0],
+                                                ['IE',       26.8],
+                                                {
+                                                    name: 'Chrome',
+                                                    y: 12.8,
+                                                    sliced: true,
+                                                    selected: true
+                                                },
+                                                ['Safari',    8.5],
+                                                ['Opera',     6.2],
+                                                ['其他',   0.7]
+                                            ]
+                                        }]
+                                    });
+                                });
+                            </script>
+                        </div>
+                        <div class="detailed">
+                            <ul>
+                                <li><img src="../Content/images/detailed1.png" alt=""></li>
+                                <li><img src="../Content/images/detailed2.png" alt=""></li>
+                                <li><img src="../Content/images/detailed3.png" alt=""></li>
+                            </ul>
+                        </div>
+                        <div class="statistics mb30">
+                            <div class="clearfix">
+                                <div class="statistics_left fl">采购行为分析</div>
+                                <div class="statistics_right fr">
+                                    <p>买家交易分析报告买家交易分析报告<i>4</i>买家交易分析报告 <i>95.86</i>买家交易分析报告</p>
+                                    <p>交易分析报告 <i>买家交易分析</i>报告买家交易分析报告买家交 <i>易分析</i>报告买家交易分析报告买家交易分析报告</p>
+                                </div>
+                            </div>
+                            <div id="container3" style="width: 1170px; height: 728px;">
+                                <script>
+                                    $(function () {
+                                        Highcharts.chart('container3', {
+                                            title: {
+                                                text: ''
+                                            },
+                                            chart: {
+                                                type: 'spline'
+                                            },
+                                            xAxis: {
+                                                type: 'datetime',
+                                                title: {
+                                                    text: null
+                                                }
+                                            },
+                                            yAxis: {
+                                                title: {
+                                                    text: '积雪 厚度 (m)'
+                                                },
+                                                min: 0
+                                            },
+                                            tooltip: {
+                                                headerFormat: '<b>{series.name}</b><br>',
+                                                pointFormat: '{point.x:%e. %b}: {point.y:.2f} m'
+                                            },
+                                            plotOptions: {
+                                                spline: {
+                                                    marker: {
+                                                        enabled: true
+                                                    }
+                                                }
+                                            },
+                                            series: [{
+                                                name: '2007-2008 冬',
+                                                // Define the data points. All series have a dummy year
+                                                // of 1970/71 in order to be compared on the same x axis. Note
+                                                // that in JavaScript, months start at 0 for January, 1 for February etc.
+                                                data: [
+                                                    [Date.UTC(1970,  9, 27), 0   ],
+                                                    [Date.UTC(1970, 10, 10), 0.6 ],
+                                                    [Date.UTC(1970, 10, 18), 0.7 ],
+                                                    [Date.UTC(1970, 11,  2), 0.8 ],
+                                                    [Date.UTC(1970, 11,  9), 0.6 ],
+                                                    [Date.UTC(1970, 11, 16), 0.6 ],
+                                                    [Date.UTC(1970, 11, 28), 0.67],
+                                                    [Date.UTC(1971,  0,  1), 0.81],
+                                                    [Date.UTC(1971,  0,  8), 0.78],
+                                                    [Date.UTC(1971,  0, 12), 0.98],
+                                                    [Date.UTC(1971,  0, 27), 1.84],
+                                                    [Date.UTC(1971,  1, 10), 1.80],
+                                                    [Date.UTC(1971,  1, 18), 1.80],
+                                                    [Date.UTC(1971,  1, 24), 1.92],
+                                                    [Date.UTC(1971,  2,  4), 2.49],
+                                                    [Date.UTC(1971,  2, 11), 2.79],
+                                                    [Date.UTC(1971,  2, 15), 2.73],
+                                                    [Date.UTC(1971,  2, 25), 2.61],
+                                                    [Date.UTC(1971,  3,  2), 2.76],
+                                                    [Date.UTC(1971,  3,  6), 2.82],
+                                                    [Date.UTC(1971,  3, 13), 2.8 ],
+                                                    [Date.UTC(1971,  4,  3), 2.1 ],
+                                                    [Date.UTC(1971,  4, 26), 1.1 ],
+                                                    [Date.UTC(1971,  5,  9), 0.25],
+                                                    [Date.UTC(1971,  5, 12), 0   ]
+                                                ]
+                                            }, {
+                                                name: '2008-2009 冬',
+                                                data: [
+                                                    [Date.UTC(1970,  9, 18), 0   ],
+                                                    [Date.UTC(1970,  9, 26), 0.2 ],
+                                                    [Date.UTC(1970, 11,  1), 0.47],
+                                                    [Date.UTC(1970, 11, 11), 0.55],
+                                                    [Date.UTC(1970, 11, 25), 1.38],
+                                                    [Date.UTC(1971,  0,  8), 1.38],
+                                                    [Date.UTC(1971,  0, 15), 1.38],
+                                                    [Date.UTC(1971,  1,  1), 1.38],
+                                                    [Date.UTC(1971,  1,  8), 1.48],
+                                                    [Date.UTC(1971,  1, 21), 1.5 ],
+                                                    [Date.UTC(1971,  2, 12), 1.89],
+                                                    [Date.UTC(1971,  2, 25), 2.0 ],
+                                                    [Date.UTC(1971,  3,  4), 1.94],
+                                                    [Date.UTC(1971,  3,  9), 1.91],
+                                                    [Date.UTC(1971,  3, 13), 1.75],
+                                                    [Date.UTC(1971,  3, 19), 1.6 ],
+                                                    [Date.UTC(1971,  4, 25), 0.6 ],
+                                                    [Date.UTC(1971,  4, 31), 0.35],
+                                                    [Date.UTC(1971,  5,  7), 0   ]
+                                                ]
+                                            }, {
+                                                name: '2009-2010 冬',
+                                                data: [
+                                                    [Date.UTC(1970,  9,  9), 0   ],
+                                                    [Date.UTC(1970,  9, 14), 0.15],
+                                                    [Date.UTC(1970, 10, 28), 0.35],
+                                                    [Date.UTC(1970, 11, 12), 0.46],
+                                                    [Date.UTC(1971,  0,  1), 0.59],
+                                                    [Date.UTC(1971,  0, 24), 0.58],
+                                                    [Date.UTC(1971,  1,  1), 0.62],
+                                                    [Date.UTC(1971,  1,  7), 0.65],
+                                                    [Date.UTC(1971,  1, 23), 0.77],
+                                                    [Date.UTC(1971,  2,  8), 0.77],
+                                                    [Date.UTC(1971,  2, 14), 0.79],
+                                                    [Date.UTC(1971,  2, 24), 0.86],
+                                                    [Date.UTC(1971,  3,  4), 0.8 ],
+                                                    [Date.UTC(1971,  3, 18), 0.94],
+                                                    [Date.UTC(1971,  3, 24), 0.9 ],
+                                                    [Date.UTC(1971,  4, 16), 0.39],
+                                                    [Date.UTC(1971,  4, 21), 0   ]
+                                                ]
+                                            }]
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="mb212">
+                            <img src="../Content/images/detailed4.png" style="width: 1170px;" alt="">
+                        </div>
+                    </div>
+                    <div class=" ct">
+                        <div class="mail_list mb10">
+                            <h2>买家内部通讯录</h2>
+                            <table border="1" style="border-collapse: collapse; border-color: #eef1f3">
+                                <tr>
+                                    <td style="width: 220px;">公司名称</td>
+                                    <td style="width: 380px;">THE ROBERT ALLEN GROUP</td>
+                                    <td style="width: 220px;">联系人1</td>
+                                    <td style="width: 380px;">M******************(OWEN)</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 220px;">公司网址</td>
+                                    <td style="width: 380px;">THE ROBERT ALLEN GROUP</td>
+                                    <td style="width: 220px;">EM AI</td>
+                                    <td style="width: 380px;">M******************(OWEN)</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 220px;">公司地址</td>
+                                    <td style="width: 380px;">THE ROBERT ALLEN GROUP</td>
+                                    <td style="width: 220px;">电话号码1</td>
+                                    <td style="width: 380px;">M******************(OWEN)</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 220px;">公司概括</td>
+                                    <td style="width: 380px;">美国</td>
+                                    <td style="width: 220px;">传真号码1</td>
+                                    <td style="width: 380px;">M******************(OWEN)</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="contacts">
+                            <div class="ctas clearfix">
+                                <div class="ctas_left">
+                                    联系人1
+                                </div>
+                                <div class="ctas_right">
+                                    <div class="fl" style="width: 560px;padding-left: 35px">
+                                        <p>联系人：**************</p>
+                                        <p>职称；<span>***************</span></p>
+                                    </div>
+                                    <div class="fl">
+                                        <p>邮箱:*********************</p>
+                                        <p>电话:****************888</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ctas clearfix">
+                                <div class="ctas_left">
+                                    联系人2
+                                </div>
+                                <div class="ctas_right">
+                                    <div class="fl" style="width: 560px;padding-left: 35px">
+                                        <p>联系人：**************</p>
+                                        <p>职称；<span>***************</span></p>
+                                    </div>
+                                    <div class="fl">
+                                        <p>邮箱:*********************</p>
+                                        <p>电话:****************888</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ctas clearfix">
+                                <div class="ctas_left">
+                                    联系人3
+                                </div>
+                                <div class="ctas_right">
+                                    <div class="fl" style="width: 560px;padding-left: 35px">
+                                        <p>联系人：**************</p>
+                                        <p>职称；<span>***************</span></p>
+                                    </div>
+                                    <div class="fl">
+                                        <p>邮箱:*********************</p>
+                                        <p>电话:****************888</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ctas clearfix">
+                                <div class="ctas_left">
+                                    联系人4
+                                </div>
+                                <div class="ctas_right">
+                                    <div class="fl" style="width: 560px;padding-left: 35px">
+                                        <p>联系人：**************</p>
+                                        <p>职称；<span>***************</span></p>
+                                    </div>
+                                    <div class="fl">
+                                        <p>邮箱:*********************</p>
+                                        <p>电话:****************888</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ctas clearfix">
+                                <div class="ctas_left">
+                                    联系人5
+                                </div>
+                                <div class="ctas_right">
+                                    <div class="fl" style="width: 560px;padding-left: 35px">
+                                        <p>联系人：**************</p>
+                                        <p>职称；<span>***************</span></p>
+                                    </div>
+                                    <div class="fl">
+                                        <p>邮箱:*********************</p>
+                                        <p>电话:****************888</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reference clearfix mb10">
+                            <div class="reference_left fl">
+                                <p>参考联系人</p>
+                            </div>
+                            <div class="reference_right fr">
+                                <ul class="clearfix">
+                                    <li>R************* <em>【vice President 】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********* <em>【vice President Technology】</em></li>
+                                    <li>R************************************ <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President 】</em></li>
+                                    <li>R********** <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********* <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President 】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********** <em>【vice President Technology】</em></li>
+                                    <li>R********** <em>【vice President 】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********** <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********* <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********** <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********** <em>【vice President Technology】</em></li>
+                                    <li>R********** <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President 】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********* <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********* <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R*********** <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R******** <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R********** <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology】</em></li>
+                                    <li>R************* <em>【vice President Technology list】</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="reference clearfix mb238">
+                            <div class="reference_left fl">
+                                <p>参考邮箱</p>
+                            </div>
+                            <div class="reference_right fr">
+                                <ul class="clearfix">
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                    <li>R*************@***.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" ct">
+                        <div class="mail_list clearfix">
+                            <h2>买家内部通讯录</h2>
+                            <div class="analysis">
+                                <table style="border-collapse: collapse;">
+                                    <tr>
+                                        <th style="width: 177px;">查询项目</th>
+                                        <th style="width: 177px;" >国家</th>
+                                        <th style="width: 177px;" >价格</th>
+                                        <th style="width: 177px;" >产品名称</th>
+                                        <th style="width: 177px;">公司名称名称</th>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width: 177px;">买家内部通讯录</td>
+                                        <td style="width: 177px;"><input type="text" value="国家"></td>
+                                        <td style="width: 177px;"><input type="text" value="33.9"></td>
+                                        <td style="width: 177px;"><input type="text" value="阿里巴巴"></td>
+                                        <td style="width: 177px;"><input type="text" value="阿里巴巴"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 177px;">买家交易分析表</td>
+                                        <td  style="width: 177px;"><input type="text" value="国家"></td>
+                                        <td  style="width: 177px;"><input type="text" value="33.9"></td>
+                                        <td  style="width: 177px;"><input type="text" value="阿里巴巴"></td>
+                                        <td  style="width: 177px;"><input type="text" value="阿里巴巴"></td>
+                                    </tr>
+                                </table>
+                                <button class="chaxun">查 询</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <script type="text/javascript">
+                    jQuery(".wdda_left").slide({
+                        type: "menu", //效果类型
+                        titCell: ".ma", // 鼠标触发对象
+                        targetCell: ".fbnrbox", // 效果对象，必须被titCell包含
+                        effect: "slideDown",//下拉效果
+                        delayTime: 300, // 效果时间
+                        triggerTime: 0, //鼠标延迟触发时间
+                        returnDefault: true  //返回默认状态
+                    });
+                </script>
+        </div>
+        <div th:include="front/footer"></div>
+    </body>
+</html>
+<script type="text/javascript">
+		$(".nav li h3 a").eq(4).css("color","#000");
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.ct:gt(0)').hide()
+        $('.zuonav .nav-nav li').click(function(){
+            $(this).addClass("navdown")
+                .siblings().removeClass();
+            //获取当前标签的索引值
+            var content_idnex = $('.zuonav .nav-nav li').index(this);
+            $('.ct').eq(content_idnex).show()
+                .siblings().hide();
+        });
+
+    });
+
+
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>纺织名片宝-登录</title>
+        <script type="text/javascript" src="/front/Scripts/jquery1.42.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+        <link rel="stylesheet" href="/front/Content/commons.css">
+        <link href="/front/Content/style.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="/front/Scripts/index.js"></script>
+    </head>
+
+    <body>
+    <div th:include="front/header"></div>
+        <div class="banner1"></div>
+        <div class="dlxq">
+            <h2>登录</h2>
+            <ul>
+                <li><span>手机号码</span><i><input name="tel" type="text" class="wby1" placeholder="请输入您的手机号"/></i></li>
+                <li><span>登录密码</span><i><input name="pass" type="password" class="wby1"/></i></li>
+                <li><p><a th:href="@{/login/findPass.php}" >忘记密码</a><a href="" class="fr">免费注册</a></p></li>
+                <li><i><input name="" type="button" class="btn1" value="登录"/></i></li>
+            </ul>
+        </div>
+    <div th:include="front/footer"></div>
+    </body>
+</html>
+<script>
+
+    $(function () {
+
+        $(".btn1").click(function () {
+            var tel = $("input[name='tel']").val();
+            var password = $("input[name='pass']").val();
+            var info = {tel:tel,password:password};
+            $.post("/login/login.do",info, function(result){
+                //console.log(result);
+                if(result == "true" || result==true)
+                {
+                    window.location.href = "/user/home.php";
+                }
+                else if(result == "false" || result==false)
+                {
+                    alert("登录失败");
+                }
+                else
+                {
+                    alert("系统错误");
+                }
+            },"json");
+        });
+
+    });
+
+</script>

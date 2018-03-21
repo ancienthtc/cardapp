@@ -1,0 +1,36 @@
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+
+
+<link rel="stylesheet" href="/public/css/ft-carousel.css" />
+<style>
+
+.example {width: 624px;height: 336px;font-size: 40px;text-align: center;}
+.carousel-item{line-height: 336px;color: #fff;font-family:  Arial Black}
+</style>
+
+
+<div class="example">
+	<div class="ft-carousel" id="carousel_3">
+		<ul class="carousel-inner">
+			<li class="carousel-item"><a href=""><img width="640px" height="395px" th:src="@{${address1}}" th:if="${pic1!=null}" alt=""></a></li>
+			<li class="carousel-item"><a href=""><img width="640px" height="395px" th:src="@{${address2}}" th:if="${pic2!=null}" alt=""></a></li>
+
+		</ul>
+	</div>
+</div>
+
+<script src="/public/js/jquery-3.1.1.js"></script>
+<script src="/public/js/ft-carousel.min.js"></script>
+<script type="text/javascript">
+
+
+	$("#carousel_3").FtCarousel({
+		index: 0,
+		auto: true,
+		time: 3000,
+		indicators: false,
+		buttons: true
+	});
+</script>
+</html>

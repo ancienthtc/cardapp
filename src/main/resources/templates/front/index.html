@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>纺织名片宝</title>
+
+        <link rel="stylesheet" th:href="@{/front/Content/commons.css}">
+        <link th:href="@{/front/Content/style.css}" rel="stylesheet" type="text/css">
+
+        <script type="text/javascript" th:src="@{/front/Scripts/jquery-1.9.1.min.js}"></script>
+        <script type="text/javascript" th:src="@{/front/Scripts/jquery.SuperSlide.2.1.js}"></script>
+        <script type="text/javascript" th:src="@{/front/Scripts/index.js}"></script>
+
+        <style>
+            .background {
+                width: 100%;
+                background-image: url("static/front/Content/images/timg1.jpg");
+            }
+
+
+        </style>
+
+
+    </head>
+<body>
+
+        <div th:include="front/header"></div>
+
+        <div class="clear"></div>
+
+
+        <div class="fullSlide">
+
+            <div class="bd">
+                <ul th:style="'position: relative; width: 1902px; height: 662px;'">
+
+                    <li th:style="'background: url(' + @{/front/Content/images/timg1.jpg} + ')'"></li>
+                    <!--
+                    <li th:style="'background-image:url(static/front/Content/images/timg1.jpg);'"></li>
+                    -->
+                    <li th:style="'background: url(' + @{/front/Content/images/timg2.jpg} + ')'"></li>
+                    <li th:style="'background: url(' + @{/front/Content/images/timg1.jpg} + ')'"></li>
+                    <li th:style="'background: url(' + @{/front/Content/images/timg2.jpg} + ')'"></li>
+                </ul>
+            </div>
+
+            <div class="hd">
+                <ul><li class="">1</li><li class="on">2</li><li class="">3</li><li class="">4</li></ul>
+            </div>
+            <span class="prev" style="opacity: 0.5; display: none;"></span>
+            <span class="next" style="opacity: 0.5; display: none;"></span>
+        </div>
+
+        <script type="text/javascript">
+
+            /* 控制左右按钮显示 */
+            jQuery(".fullSlide").hover(function () {
+                jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+            }, function () {
+                jQuery(this).find(".prev,.next").fadeOut()
+            });
+
+            /* 调用SuperSlide */
+            jQuery(".fullSlide").slide({
+                titCell: ".hd ul", mainCell: ".bd ul", effect: "fold", autoPlay: true, autoPage: true, trigger: "click",
+                startFun: function (i) {
+                    var curLi = jQuery(".fullSlide .bd li").eq(i);
+                    /* 当前大图的li */
+                    if (!!curLi.attr("_src")) {
+                        curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+                        /* 将_src地址赋予li背景，然后删除_src */
+                    }
+                }
+            });
+        </script>
+        <div class="zyfw">
+            <div class="zyfw_tit">
+                <h2>专业化服务</h2>
+                <p>名宝为您提供纺织服装行业精准高效的消息数,据服务同时也是一个“人人为我，我为从”的共享服务平台，<br>通过全员参与的奖励激励方,致力于打破行业数据孤岛，让信息高效流通，个人和企业共享收益。</p>
+            </div>
+            <div class="zyfw_nr">
+                <ul>
+                    <li>
+                        <a href="#"><img th:src="@{/front/Content/images/a_01.png}"></a>
+                        <h4>
+                            根据抽签结果，世界排名前八位的国家队中，除排名第三的葡萄牙和排名第八的西班牙同组以外，其他队都被分在不同组中。有分析认为，此次世界杯决赛圈没有绝对意义的死亡之组。</h4>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/front/Content/images/a_01.png}"></a>
+                        <h4>
+                            根据抽签结果，世界排名前八位的国家队中，除排名第三的葡萄牙和排名第八的西班牙同组以外，其他队都被分在不同组中。有分析认为，此次世界杯决赛圈没有绝对意义的死亡之组。</h4>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/front/Content/images/a_01.png}"></a>
+                        <h4>
+                            根据抽签结果，世界排名前八位的国家队中，除排名第三的葡萄牙和排名第八的西班牙同组以外，其他队都被分在不同组中。有分析认为，此次世界杯决赛圈没有绝对意义的死亡之组。</h4>
+                    </li>
+                   <li>
+                        <a href="#"><img th:src="@{/front/Content/images/a_01.png}"></a>
+                        <h4>
+                            根据抽签结果，世界排名前八位的国家队中，除排名第三的葡萄牙和排名第八的西班牙同组以外，其他队都被分在不同组中。有分析认为，此次世界杯决赛圈没有绝对意义的死亡之组。</h4>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="zyfw">
+            <div class="zyfw_tit">
+                <h2>行业细分</h2>
+                <p>纺织服装行业数据信息一站式提供方案，全方位覆盖整个产业链</p>
+            </div>
+            <div class="cyxf ">
+                <ul>
+                	<li>
+                		<a href="#">
+                			<div class="cyxf_bj"><img th:src="@{/front/Content/images/cp.png}" class="img_fd"></div>
+                            <div class="txt">
+                                <p>买家综合买家综合买家综合买家综合买家综合</p>
+                            </div>
+                        </a>
+                       <div class="txt">
+                           <p>买家综合买家综合买家综合买家综合买家综合</p>
+                       </div>
+                		<p>买家综合</p>
+                	</li>
+                    <li>
+                		<a href="#">
+                			<div class="cyxf_bj"><img th:src="@{/front/Content/images/cp.png}" class="img_fd"></div>
+                            <div class="txt">
+                                <p>买家综合买家综合买家综合买家综合买家综合</p>
+                            </div>
+                        </a>
+                        <p>原料纱线</p>
+                	</li>
+                	<li>
+                		<a href="#">
+                			<div class="cyxf_bj"><img th:src="@{/front/Content/images/cp.png}" class="img_fd"></div>
+                            <div class="txt">
+                                <p>买家综合买家综合买家综合买家综合买家综合</p>
+                            </div>
+                        </a>
+
+                		<p>面料布匹</p>
+                	</li>
+                	<li>
+                		<a href="#">
+                			<div class="cyxf_bj"><img th:src="@{/front/Content/images/cp.png}" class="img_fd"></div>
+                            <div class="txt">
+                                <p>买家综合买家综合买家综合买家综合买家综合</p>
+                            </div>
+                        </a>
+
+                		<p>成衣服饰</p>
+                	</li>
+                	<li>
+                		<a href="#">
+                			<div class="cyxf_bj"><img th:src="@{/front/Content/images/cp.png}" class="img_fd"></div>
+                            <div class="txt">
+                                <p>买家综合买家综合买家综合买家综合买家综合</p>
+                            </div>
+                        </a>
+
+                		<p>家居家纺</p>
+                	</li>
+                	<li>
+                		<a href="#">
+                			<div class="cyxf_bj"><img th:src="@{/front/Content/images/cp.png}" class="img_fd"></div>
+                            <div class="txt">
+                                <p>买家综合买家综合买家综合买家综合买家综合</p>
+                            </div>
+                        </a>
+
+                		<p>辅料包装</p>
+                	</li>
+                	<li>
+                		<a href="#">
+                			<div class="cyxf_bj"><img th:src="@{/front/Content/images/cp.png}" class="img_fd"></div>
+                            <div class="txt">
+                                <p>买家综合买家综合买家综合买家综合买家综合</p>
+                            </div>
+                        </a>
+
+                		<p>纺机印染</p>
+                	</li>
+                	<li>
+                		<a href="#">
+                			<div class="cyxf_bj"><img th:src="@{/front/Content/images/cp.png}" class="img_fd"></div>
+                            <div class="txt">
+                                <p>买家综合买家综合买家综合买家综合买家综合</p>
+                            </div>
+                        </a>
+
+                		<p>其他</p>
+                	</li>
+                </ul>
+            </div>
+        </div>
+        <div class="zyfw_tit">
+            <h2>企业展示</h2>
+            <p>行业知名企业展示</p>
+        </div>
+        <div class="zyfw_down">
+<!--            <img class="zyfw_img" src="../Content/images/drop-down.png" alt="">-->
+            <div class="bj1" style="display: block;">
+                <div class="cjqy">
+                    <ul>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l2.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l3.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l4.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l5.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l6.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l7.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l8.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l9.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                        <li><a href=""><img th:src="@{/front/Content/images/l1.png}"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div th:include="front/footer"></div>
+</body>
+</html>
+
+<script type="text/javascript">
+		$(".nav li h3 a").eq(0).css("color","#000");
+</script>
+
+<script type="text/javascript">
+$(".cyxf ul li a").hover(function(){
+
+        $(this).find(".txt").stop().animate({height:"100px"},400);
+
+    },function(){
+
+        $(this).find(".txt").stop().animate({height:"0px"},400);
+
+
+
+    })
+
+</script>
+

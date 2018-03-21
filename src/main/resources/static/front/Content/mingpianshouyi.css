@@ -1,0 +1,27 @@
+.profit_right table{
+    border: 1px solid #808080;
+    font-size: 12px;
+    border-collapse: collapse;
+    margin: 59px 0 237px 0;
+}
+.profit_right table tr{
+    text-align: center;
+}
+.profit_right table tr th{
+    width: 255px;
+    height: 58px;
+    line-height: 58px;
+    background: #f5f5f5;
+    font-size: 20px;
+    font-weight: normal;
+}
+.profit_right table tr th.w535,
+.profit_right table tr td.w535{
+    width: 535px;
+    text-align: center;
+}
+.profit_right table tr td{
+    height: 34px;
+    line-height: 34px;
+    color: #b1b1b1;
+}

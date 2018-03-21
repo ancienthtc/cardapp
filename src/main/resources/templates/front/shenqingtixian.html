@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link href="/front/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="/front/Scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+        <link rel="stylesheet" href="/front/Content/commons.css">
+        <link rel="stylesheet" href="/front/Content/style.css">
+
+        <link rel="stylesheet" href="/front/Content/shenqingtixian.css">
+        <link rel="stylesheet" href="/front/Content/zhanghuchongzhi.css">
+        <script src="/front/Scripts/index.js"></script>
+    </head>
+    <body>
+        <div th:include="front/header"></div>
+        <div class="banner1"></div>
+        <div class="xtxx">
+            <div class="xtxx_top">
+                <div class="xtxx_tit"><p><a th:href="@{/user/personal.php}">个人中心</a>&nbsp;>&nbsp;<a th:href="@{/user/withdraw.php}">申请提现</a></p></div>
+            </div>
+            <div class="wdda wdda_profit">
+                <div class="wdda_left fl">
+                    <ul class="wdda-left">
+                        <li><a th:href="@{/user/recharge.php}" >账户充值</a></li>
+                        <li><a th:href="@{/user/income.php}">名片收益</a></li>
+                        <li><a th:href="@{/user/withdraw.php}" class="tixian on">申请提现</a></li>
+                        <li><a th:href="@{/user/withdrawRecord.php}">提现记录</a></li>
+                    </ul>
+                </div>
+                <div class="profit_right">
+                    <p><em>当前账户余额:</em> <i>0</i> 元</p>
+                    <p><em>可提现金额:</em> <i>0</i> 元</p>
+                    <p><em>提现金额:</em> <input type="text" style="height: 20px"> 元  ( ≥ 50元)</p>
+                    <p><em>支付宝开户姓名:</em> <input type="text" style="height: 20px; width: 260px;"></p>
+                    <p><em>支付宝账号:</em> <input type="text" style="height: 20px; width: 200px;"></p>
+                    <div class="apply  a globalLoginBtn">申请提现</di>
+                </div>
+            </div>
+
+                <div class="modal fade" id="loginModal" style="display:none;">
+
+                    <div class="modal-dialog modal-sm" style="width:200px;">
+                        <div class="modal-content" style="border:none;">
+                            <div class="col-right">
+                                <div class="modal-header">
+                                    <button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">信息</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <section class="box-login v5-input-txt" id="box-login">
+
+                                        <p class="good-tips marginB10">申请提现成功</p>
+                                        <div class="login-box marginB10">
+                                            <button id="login_btn login_close" type="button" class="btn btn-micv5 btn-block globalLogin" data-dismiss="modal">确定</button>
+                                            <div id="login-form-tips" class="tips-error bg-danger" style="display: none;">错误提示</div>
+                                        </div>
+
+
+
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal fade" id="loginModal2" style="display:none;">
+
+                    <div class="modal-dialog modal-sm" style="width:200px;">
+                        <div class="modal-content" style="border:none;">
+                            <div class="col-right">
+                                <div class="modal-header">
+                                    <button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">信息</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <section class="box-login v5-input-txt" id="box-login">
+
+                                        <p class="good-tips marginB10">账户可提现金额不足！</p>
+                                        <div class="login-box marginB10">
+                                            <button id="login_btn login_close" type="button" class="btn btn-micv5 btn-block globalLogin" data-dismiss="modal">确定</button>
+                                            <div id="login-form-tips" class="tips-error bg-danger" style="display: none;">错误提示</div>
+                                        </div>
+
+
+
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            <!--<script type="text/javascript">
+                jQuery(".wdda_left").slide({
+                    type: "menu", //效果类型
+                    titCell: ".ma", // 鼠标触发对象
+                    targetCell: ".fbnrbox", // 效果对象，必须被titCell包含
+                    effect: "slideDown",//下拉效果
+                    delayTime: 300, // 效果时间
+                    triggerTime: 0, //鼠标延迟触发时间
+                    returnDefault: true  //返回默认状态
+                });
+            </script>-->
+            <!--<script>
+                $(".wdda .wdda_left h3").each(function (index) {
+                    $(this).click(function () {
+                        $(".on5").removeClass("on5");
+                        $(this).addClass("on5");
+                        $(".wdda .wdda_right .danr:eq(" + index + ")").show().siblings().hide();
+                    });
+                });
+            </script>-->
+        </div>
+            <div th:include="front/footer"></div>
+            <script>
+                $(function(){
+                    $('.czfs ul li').click(function(){
+                        $(this).addClass("thisclass").siblings().removeClass("thisclass");
+                    });
+                });
+            </script>
+            <script type="text/javascript" src="../Scripts/modal.js"></script>
+            <script type="text/javascript" src="../Scripts/script.js"></script>
+    </body>
+</html>

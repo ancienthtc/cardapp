@@ -1,0 +1,102 @@
+2018-03-07 18:45:45,388 ERROR (LoggingApplicationListener.java:365)- Cannot set level: true for 'com.example.springboot_2.dao'
+2018-03-07 18:45:45,482 INFO (StartupInfoLogger.java:48)- Starting CardAppApplication on PC-20171205FOMO with PID 6176 (E:\Project\Intellij1\cardapp\target\classes started by Administrator in E:\Project\Intellij1\cardapp)
+2018-03-07 18:45:45,483 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-03-07 18:45:45,653 INFO (Version.java:30)- HV000001: Hibernate Validator 5.3.6.Final
+2018-03-07 18:45:46,079 WARN (ClassPathMapperScanner.java:166)- No MyBatis mapper was found in '[com.jd.cardapp.dao]' package. Please check your configuration.
+2018-03-07 18:45:46,175 WARN (ClassPathMapperScanner.java:166)- No MyBatis mapper was found in '[com.jd.cardapp]' package. Please check your configuration.
+2018-03-07 18:45:46,884 INFO (DirectJDKLog.java:180)- Starting service [Tomcat]
+2018-03-07 18:45:46,885 INFO (DirectJDKLog.java:180)- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-07 18:45:46,944 INFO (DirectJDKLog.java:180)- Initializing Spring embedded WebApplicationContext
+2018-03-07 18:45:48,009 INFO (DirectJDKLog.java:180)- Initializing ProtocolHandler ["http-nio-8080"]
+2018-03-07 18:45:48,018 INFO (DirectJDKLog.java:180)- Starting ProtocolHandler ["http-nio-8080"]
+2018-03-07 18:45:48,025 INFO (DirectJDKLog.java:180)- Using a shared selector for servlet write/read
+2018-03-07 18:45:48,042 INFO (StartupInfoLogger.java:57)- Started CardAppApplication in 2.925 seconds (JVM running for 4.477)
+2018-03-07 18:45:59,273 INFO (DirectJDKLog.java:180)- A cookie header was received [1519952901,1520037256,1520211902] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-03-07 18:45:59,279 INFO (DirectJDKLog.java:180)- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-07 18:45:59,323 INFO (TemplateEngine.java:825)- [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-03-07 18:45:59,396 INFO (AbstractTemplateResolver.java:99)- [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-03-07 18:45:59,396 INFO (AbstractTemplateResolver.java:110)- [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-03-07 18:45:59,396 INFO (AbstractMessageResolver.java:72)- [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-03-07 18:45:59,396 INFO (AbstractMessageResolver.java:78)- [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-03-07 18:45:59,399 INFO (ConfigurationPrinterHelper.java:123)- [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-03-07 18:45:59,399 INFO (TemplateEngine.java:838)- [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-03-07 18:45:59,462 ERROR (TemplateEngine.java:1085)- [THYMELEAF][http-nio-8080-exec-4] Exception processing template "front/index": Exception parsing document
+2018-03-07 18:45:59,466 ERROR (DirectJDKLog.java:182)- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document] with root cause
+java.lang.IllegalArgumentException: Node php of type 7 and class org.apache.xerces.dom.DeferredProcessingInstructionImpl cannot be converted to Thymeleaf's DOM representation.
+	at org.thymeleaf.util.StandardDOMTranslator.translateNode(StandardDOMTranslator.java:67)
+	at org.thymeleaf.util.StandardDOMTranslator.translateElement(StandardDOMTranslator.java:168)
+	at org.thymeleaf.util.StandardDOMTranslator.translateNode(StandardDOMTranslator.java:55)
+	at org.thymeleaf.util.StandardDOMTranslator.translateElement(StandardDOMTranslator.java:168)
+	at org.thymeleaf.util.StandardDOMTranslator.translateRootElement(StandardDOMTranslator.java:183)
+	at org.thymeleaf.util.StandardDOMTranslator.translateDocument(StandardDOMTranslator.java:108)
+	at org.thymeleaf.templateparser.html.AbstractHtmlTemplateParser$NekoBasedHtmlParser.parseTemplate(AbstractHtmlTemplateParser.java:177)
+	at org.thymeleaf.templateparser.html.AbstractHtmlTemplateParser.parseTemplate(AbstractHtmlTemplateParser.java:97)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)

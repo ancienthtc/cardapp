@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.cardapp.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.jd.cardapp.model.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="realname" jdbcType="VARCHAR" property="realname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="tel" jdbcType="CHAR" property="tel" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="selfemail" jdbcType="VARCHAR" property="selfemail" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="coemail" jdbcType="VARCHAR" property="coemail" />
+    <result column="coname" jdbcType="VARCHAR" property="coname" />
+    <result column="coteam" jdbcType="INTEGER" property="coteam" />
+    <result column="coaddress" jdbcType="VARCHAR" property="coaddress" />
+    <result column="cowww" jdbcType="VARCHAR" property="cowww" />
+    <result column="balance" jdbcType="DOUBLE" property="balance" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="ulevel" jdbcType="INTEGER" property="ulevel" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, nickname, realname, password, tel, gender, selfemail, position, coemail, coname, 
+    coteam, coaddress, cowww, balance, detail, ulevel, state, updatetime, createtime
+  </sql>
+  <select id="selectByExample" parameterType="com.jd.cardapp.model.UserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from t_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.jd.cardapp.model.UserExample">
+    delete from t_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jd.cardapp.model.User">
+    insert into t_user (id, nickname, realname, 
+      password, tel, gender, 
+      selfemail, position, coemail, 
+      coname, coteam, coaddress, 
+      cowww, balance, detail, 
+      ulevel, state, updatetime, 
+      createtime)
+    values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{tel,jdbcType=CHAR}, #{gender,jdbcType=INTEGER}, 
+      #{selfemail,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{coemail,jdbcType=VARCHAR}, 
+      #{coname,jdbcType=VARCHAR}, #{coteam,jdbcType=INTEGER}, #{coaddress,jdbcType=VARCHAR}, 
+      #{cowww,jdbcType=VARCHAR}, #{balance,jdbcType=DOUBLE}, #{detail,jdbcType=VARCHAR}, 
+      #{ulevel,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jd.cardapp.model.User">
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="realname != null">
+        realname,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="selfemail != null">
+        selfemail,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="coemail != null">
+        coemail,
+      </if>
+      <if test="coname != null">
+        coname,
+      </if>
+      <if test="coteam != null">
+        coteam,
+      </if>
+      <if test="coaddress != null">
+        coaddress,
+      </if>
+      <if test="cowww != null">
+        cowww,
+      </if>
+      <if test="balance != null">
+        balance,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="ulevel != null">
+        ulevel,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=CHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="selfemail != null">
+        #{selfemail,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="coemail != null">
+        #{coemail,jdbcType=VARCHAR},
+      </if>
+      <if test="coname != null">
+        #{coname,jdbcType=VARCHAR},
+      </if>
+      <if test="coteam != null">
+        #{coteam,jdbcType=INTEGER},
+      </if>
+      <if test="coaddress != null">
+        #{coaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cowww != null">
+        #{cowww,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null">
+        #{balance,jdbcType=DOUBLE},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="ulevel != null">
+        #{ulevel,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jd.cardapp.model.UserExample" resultType="java.lang.Integer">
+    select count(*) from t_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_user
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.nickname != null">
+        nickname = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realname != null">
+        realname = #{record.realname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel != null">
+        tel = #{record.tel,jdbcType=CHAR},
+      </if>
+      <if test="record.gender != null">
+        gender = #{record.gender,jdbcType=INTEGER},
+      </if>
+      <if test="record.selfemail != null">
+        selfemail = #{record.selfemail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.position != null">
+        position = #{record.position,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coemail != null">
+        coemail = #{record.coemail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coname != null">
+        coname = #{record.coname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coteam != null">
+        coteam = #{record.coteam,jdbcType=INTEGER},
+      </if>
+      <if test="record.coaddress != null">
+        coaddress = #{record.coaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cowww != null">
+        cowww = #{record.cowww,jdbcType=VARCHAR},
+      </if>
+      <if test="record.balance != null">
+        balance = #{record.balance,jdbcType=DOUBLE},
+      </if>
+      <if test="record.detail != null">
+        detail = #{record.detail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ulevel != null">
+        ulevel = #{record.ulevel,jdbcType=INTEGER},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=INTEGER},
+      </if>
+      <if test="record.updatetime != null">
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createtime != null">
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_user
+    set id = #{record.id,jdbcType=INTEGER},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      realname = #{record.realname,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      tel = #{record.tel,jdbcType=CHAR},
+      gender = #{record.gender,jdbcType=INTEGER},
+      selfemail = #{record.selfemail,jdbcType=VARCHAR},
+      position = #{record.position,jdbcType=VARCHAR},
+      coemail = #{record.coemail,jdbcType=VARCHAR},
+      coname = #{record.coname,jdbcType=VARCHAR},
+      coteam = #{record.coteam,jdbcType=INTEGER},
+      coaddress = #{record.coaddress,jdbcType=VARCHAR},
+      cowww = #{record.cowww,jdbcType=VARCHAR},
+      balance = #{record.balance,jdbcType=DOUBLE},
+      detail = #{record.detail,jdbcType=VARCHAR},
+      ulevel = #{record.ulevel,jdbcType=INTEGER},
+      state = #{record.state,jdbcType=INTEGER},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jd.cardapp.model.User">
+    update t_user
+    <set>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=CHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="selfemail != null">
+        selfemail = #{selfemail,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="coemail != null">
+        coemail = #{coemail,jdbcType=VARCHAR},
+      </if>
+      <if test="coname != null">
+        coname = #{coname,jdbcType=VARCHAR},
+      </if>
+      <if test="coteam != null">
+        coteam = #{coteam,jdbcType=INTEGER},
+      </if>
+      <if test="coaddress != null">
+        coaddress = #{coaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cowww != null">
+        cowww = #{cowww,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null">
+        balance = #{balance,jdbcType=DOUBLE},
+      </if>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="ulevel != null">
+        ulevel = #{ulevel,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jd.cardapp.model.User">
+    update t_user
+    set nickname = #{nickname,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=CHAR},
+      gender = #{gender,jdbcType=INTEGER},
+      selfemail = #{selfemail,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      coemail = #{coemail,jdbcType=VARCHAR},
+      coname = #{coname,jdbcType=VARCHAR},
+      coteam = #{coteam,jdbcType=INTEGER},
+      coaddress = #{coaddress,jdbcType=VARCHAR},
+      cowww = #{cowww,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=DOUBLE},
+      detail = #{detail,jdbcType=VARCHAR},
+      ulevel = #{ulevel,jdbcType=INTEGER},
+      state = #{state,jdbcType=INTEGER},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      createtime = #{createtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!-- 自定义SQL -->
+  <select id="userLogin" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_user
+    where tel = #{tel,jdbcType=CHAR} and password = #{pass,jdbcType=VARCHAR}
+  </select>
+
+  <select id="getUserList" resultType="com.jd.cardapp.model.User">
+    select
+    <include refid="Base_Column_List" />
+    from t_user
+    <trim prefix="where" prefixOverrides="and|or">
+      <if test="key!=null">
+        (
+        <foreach collection="key" item="item" index="index"  separator="OR">
+          realname LIKE CONCAT('%',#{item},'%')
+          OR coname LIKE CONCAT('%',#{item},'%')
+        </foreach>
+        )
+      </if>
+      <choose>
+        <when test=" (begin!=null and end==null) or (begin!='' and end=='') ">
+          AND createtime >= #{begin,jdbcType=VARCHAR}
+        </when>
+        <when test=" (end!=null and begin==null) or (end!='' and begin=='') ">
+          AND #{end,jdbcType=VARCHAR} >= createtime
+        </when>
+        <when test=" (begin!=null and end!=null) and (begin!='' and end!='') ">
+          AND createtime >= #{begin,jdbcType=VARCHAR} AND #{end,jdbcType=VARCHAR} >= createtime
+        </when>
+      </choose>
+    </trim>
+  </select>
+
+</mapper>

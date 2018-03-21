@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>纺织名片宝-个人中心</title>
+    <link rel="stylesheet" href="/front/Content/style.css">
+    <link rel="stylesheet" href="/front/Content/commons.css">
+    <link rel="stylesheet" href="/front/Content/style.css">
+    <link href="/front/Content/assets/css/codemirror.css" rel="stylesheet">
+    <link rel="stylesheet" href="/front/Content/assets/css/ace.min.css"/>
+    <script SRC="/front/Scripts/jquery2.2.2.min.js"></script>
+    <script SRC="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+    <script SRC="/front/Scripts/wangEditor.min.js"></script>
+    <script SRC="/front/Scripts/index.js"></script>
+    <script src="/front/Content/assets/layer/layer.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        <!--
+        .STYLE2 {
+            color: #FF0000
+        }
+
+        -->
+    </style>
+</head>
+
+<body>
+<div th:include="front/header"></div>
+<div class="banner1"></div>
+<div class="xtxx">
+    <div class="xtxx_top">
+        <div class="xtxx_tit"><p><a th:href="@{/user/personal.php}">个人中心</a>&nbsp;>&nbsp;<a th:href="@{/user/personal.php}">我的档案</a></p></div>
+    </div>
+    <div class="wdda">
+        <div class="wdda_left">
+            <ul>
+                <li class="ma"><h3 class="on5">我的档案</h3></li>
+                <li class="ma"><h3>名片宝库</h3>
+                    <div class="fbnrbox">
+                        <ul>
+                            <li><a th:href="@{/user/recharge.php}" >账户充值</a></li>
+                            <li><a th:href="@{/user/income.php}">名片收益</a></li>
+                            <li><a th:href="@{/user/withdraw.php}">申请提现</a></li>
+                            <li><a th:href="@{/user/withdrawRecord.php}">提现记录</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="ma">
+                    <h3>我要发布</h3>
+                    <div class="fbnrbox">
+                        <ul>
+                            <li><a th:href="@{/user/myCard.php}">名片管理</a></li>
+                            <li><a th:href="@{/user/buyerRequest.php}">买家需求</a></li>
+                            <li><a th:href="@{/user/sellerPost.php}">卖家发布</a></li>
+                            <li><a th:href="@{/user/talent.php}">人才招聘</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="ma"><a th:href="@{/user/dataCenter.php}" style="color: #000000"><h3>我的数据</h3></a></li>
+                <li class="ma"><a th:href="@{/user/buyRecord.php}" style="color: #000000"><h3>购买记录</h3></a></li>
+            </ul>
+            <script type="text/javascript">
+                jQuery(".wdda_left").slide({
+                    type: "menu", //效果类型
+                    titCell: ".ma", // 鼠标触发对象
+                    targetCell: ".fbnrbox", // 效果对象，必须被titCell包含
+                    effect: "slideDown",//下拉效果
+                    delayTime: 300, // 效果时间
+                    triggerTime: 0, //鼠标延迟触发时间
+                    returnDefault: true  //返回默认状态
+                });
+            </script>
+        </div>
+        <div class="wdda_right">
+            <div class="danr">
+
+                <div class="admin_info_style mpnr">
+                    <div class="admin_modify_style" id="Personal">
+                        <div class="xinxi">
+                            <ul>
+                                <li>
+                                    <input type="hidden" th:value="${user.id}" name="id">
+                                    <div class="form-group"><label class=" control-label no-padding-right"
+                                                                   for="form-field-1">公司名称： </label>
+                                        <div><input type="text" name="coname"  th:value="${user.coname}"
+                                                    class=" text_info" disabled="disabled"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group"><label class="control-label no-padding-right"
+                                                                   for="form-field-1">公司地址： </label>
+                                        <div><input type="text" name="coaddress"  th:value="${user.coaddress}"
+                                                    class=" text_info" disabled="disabled"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group"><label class="control-label no-padding-right"
+                                                                   for="form-field-1">*联系人： </label>
+                                        <div><input type="text" name="realname"  th:value="${user.realname}"
+                                                    class="text_info" disabled="disabled"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group"><label class=" control-label no-padding-right"
+                                                                   for="form-field-1">*职位名称： </label>
+                                        <div><input type="text" name="position"  th:value="${user.position}"
+                                                    class="text_info" disabled="disabled"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group"><label class=" control-label no-padding-right"
+                                                                   for="form-field-1">*手机号： </label>
+                                        <div><input type="text" name="tel"  th:value="${user.tel}"
+                                                    class=" text_info" disabled="disabled"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group"><label class=" control-label no-padding-right"
+                                                                   for="form-field-1">*国际业务团队人数： </label>
+                                        <div><input type="text" name="coteam"  th:value="${user.coteam}"
+                                                    class=" text_info" disabled="disabled"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group"><label class=" control-label no-padding-right"
+                                                                   for="form-field-1">*企业邮箱： </label>
+                                        <div><input type="text" name="coemail"
+                                                    th:value="${user.coemail}" class=" text_info" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group"><label class=" control-label no-padding-right"
+                                                                   for="form-field-1">*企业网址： </label>
+                                        <div><input type="text" name="cowww"  th:value="${user.cowww}"
+                                                    class=" text_info" disabled="disabled"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Button_operation clearfix">
+                            <button onclick="modify();" class="btn btn-danger radius" type="submit">修改信息</button>
+                            <button onclick="save_info();" class="btn btn-success radius" type="button">保存修改</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <script>
+            $(".wdda .wdda_left h3").each(function (index) {
+                $(this).click(function () {
+                    $(".on5").removeClass("on5");
+                    $(this).addClass("on5");
+                    $(".wdda .wdda_right .danr:eq(" + index + ")").show().siblings().hide();
+                });
+            });
+        </script>
+    </div>
+</div>
+    <div th:include="front/footer"></div>
+
+
+    <script>
+
+        //按钮点击事件
+        function modify() {
+            $('.text_info').attr("disabled", false);
+            $('.text_info').addClass("add");
+            $('#Personal').find('.xinxi').addClass("hover");
+            $('#Personal').find('.btn-success').css({'display': 'block'});
+        };
+
+        function save_info() {
+            var num = 0;
+            var str = "";
+            // $(".xinxi input[type$='text']").each(function (n) {
+            //     if ($(this).val() == "") {
+            //
+            //         layer.alert(str += "" + $(this).attr("name") + "不能为空！\r\n", {
+            //             title: '提示框',
+            //             icon: 0,
+            //         });
+            //         num++;
+            //         return false;
+            //     }
+            // });
+
+            if (num > 0) {
+                return false;
+            }
+            else {
+                var id = $(".xinxi input[name='id']").val();
+                var coname = $(".xinxi input[name='coname']").val();
+                var coaddress = $(".xinxi input[name='coaddress']").val();
+                var realname = $(".xinxi input[name='realname']").val();
+                var position = $(".xinxi input[name='position']").val();
+                var coteam = $(".xinxi input[name='coteam']").val();
+                var coemail = $(".xinxi input[name='coemail']").val();
+                var cowww = $(".xinxi input[name='cowww']").val();
+
+                var info = { id:id,coname:coname,coaddress:coaddress,realname:realname,position:position
+                    ,coteam:coteam,coemail:coemail,cowww:cowww }
+
+                console.log(info);
+
+                $.ajax({
+                    url: "/user/updateUser.do",
+                    type: 'post',
+                    dataType: 'text',
+                    data: info,
+                    success: function (data) {
+                        //alert(data);
+                        if(data=="true")
+                        {
+                            layer.alert('修改成功！', {
+                                title: '提示框',
+                                icon: 1,
+                            });
+                        }
+                        else
+                        {
+                            layer.alert('未生效！', {
+                                title: '提示框',
+                                icon: 1,
+                            });
+                        }
+
+                    },
+                    error: function () {
+                        alert('服务器繁忙..请稍后重试！');
+                    }
+                });
+
+                $('#Personal').find('.xinxi').removeClass("hover");
+                $('#Personal').find('.text_info').removeClass("add").attr("disabled", true);
+                $('#Personal').find('.btn-success').css({'display': 'none'});
+                layer.close(index);
+            }
+        };
+
+    </script>
+</body>
+</html>
