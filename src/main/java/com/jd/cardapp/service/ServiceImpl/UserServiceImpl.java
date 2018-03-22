@@ -202,4 +202,54 @@ public class UserServiceImpl implements UserService{
         }
         return i;
     }
+
+    @Override
+    public PageInfo<UserFile> getUserFileList(String keys, Integer pageNo, Integer pageSize, String begin, String end,Integer status) {
+        pageNo = pageNo == null ? 1:pageNo;
+        pageSize = pageSize == null ? 10:pageSize;
+        PageHelper.startPage(pageNo, pageSize);
+        String[] key=keys.split("\\s+");
+        List<UserFile> userFiles=userFileMapper.getUserFileList(key,begin,end,status);
+        PageInfo<UserFile> result = new PageInfo<>(userFiles);
+        return result;
+    }
+
+    @Override
+    public int userFileUpdate(Integer id, Integer status) {
+        UserFile userFile = userFileMapper.selectByPrimaryKey(id);
+        if( userFile.getState()==status )
+        {
+            return 0;
+        }
+        userFile.setState(status);
+        return userFileMapper.updateByPrimaryKeySelective(userFile);
+    }
+
+    @Override
+    public UserFile getUserFile(Integer id) {
+        return userFileMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int UserFileDel(Integer id) {
+        UserFile userFile = userFileMapper.selectByPrimaryKey(id);
+        File file = new File(userFile.getFolder()+userFile.getFilename());
+        if(file.exists())
+        {
+            file.delete();
+        }
+        return userFileMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public PageInfo<UserFile> usetGetRequestByType(Integer type, Integer pageNo, Integer pageSize) {
+        pageNo = pageNo == null ? 1:pageNo;
+        pageSize = pageSize == null ? 10:pageSize;
+        PageHelper.startPage(pageNo, pageSize);
+        UserFileExample userFileExample = new UserFileExample();
+        UserFileExample.Criteria criteria = userFileExample.createCriteria();
+
+
+        return null;
+    }
 }

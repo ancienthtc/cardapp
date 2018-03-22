@@ -7,9 +7,11 @@ import com.github.pagehelper.PageInfo;
 import com.jd.cardapp.common.GlobalExceptionHandler;
 import com.jd.cardapp.common.UserCheck;
 import com.jd.cardapp.config.MyCustomConfig;
+import com.jd.cardapp.model.Admin;
 import com.jd.cardapp.model.Advance.DataTablePageUtil;
 import com.jd.cardapp.model.Buy;
 import com.jd.cardapp.model.User;
+import com.jd.cardapp.model.UserFile;
 import com.jd.cardapp.service.CardService;
 import com.jd.cardapp.service.UserService;
 import com.jd.cardapp.util.date.DateExample;
@@ -338,11 +340,14 @@ public class UserController {
     }
 
 
+    //需求发布详情
+    @RequestMapping("/getFileDetail.php")
     @ResponseBody
-    public void showHtml(HttpServletRequest request, HttpServletResponse response)
+    public void showHtml(HttpServletRequest request, HttpServletResponse response,Integer id)
     {
-        String absoultePath = "";
-
+        String absoultePath;
+        UserFile userFile = userService.getUserFile(id);
+        absoultePath = userFile.getFolder() + userFile.getFilename();
         response.setContentType("multipart/form-data");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
@@ -370,6 +375,16 @@ public class UserController {
             e.printStackTrace();
         }
 
+    }
+
+    //需求发布查询
+    @RequestMapping("/requestList")
+    @ResponseBody
+    public String userGetRequest(Integer type , Integer pageNo ,Integer pageSize)
+    {
+        //暂时不验证登录
+
+        return "";
     }
 
 
@@ -420,6 +435,53 @@ public class UserController {
         String jsonString = JSON.toJSONString(dataTable);
 
         return jsonString;
+    }
+
+    //主题查询
+    @RequestMapping("/issueList")
+    @ResponseBody
+    public String getIssueList(HttpSession session,String keys, Integer pageNo, Integer pageSize, String begin, String end,Integer status)
+    {
+        Admin admin = (Admin) session.getAttribute("admin");
+        if( admin==null )
+        {
+            return null;
+        }
+        return JSON.toJSONString( userService.getUserFileList(keys,pageNo,pageSize,begin,end,status) );
+    }
+
+    //变更状态
+    @RequestMapping("/issue.do")
+    @ResponseBody
+    public String userFileOperate(HttpSession session,Integer id,Integer status)
+    {
+        Admin admin = (Admin) session.getAttribute("admin");
+        if( admin==null )
+        {
+            return "false";
+        }
+        if( userService.userFileUpdate(id,status) > 0 )
+        {
+            return "true";
+        }
+        return "false";
+    }
+
+    //删除
+    @RequestMapping("/del.do")
+    @ResponseBody
+    public String userFileDel(HttpSession session,Integer id)
+    {
+        Admin admin = (Admin) session.getAttribute("admin");
+        if( admin==null )
+        {
+            return "false";
+        }
+        if( userService.UserFileDel(id) > 0  )
+        {
+            return "true";
+        }
+        return "false";
     }
 
 }

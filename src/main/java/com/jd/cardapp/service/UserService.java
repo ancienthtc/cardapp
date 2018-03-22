@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.jd.cardapp.model.Buy;
 import com.jd.cardapp.model.Income;
 import com.jd.cardapp.model.User;
+import com.jd.cardapp.model.UserFile;
 
 import java.util.List;
 
@@ -27,4 +28,14 @@ public interface UserService {
     Buy getBuyDetail(Integer id);
 
     int htmlUpload(Integer uid ,String title, String detail ,String html,Integer type);
+
+    PageInfo<UserFile> getUserFileList(String keys, Integer pageNo , Integer pageSize, String begin , String end,Integer status);
+
+    int userFileUpdate(Integer id , Integer status);
+
+    UserFile getUserFile(Integer id);
+
+    int UserFileDel(Integer id);
+
+    PageInfo<UserFile> usetGetRequestByType(Integer type,Integer pageNo , Integer pageSize);
 }

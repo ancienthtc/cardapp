@@ -91,6 +91,25 @@ public class AdminController {
 
 
     //主题
+    @AdminCheck
+    @RequestMapping("/mIssue.php")
+    public String toIssueManagerList()
+    {
+        return "back/issue-list";
+    }
 
+    @AdminCheck
+    @RequestMapping("/mIssueWait.php")
+    public String toIssueManagerWait()
+    {
+        return "back/issue-wait-list";
+    }
+
+    @AdminCheck
+    @RequestMapping("/mIssueCancel.php")
+    public String toIssueManagerCancel()
+    {
+        return "back/issue-cancel-list";
+    }
 
 }

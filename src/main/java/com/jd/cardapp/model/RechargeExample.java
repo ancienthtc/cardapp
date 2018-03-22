@@ -165,6 +165,76 @@ public class RechargeExample {
             return (Criteria) this;
         }
 
+        public Criteria andSequenceIsNull() {
+            addCriterion("sequence is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceIsNotNull() {
+            addCriterion("sequence is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceEqualTo(String value) {
+            addCriterion("sequence =", value, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceNotEqualTo(String value) {
+            addCriterion("sequence <>", value, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceGreaterThan(String value) {
+            addCriterion("sequence >", value, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceGreaterThanOrEqualTo(String value) {
+            addCriterion("sequence >=", value, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceLessThan(String value) {
+            addCriterion("sequence <", value, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceLessThanOrEqualTo(String value) {
+            addCriterion("sequence <=", value, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceLike(String value) {
+            addCriterion("sequence like", value, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceNotLike(String value) {
+            addCriterion("sequence not like", value, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceIn(List<String> values) {
+            addCriterion("sequence in", values, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceNotIn(List<String> values) {
+            addCriterion("sequence not in", values, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceBetween(String value1, String value2) {
+            addCriterion("sequence between", value1, value2, "sequence");
+            return (Criteria) this;
+        }
+
+        public Criteria andSequenceNotBetween(String value1, String value2) {
+            addCriterion("sequence not between", value1, value2, "sequence");
+            return (Criteria) this;
+        }
+
         public Criteria andStateIsNull() {
             addCriterion("state is null");
             return (Criteria) this;

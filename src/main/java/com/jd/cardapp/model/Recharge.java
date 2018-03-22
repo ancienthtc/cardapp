@@ -5,6 +5,8 @@ import java.util.Date;
 public class Recharge {
     private Integer id;
 
+    private String sequence;
+
     private Integer state;
 
     private Double amount;
@@ -19,6 +21,14 @@ public class Recharge {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getSequence() {
+        return sequence;
+    }
+
+    public void setSequence(String sequence) {
+        this.sequence = sequence == null ? null : sequence.trim();
     }
 
     public Integer getState() {

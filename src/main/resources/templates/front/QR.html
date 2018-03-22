@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        ul,li{list-style: none;}
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear:both;
+            height: 0;
+        }
+        .bian{
+            width: 600px;
+            height:350px;
+            border: 1px solid #000000;
+            margin: 100px auto;
+            padding: 50px;
+        }
+
+        .img{
+            width: 150px;
+            height: 150px;
+            margin:0 auto;
+            border: 1px solid pink;
+            margin-bottom: 50px;
+        }
+        ul{width: 260px;margin: 30px auto;}
+        ul li{
+            float: left;
+            margin: 0 10px;
+            text-align: center;
+            font-size: 18px;
+
+        }
+        .fanhui a{
+            display: block;
+            width: 100px;
+            height: 30px;
+            margin: 0 auto;
+            border: 1px solid #00a0e7;
+            background-color: #00a0e7;
+            color: #ffffff;
+            line-height: 30px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class=" bian">
+    <h3>扫码支付</h3>
+    <ul class="clearfix">
+        <li>商品：<span>gods</span></li>
+        <li>价格：<span>0.01</span>￥</li>
+    </ul>
+    <div class="img">
+        <img th:src="@{${QR_URL}}" alt="">
+        <!--<img class="addImg" onclick="clickImg(this);" th:attr ="data-img-src=@{/front/Content/images/addimg.png}"  />-->
+    </div>
+    <div class="fanhui">
+        <a href="">返回</a>
+    </div>
+</div>
+</body>
+</html>

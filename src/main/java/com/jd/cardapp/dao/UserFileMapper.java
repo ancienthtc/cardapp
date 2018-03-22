@@ -27,4 +27,6 @@ public interface UserFileMapper {
     int updateByPrimaryKeySelective(UserFile record);
 
     int updateByPrimaryKey(UserFile record);
+
+    List<UserFile> getUserFileList(@Param("key") String key[], @Param("begin") String begin, @Param("end") String end,@Param("status") Integer status);
 }

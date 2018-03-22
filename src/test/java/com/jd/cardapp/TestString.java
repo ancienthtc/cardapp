@@ -1,5 +1,6 @@
 package com.jd.cardapp;
 
+import com.jd.cardapp.util.StringUtil.GenerateString;
 import com.jd.cardapp.util.password.Secret;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,6 +40,12 @@ public class TestString {
     {
         String a = "abc.jpg";
         System.out.println( a.substring(a.lastIndexOf(".")) );
+    }
+
+    @Test
+    public void test3()
+    {
+        System.out.println( new GenerateString().getRandomString(32));
     }
 
 }

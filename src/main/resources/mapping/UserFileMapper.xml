@@ -273,4 +273,32 @@
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getUserFileList" resultType="com.jd.cardapp.model.UserFile">
+    select
+    <include refid="Base_Column_List" />
+    from t_file
+    <trim prefix="where" prefixOverrides="and|or">
+      <if test="key!=null">
+        (
+        <foreach collection="key" item="item" index="index"  separator="OR">
+          title LIKE CONCAT('%',#{item},'%')
+        </foreach>
+        )
+      </if>
+      <choose>
+        <when test=" (begin!=null and end==null) or (begin!='' and end=='') ">
+          AND createtime >= #{begin,jdbcType=VARCHAR}
+        </when>
+        <when test=" (end!=null and begin==null) or (end!='' and begin=='') ">
+          AND #{end,jdbcType=VARCHAR} >= createtime
+        </when>
+        <when test=" (begin!=null and end!=null) and (begin!='' and end!='') ">
+          AND createtime >= #{begin,jdbcType=VARCHAR} AND #{end,jdbcType=VARCHAR} >= createtime
+        </when>
+      </choose>
+      AND state = #{status,jdbcType=INTEGER}
+    </trim>
+  </select>
+
 </mapper>
