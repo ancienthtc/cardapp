@@ -3,6 +3,8 @@ package com.jd.cardapp.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.ValueFilter;
 import com.jd.cardapp.common.GlobalExceptionHandler;
+import com.jd.cardapp.common.UserCheck;
+import com.jd.cardapp.model.Recharge;
 import com.jd.cardapp.model.User;
 import com.jd.cardapp.service.TradeService;
 import org.slf4j.Logger;
@@ -72,6 +74,30 @@ public class TradeController {
         }
         m = tradeService.userBuyCard(user.getId(),cid);
         return JSON.toJSONString(m);
+    }
+
+    @UserCheck
+    @RequestMapping("/wxPay")
+    public String wxPay(HttpSession session,Double price)
+    {
+        User user = (User) session.getAttribute("user");
+        if(price < 0.01)  //正式 50
+        {
+            String url = "/user/recharge.php";
+            String msg = "充值金额不得少于50";
+            return "redirect:/info?message="+msg+"&&url="+url;
+        }
+        Recharge recharge = tradeService.searchRecharge(user.getId(),price);
+        Recharge r = tradeService.createOrder(recharge,user.getId(),price);
+        Integer total = price.intValue()*100;
+        System.out.println( r.getSequence() + " " + r.getAmount() + " " + total );
+        return "redirect:/WxPay/pay?body=名片宝充值&&orderid="+r.getSequence()+"&&price="+price;
+    }
+
+    @RequestMapping("/aliPay")
+    public String aliPay()
+    {
+        return "";
     }
 
 }

@@ -2,6 +2,8 @@ package com.jd.cardapp.dao;
 
 import com.jd.cardapp.model.Recharge;
 import com.jd.cardapp.model.RechargeExample;
+
+import java.sql.Timestamp;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -29,4 +31,8 @@ public interface RechargeMapper {
     int updateByPrimaryKey(Recharge record);
 
     List<Recharge> getRechargeList(@Param("begin") String begin, @Param("end") String end);
+
+    int orderUpdate(@Param("sequence") String sequence, @Param("paytime") Timestamp paytime, @Param("status") Integer status);
+
+    Recharge selectBySequence(@Param("sequence") String sequence);
 }

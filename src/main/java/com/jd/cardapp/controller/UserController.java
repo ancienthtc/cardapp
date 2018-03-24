@@ -62,6 +62,9 @@ public class UserController {
      */
     @RequestMapping("/home.php")
     public String toIndex() {
+        //加载首页图片
+
+
         return "front/index";
     }
 
@@ -85,6 +88,13 @@ public class UserController {
     public String toRecharge()
     {
         return "front/zhanghuchongzhi";
+    }
+
+    @RequestMapping("/choosePay.php")
+    public String toChoosePay(@RequestParam Double money,Map<String,Object> map)
+    {
+        map.put("money",money);
+        return "front/chongzhi";
     }
 
     /**个人中心--收益记录
@@ -380,11 +390,16 @@ public class UserController {
     //需求发布查询
     @RequestMapping("/requestList")
     @ResponseBody
-    public String userGetRequest(Integer type , Integer pageNo ,Integer pageSize)
+    public String userGetRequest(HttpSession session,Integer type , Integer pageNo ,Integer pageSize)
     {
         //暂时不验证登录
+//        User user = (User) session.getAttribute("user");
+//        if( user == null )
+//        {
+//            return null;
+//        }
 
-        return "";
+        return JSON.toJSONString( userService.usertGetRequestByType(type,pageNo,pageSize) );
     }
 
 

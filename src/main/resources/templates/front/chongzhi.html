@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>纺织名片宝-个人中心</title>
+    <link href="/front/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/front/Scripts/jquery2.2.2.min.js"></script>
+    <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+    <link rel="stylesheet" href="/front/Content/commons.css">
+    <link rel="stylesheet" href="/front/Content/chongzhi.css">
+    <link href="/front/Content/style.css" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript" src="/front/Scripts/index.js"></script>
+
+    <style type="text/css">
+        <!--
+        .STYLE2 {
+            color: #FF0000
+        }
+
+        -->
+    </style>
+</head>
+
+<body>
+<div th:include="front/header"></div>
+<div class="banner1"></div>
+<div class="xtxx">
+    <div class="xtxx_top">
+        <div class="xtxx_tit"><p><a th:href="@{/user/personal.php}">个人中心</a>&nbsp;>&nbsp;<a th:href="@{/user/personal.php}">我的档案</a></p></div>
+    </div>
+    <div class="wdda">
+        <div class="wdda_left">
+            <ul>
+                <li class="ma"><h3>我的档案</h3></li>
+                <li class="ma"><h3  class="on5">名片宝库</h3>
+                    <div class="fbnrbox">
+                        <ul class="wdda-left">
+                            <li><a th:href="@{/user/recharge.php}">账户充值</a></li>
+                            <li><a th:href="@{/user/income.php}" class="on">名片收益</a></li>
+                            <li><a th:href="@{/user/withdraw.php}" class="tixian">申请提现</a></li>
+                            <li><a th:href="@{/user/withdrawRecord.php}">提现记录</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="ma">
+                    <h3>我要发布</h3>
+                    <div class="fbnrbox">
+                        <ul>
+                            <li><a href="">名片管理</a></li>
+                            <li><a href="">买家需求</a></li>
+                            <li><a href="">卖家发布</a></li>
+                            <li><a href="">人才招聘</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="ma"><a th:href="@{/user/dataCenter.php}" style="color: #000000"><h3>我的数据</h3></a></li>
+            </ul>
+            <script type="text/javascript">
+                jQuery(".wdda_left").slide({
+                    type: "menu", //效果类型
+                    titCell: ".ma", // 鼠标触发对象
+                    targetCell: ".fbnrbox", // 效果对象，必须被titCell包含
+                    effect: "slideDown",//下拉效果
+                    delayTime: 300, // 效果时间
+                    triggerTime: 0, //鼠标延迟触发时间
+                    returnDefault: true  //返回默认状态
+                });
+            </script>
+        </div>
+        <div class="wdda_right">
+            <div class="danr">
+
+                <div class="anz">
+                    <div class="qrdd">确认订单信息</div>
+                    <div class="cz clearfix">
+                        <div class="czje">充值金额</div>
+                        <div class="chongzje">
+                            <span>￥</span>
+                            <input type="text" id="money" th:value="${money}"/>
+                            <span>元</span>
+                        </div>
+                    </div>
+                    <div class="qrdd">我的付款方式：</div>
+                    <div class="czfs">
+                        <ul class="clearfix ">
+                            <li class="thisclass" way="0">支付宝支付</li>
+                            <li way="1">微信支付</li>
+                        </ul>
+                    </div>
+                    <div class="qcz clearfix">
+                        <a id="pay" class="qcz">去付款</a>
+                        <!--<a class="fhxgczje a globalLoginBtn">返回修改充值金额</a>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="loginModal" style="display:none;">
+
+        <div class="modal-dialog modal-sm" style="width:200px;">
+            <div class="modal-content" style="border:none;">
+                <div class="col-right">
+                    <div class="modal-header">
+                        <button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">信息</h4>
+                    </div>
+                    <div class="modal-body">
+                        <section class="box-login v5-input-txt" id="box-login">
+
+                            <p class="good-tips marginB10">修改成功</p>
+                            <div class="login-box marginB10">
+                                <button id="login_btn login_close" type="button" class="btn btn-micv5 btn-block globalLogin" data-dismiss="modal">确定</button>
+                                <div id="login-form-tips" class="tips-error bg-danger" style="display: none;">错误提示</div>
+                            </div>
+
+
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(".wdda .wdda_left h3").each(function (index) {
+            $(this).click(function () {
+                $(".on5").removeClass("on5");
+                $(this).addClass("on5");
+                $(".wdda .wdda_right .danr:eq(" + index + ")").show().siblings().hide();
+            });
+        });
+    </script>
+</div>
+<div th:include="front/footer"></div>
+<script>
+    $(function(){
+        $('.czfs ul li').click(function(){
+            $(this).addClass("thisclass").siblings().removeClass("thisclass");
+        });
+    });
+</script>
+<script type="text/javascript" src="/front/Scripts/modal.js"></script>
+<script type="text/javascript" src="/front/Scripts/script.js"></script>
+</body>
+</html>
+<script>
+
+    var way = $(".thisclass").attr("way");
+    var money = $("#money").val();
+    if( way==0 )
+    {
+        //微信
+        window.location.href = "/trade/wxPay?price="+money;
+    }
+    else if(way ==1)
+    {
+        //支付宝
+        alert("支付宝暂未开放");
+    }
+
+</script>

@@ -37,5 +37,6 @@ public interface UserService {
 
     int UserFileDel(Integer id);
 
-    PageInfo<UserFile> usetGetRequestByType(Integer type,Integer pageNo , Integer pageSize);
+    PageInfo<UserFile> usertGetRequestByType(Integer type,Integer pageNo , Integer pageSize);
+
 }

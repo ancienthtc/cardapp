@@ -5,6 +5,7 @@ import com.jd.cardapp.model.Buy;
 import com.jd.cardapp.model.Recharge;
 import com.jd.cardapp.model.Withdraw;
 
+import java.sql.Timestamp;
 import java.util.Map;
 
 public interface TradeService {
@@ -19,4 +20,10 @@ public interface TradeService {
     Buy checkBuy(Integer uid,Integer cid);
 
     Map<String,Object> userBuyCard(Integer uid,Integer cid);
+
+    Recharge searchRecharge(Integer uid,Double price);
+
+    Recharge createOrder(Recharge recharge,Integer uid,Double price);
+
+    int RechargeUpdate(String sequence,Integer status,Timestamp paytime);
 }

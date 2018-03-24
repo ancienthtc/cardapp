@@ -9,12 +9,14 @@ import com.jd.cardapp.dao.*;
 import com.jd.cardapp.model.*;
 import com.jd.cardapp.service.ImageService;
 import com.jd.cardapp.service.TradeService;
+import com.jd.cardapp.util.StringUtil.GenerateString;
 import com.jd.cardapp.util.date.DateExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -206,6 +208,60 @@ public class TradeServiceImpl implements TradeService {
     }
 
 
+    @Override
+    public Recharge searchRecharge(Integer uid, Double price) {
+        //查找之前未付款的订单
+        RechargeExample rechargeExample = new RechargeExample();
+        RechargeExample.Criteria criteria = rechargeExample.createCriteria();
+        criteria.andAmountEqualTo(price);
+        criteria.andUserEqualTo(uid);
+        rechargeExample.setOrderByClause("paytime");
+        List<Recharge> rechargeList = rechargeMapper.selectByExample(rechargeExample);
+        if(rechargeList!=null)
+        {
+            return rechargeList.get(0);
+        }
+        return null;
+    }
 
+    @Override
+    @Transactional
+    public Recharge createOrder(Recharge recharge,Integer uid, Double price) {
+        if( recharge.getId()!=null && recharge.getAmount()==price && recharge.getUser()==uid)
+        {
+            return recharge;
+        }
+        try {
+            recharge = new Recharge();
+            recharge.setAmount(price);
+            String sequence = new GenerateString().getOrderid();
+            recharge.setSequence(sequence);
+            recharge.setState(0);
+            recharge.setUser(uid);
+            recharge.setAmount(price);
+            rechargeMapper.insertSelective(recharge);
+            System.out.println( recharge.getId() );
 
+        }catch (Exception e)
+        {
+            return null;
+        }
+
+        return recharge;
+    }
+
+    @Override
+    @Transactional
+    public int RechargeUpdate(String sequence, Integer status,Timestamp paytime) {
+//        RechargeExample rechargeExample = new RechargeExample();
+//        RechargeExample.Criteria criteria = rechargeExample.createCriteria();
+//        criteria.andSequenceEqualTo(sequence);
+        int i = rechargeMapper.orderUpdate(sequence,paytime,status);
+
+        Recharge recharge = rechargeMapper.selectBySequence(sequence);
+        User user = userMapper.selectByPrimaryKey(recharge.getId());
+        user.setBalance( user.getBalance() + recharge.getAmount() );
+        int j = userMapper.updateByPrimaryKey(user);
+        return i+j;
+    }
 }

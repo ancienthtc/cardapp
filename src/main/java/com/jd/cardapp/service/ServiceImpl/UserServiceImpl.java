@@ -241,15 +241,27 @@ public class UserServiceImpl implements UserService{
         return userFileMapper.deleteByPrimaryKey(id);
     }
 
+    /**
+     * @param type  0:买家  1:卖家  2:人才
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
     @Override
-    public PageInfo<UserFile> usetGetRequestByType(Integer type, Integer pageNo, Integer pageSize) {
+    public PageInfo<UserFile> usertGetRequestByType(Integer type, Integer pageNo, Integer pageSize) {
+        if( !(type==0 || type==1 || type==2) )
+        {
+            return null;
+        }
         pageNo = pageNo == null ? 1:pageNo;
         pageSize = pageSize == null ? 10:pageSize;
         PageHelper.startPage(pageNo, pageSize);
         UserFileExample userFileExample = new UserFileExample();
         UserFileExample.Criteria criteria = userFileExample.createCriteria();
-
-
-        return null;
+        criteria.andTypeEqualTo(type);
+        userFileExample.setOrderByClause("createtime DESC");
+        List<UserFile> userFiles = userFileMapper.selectByExample(userFileExample);
+        PageInfo<UserFile> result = new PageInfo<>(userFiles);
+        return result;
     }
 }

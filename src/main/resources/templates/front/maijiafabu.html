@@ -40,7 +40,7 @@
 
             <div class=" ct">
                 <div class="wyfb">
-                    <div class="mingpian-title" >买家发布</div>
+                    <div class="mingpian-title" >卖家发布</div>
                     <div class="wyfb_left">
 
                         <input type="text" name="" cols="" rows="" class="wby9"
@@ -48,21 +48,22 @@
                     </div>
                     <div class="wyfb_right" >
                         <div id="div1"></div>
-                        <button id="btn1">获取html</button>
-                        <button id="btn2">获取text</button>
-                        <div class="txxx"><input type="text" name="" cols="" rows="" class="wby10"
-                                                 value="填写备注信息"></div>
+                        <!--<button id="btn1">获取html</button>-->
+                        <!--<button id="btn2">获取text</button>-->
+                        <div class="txxx">
+                            <input type="text" id="detail" name="detail" cols="" rows="" class="wby10" value="填写备注信息"></div>
                         <div class="anz">
                             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
+                                    <!--<td>-->
+                                    <!--<div align="center">-->
+                                    <!--<input name="" type="submit" class="btn9" value="编辑"/>-->
+                                    <!--</div>-->
+                                    <!--</td>-->
                                     <td>
                                         <div align="center">
-                                            <input name="" type="submit" class="btn9" value="编辑"/>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div align="center">
-                                            <input name="" type="submit" class="btn9" value="保存"/>
+                                            <!--<input name="" id="sub" type="button" class="btn9" value="提交"/>-->
+                                            <button id="sub" class="btn9">提交</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -91,7 +92,7 @@
         });
         })
     </script>
-
+</div>
 </body>
 </html>
 <script>
@@ -139,13 +140,37 @@
     //创建
     editor.create();
 
-    document.getElementById('btn1').addEventListener('click', function () {
+    document.getElementById('sub').addEventListener('click', function () {
         // 读取 html
-        alert(editor.txt.html())
-    }, false)
+        //alert(editor.txt.html());
+        sub(editor.txt.html());
+    }, false);
+    //
+    // document.getElementById('btn2').addEventListener('click', function () {
+    //     // 读取 text
+    //     alert(editor.txt.text())
+    // }, false)
 
-    document.getElementById('btn2').addEventListener('click', function () {
-        // 读取 text
-        alert(editor.txt.text())
-    }, false)
+
+    function sub(html) {
+        //console.log(html);
+        var title = $("#title").val();
+        var detail = $("#detail").val();
+        //var html = editor.text.html();
+        var url = "/user/subFile";
+        var info = {title:title,detail:detail,html:html,type:1};
+        $.post(url,info,function (data) {
+            //alert(data);
+            if(data==true)
+            {
+                alert("提交成功");
+            }
+            else
+            {
+                alert("提交失败");
+            }
+        },"json");
+
+    }
+
 </script>

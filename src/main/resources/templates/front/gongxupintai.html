@@ -14,6 +14,8 @@
         <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
         <script type="text/javascript" src="/front/Scripts/index.js"></script>
 
+        <script src="/public/js/layer/layer.js"></script>
+
     </head>
     <body>
     <div th:include="front/header"></div>
@@ -29,12 +31,16 @@
                         <span>卖家发布</span>
                         <span>人才招聘</span>
                     </div>
+
+                    <!-- 买家需求 -->
                     <div class="gywm_nr">
                         <div class="gywmbox">
                             <div class="gxpt">
                                 <div class="qpts">
-                                    <h1><span>特别声明：</span>纺织名片宝刊登之所有信息不声明或保证其内容之正确性或可靠性；您 在此接受并承认个息任何信息所生之风险应自行承担，纺织名片宝有权但无此义务，改变或更正所登信息任何部分之错误 或损失<a href="" class="btn11">我有需求</a></h1>
-                                    <ul class="nav-nav">
+                                    <h1><span>特别声明：</span>纺织名片宝刊登之所有信息不声明或保证其内容之正确性或可靠性；您 在此接受并承认个息任何信息所生之风险应自行承担，纺织名片宝有权但无此义务，改变或更正所登信息任何部分之错误 或损失
+                                        <a href="/user/buyerRequest.php" class="btn11">我有需求</a>
+                                    </h1>
+                                    <ul class="nav-nav" id="tbody0">
                                         <li class="navdown1"><a class="tc" href="##" ><h3>纺织宝一句话标题</h3></a></li>
                                         <li><a class="tc" href="#"><h3>纺织宝一句话标题</h3></a></li>
                                         <li><a class="tc" href="#"><h3>纺织宝一句话标题</h3></a></li>
@@ -58,7 +64,7 @@
 
                                     </ul>
                                 </div>
-                                <div class="dede_pages">
+                                <div class="dede_pages u0">
                                     <ul class="pagelist">
                                         <li><a href="#">上一页</a></li>
                                         <li><a href="#">1</a></li>
@@ -67,14 +73,17 @@
                                         </li><li>
                                         </li></ul>
                                 </div>
+                                <input type="hidden" id="pageNo0" value="1">
+                                <input type="hidden" id="pages0" value="1">
                             </div>
                         </div>
 
+                        <!-- 卖家发布 -->
                         <div class="gywmbox" style="display: none;">
                             <div class="gxpt">
                                 <div class="qpts">
                                     <h1><span>特别声明：</span>纺织名片宝刊登之所有信息不声明或保证其内容之正确性或可靠性；您 在此接受并承认个息任何信息所生之风险应自行承担，纺织名片宝有权但无此义务，改变或更正所登信息任何部分之错误 或损失<a href="" class="btn11">我要发布</a></h1>
-                                    <ul class="nav-nav">
+                                    <ul class="nav-nav" id="tbody1">
                                         <li class="navdown1"><a class="tc" href="##" ><h3>纺织宝一句话标题</h3></a></li>
                                         <li><a class="tc" href="#"><h3>纺织宝一句话标题</h3></a></li>
                                         <li><a class="tc" href="#"><h3>纺织宝一句话标题</h3></a></li>
@@ -98,7 +107,7 @@
 
                                     </ul>
                                 </div>
-                                <div class="dede_pages">
+                                <div class="dede_pages u1">
                                     <ul class="pagelist">
                                         <li><a href="#">上一页</a></li>
                                         <li><a href="#">1</a></li>
@@ -107,6 +116,8 @@
                                         </li><li>
                                         </li></ul>
                                 </div>
+                                <input type="hidden" id="pageNo1" value="1">
+                                <input type="hidden" id="pages1" value="1">
                             </div>
                             <script>
                                 $(".zyfz .zyfz_tit a").each(function (index) {
@@ -118,11 +129,13 @@
                                 });
                             </script>
                         </div>
+
+                        <!-- 人才招聘 -->
                         <div class="gywmbox" style="display: none;">
                             <div class="gxpt">
                                 <div class="qpts">
                                     <h1><span>特别声明：</span>纺织名片宝刊登之所有信息不声明或保证其内容之正确性或可靠性；您 在此接受并承认个息任何信息所生之风险应自行承担，纺织名片宝有权但无此义务，改变或更正所登信息任何部分之错误 或损失<a href="" class="btn11">人才招聘</a></h1>
-                                    <ul class="nav-nav">
+                                    <ul class="nav-nav" id="tbody2">
                                         <li class="navdown1"><a class="tc" href="##" ><h3>纺织宝一句话标题</h3></a></li>
                                         <li><a class="tc" href="#"><h3>纺织宝一句话标题</h3></a></li>
                                         <li><a class="tc" href="#"><h3>纺织宝一句话标题</h3></a></li>
@@ -146,7 +159,7 @@
 
                                     </ul>
                                 </div>
-                                <div class="dede_pages">
+                                <div class="dede_pages u2">
                                     <ul class="pagelist">
                                         <li><a href="#">上一页</a></li>
                                         <li><a href="#">1</a></li>
@@ -155,6 +168,8 @@
                                         </li><li>
                                         </li></ul>
                                 </div>
+                                <input type="hidden" id="pageNo2" value="1">
+                                <input type="hidden" id="pages2" value="1">
                             </div>
                         </div>
                     </div>
@@ -263,6 +278,304 @@
         });
 
     });
+
+
+</script>
+
+<script>
+
+    //  /user/requestList   Integer type , Integer pageNo ,Integer pageSize
+    $(function () {
+        var url = "/user/requestList";
+        var info0 = {type:0,pageNo:1,pageSize:20};
+        var info1 = {type:1,pageNo:1,pageSize:20};
+        var info2 = {type:2,pageNo:1,pageSize:20};
+        send_post0(url,info0);
+        send_post1(url,info1);
+        send_post2(url,info2);
+    });
+
+    function send_post0(url, info) {
+        $.post(url,info,function (data) {
+            var tb = $("#tbody0");
+            tb.empty();
+            var html = '';
+            $.each(data.list,function(i,row){
+                html += '<li class="navdown1">';
+                html += '<a class="tc show" fid="'+row.id+'" href="javascript:;" >';
+                html += '<h3>';
+                html += row.title;
+                html += '</h3>';
+                html += '</a>';
+                html += '</li>';
+            });
+            tb.html(html);
+
+            $("#pageNo0").val(data.pageNum);
+            $("#pages0").val(data.pages);
+
+            var pg = $(".dede_pages.u0");
+            pg.empty();
+            var html2 = '<ul class="pagelist">';
+            html2 += '<li class="pre0"><a href="javascript:;">上一页</a></li>';
+
+            for( var i=1;i<=data.pages;i++ )
+            {
+                if(i==data.pageNum)
+                {
+                    html2 += '<li class="thisclass pg0" ><a href="javascript:;">'+i+'</a></li>';
+                }
+                else
+                {
+                    html2 += '<li class="pg0" pgs="'+i+'"><a href="javascript:;">'+i+'</a></li>';
+                }
+            }
+            html2 += '<li class="next0"><a href="javascript:;">下一页</a> <li>';
+            html2 += '</ul>';
+            pg.html(html2);
+            after0();
+        },"json");
+    }
+
+    function after0() {
+        $('.tc.show').on('click', function(){
+            var fid = $(this).attr("fid");
+            layer.open({
+                type: 2,
+                title: '名片',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area : ['700px' , '505px'],
+                content: '/user//getFileDetail.php?id='+fid
+            });
+        });
+
+
+        $(".next0").click(function () {
+            var pageNo = $("#pageNo0").val();
+            var pages = $("#pages0").val();
+            pageNo = parseInt(pageNo) + 1;
+            if(pageNo>pages)
+            {
+                return;
+            }
+            var url = "/user/requestList";
+            var info0 = {type:0,pageNo:pageNo,pageSize:20};
+            send_post0(url,info0);
+        });
+
+        $(".pre0").click(function () {
+            var pageNo = $("#pageNo0").val();
+            pageNo = parseInt(pageNo) - 1;
+            if(pageNo<=0)
+            {
+                return;
+            }
+            var url = "/user/requestList";
+            var info0 = {type:0,pageNo:pageNo,pageSize:20};
+            send_post0(url,info0);
+        });
+
+        $(".pg0").click(function () {
+            var pageNo = $(this).attr("pgs");
+            if(pageNo==null || typeof(pageNo) == "undefined")
+            {
+                return;
+            }
+            var url = "/user/requestList";
+            var info0 = {type:0,pageNo:pageNo,pageSize:20};
+            send_post0(url,info0);
+        });
+
+    };
+
+    function send_post1(url, info) {
+        $.post(url,info,function (data) {
+            var tb = $("#tbody1");
+            tb.empty();
+            var html = '';
+            $.each(data.list,function(i,row){
+                html += '<li class="navdown1">';
+                html += '<a class="tc show" fid="'+row.id+'" href="javascript:;" >';
+                html += '<h3>';
+                html += row.title;
+                html += '</h3>';
+                html += '</a>';
+                html += '</li>';
+            });
+            tb.html(html);
+
+            $("#pageNo1").val(data.pageNum);
+            $("#pages1").val(data.pages);
+
+            var pg = $(".dede_pages.u1");
+            pg.empty();
+            var html2 = '<ul class="pagelist">';
+            html2 += '<li class="pre1"><a href="javascript:;">上一页</a></li>';
+
+            for( var i=1;i<=data.pages;i++ )
+            {
+                if(i==data.pageNum)
+                {
+                    html2 += '<li class="thisclass pg1" ><a href="javascript:;">'+i+'</a></li>';
+                }
+                else
+                {
+                    html2 += '<li class="pg1" pgs="'+i+'"><a href="javascript:;">'+i+'</a></li>';
+                }
+            }
+            html2 += '<li class="next1"><a href="javascript:;">下一页</a> <li>';
+            html2 += '</ul>';
+            pg.html(html2);
+            after1();
+        },"json");
+    }
+
+    function after1() {
+        $('.tc.show').on('click', function(){
+            var fid = $(this).attr("fid");
+            layer.open({
+                type: 2,
+                title: '名片',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area : ['700px' , '505px'],
+                content: '/user/getFileDetail.php?id='+fid
+            });
+        });
+
+
+        $(".next1").click(function () {
+            var pageNo = $("#pageNo1").val();
+            var pages = $("#pages1").val();
+            pageNo = parseInt(pageNo) + 1;
+            if(pageNo>pages)
+            {
+                return;
+            }
+            var url = "/user/requestList";
+            var info1 = {type:1,pageNo:pageNo,pageSize:20};
+            send_post0(url,info1);
+        });
+
+        $(".pre1").click(function () {
+            var pageNo = $("#pageNo1").val();
+            pageNo = parseInt(pageNo) - 1;
+            if(pageNo<=0)
+            {
+                return;
+            }
+            var url = "/user/requestList";
+            var info1 = {type:1,pageNo:pageNo,pageSize:20};
+            send_post1(url,info1);
+        });
+
+        $(".pg1").click(function () {
+            var pageNo = $(this).attr("pgs");
+            if(pageNo==null || typeof(pageNo) == "undefined")
+            {
+                return;
+            }
+            var url = "/user/requestList";
+            var info1 = {type:1,pageNo:pageNo,pageSize:20};
+            send_post1(url,info1);
+        });
+
+    };
+
+    function send_post2(url, info) {
+        $.post(url,info,function (data) {
+            var tb = $("#tbody2");
+            tb.empty();
+            var html = '';
+            $.each(data.list,function(i,row){
+                html += '<li class="navdown1">';
+                html += '<a class="tc show" fid="'+row.id+'" href="javascript:;" >';
+                html += '<h3>';
+                html += row.title;
+                html += '</h3>';
+                html += '</a>';
+                html += '</li>';
+            });
+            tb.html(html);
+
+            $("#pageNo2").val(data.pageNum);
+            $("#pages2").val(data.pages);
+
+            var pg = $(".dede_pages.u2");
+            pg.empty();
+            var html2 = '<ul class="pagelist">';
+            html2 += '<li class="pre2"><a href="javascript:;">上一页</a></li>';
+
+            for( var i=1;i<=data.pages;i++ )
+            {
+                if(i==data.pageNum)
+                {
+                    html2 += '<li class="thisclass pg2" ><a href="javascript:;">'+i+'</a></li>';
+                }
+                else
+                {
+                    html2 += '<li class="pg2" pgs="'+i+'"><a href="javascript:;">'+i+'</a></li>';
+                }
+            }
+            html2 += '<li class="next2"><a href="javascript:;">下一页</a> <li>';
+            html2 += '</ul>';
+            pg.html(html2);
+            after2();
+        },"json");
+    }
+
+    function after2() {
+        $('.tc.show').on('click', function(){
+            var fid = $(this).attr("fid");
+            layer.open({
+                type: 2,
+                title: '名片',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area : ['700px' , '505px'],
+                content: '/user//getFileDetail.php?id='+fid
+            });
+        });
+
+
+        $(".next2").click(function () {
+            var pageNo = $("#pageNo2").val();
+            var pages = $("#pages2").val();
+            pageNo = parseInt(pageNo) + 1;
+            if(pageNo>pages)
+            {
+                return;
+            }
+            var url = "/user/requestList";
+            var info2 = {type:2,pageNo:pageNo,pageSize:20};
+            send_post2(url,info2);
+        });
+
+        $(".pre2").click(function () {
+            var pageNo = $("#pageNo2").val();
+            pageNo = parseInt(pageNo) - 1;
+            if(pageNo<=0)
+            {
+                return;
+            }
+            var url = "/user/requestList";
+            var info2 = {type:2,pageNo:pageNo,pageSize:20};
+            send_post2(url,info2);
+        });
+
+        $(".pg2").click(function () {
+            var pageNo = $(this).attr("pgs");
+            if(pageNo==null || typeof(pageNo) == "undefined")
+            {
+                return;
+            }
+            var url = "/user/requestList";
+            var info2 = {type:2,pageNo:pageNo,pageSize:20};
+            send_post2(url,info2);
+        });
+
+    };
 
 
 </script>

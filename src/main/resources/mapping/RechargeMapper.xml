@@ -109,7 +109,7 @@
     #{amount,jdbcType=DOUBLE}, #{paytime,jdbcType=TIMESTAMP}, #{user,jdbcType=INTEGER}
     )
   </insert>
-  <insert id="insertSelective" parameterType="com.jd.cardapp.model.Recharge" >
+  <insert id="insertSelective" parameterType="com.jd.cardapp.model.Recharge"  useGeneratedKeys="true" keyProperty="id">
     insert into t_recharge
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -226,4 +226,20 @@
     user = #{user,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <!-- 订单更新 -->
+  <update id="orderUpdate">
+    update t_recharge
+    set state = #{status,jdbcType=INTEGER},
+    paytime = #{paytime,jdbcType=TIMESTAMP}
+    where sequence = #{sequence,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectBySequence" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_recharge
+    where sequence = #{sequence,jdbcType=VARCHAR}
+  </select>
+
 </mapper>

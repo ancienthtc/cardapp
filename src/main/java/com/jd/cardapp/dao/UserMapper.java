@@ -33,4 +33,6 @@ public interface UserMapper {
     User userLogin(@Param("tel") String tel,@Param("pass") String pass);
 
     List<User> getUserList(@Param("key") String key[], @Param("begin") String begin, @Param("end") String end);
+
+
 }

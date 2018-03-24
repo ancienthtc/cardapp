@@ -1,10 +1,13 @@
 package com.jd.cardapp.controller;
 
+import com.jd.cardapp.service.TradeService;
 import com.jd.cardapp.service.WechatPayService;
 import com.jd.cardapp.util.api.wx.GlobalConfig;
 import com.jd.cardapp.util.api.wx.QRCodeUtil;
 import com.jd.cardapp.util.api.wx.ResponseHandler;
 import com.jd.cardapp.util.api.wx.TenpayUtil;
+import com.jd.cardapp.util.date.DateExample;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +30,8 @@ import java.util.TreeMap;
 @Scope("prototype")
 public class WxScanPayController {
 
+    @Autowired
+    private TradeService tradeService;
 
     /**
      * 微信扫码付款
@@ -68,7 +73,7 @@ public class WxScanPayController {
             if (code_url.equals(""))
                 System.err.println(wechatPayService.getResponseMessage());
 
-            System.out.println(code_url);//正式版去除
+            System.out.println("code_url:"+code_url);//正式版去除
 
             if(code_url==null)
             {
@@ -87,19 +92,13 @@ public class WxScanPayController {
         result.put("QR_URL","/WxPay/QRcode?code_url="+code_url);
         result.put("oid",orderid);
         result.put("price",String.format("%.2f", Double.parseDouble(price)/100 ) );
+        result.put("body",body);
 
         System.out.println("CodeURL:" + code_url );
         return "front/QR";
     }
 
 
-
-
-    @RequestMapping("/pay2")
-    public String pay2()
-    {
-        return "";
-    }
 
 
 
@@ -155,14 +154,15 @@ public class WxScanPayController {
             out.close();
 
             //跳转--通知
-//            if( orderid=="" || price=="" )
-//            {
-//                orderService.pay(null,null,1);
-//            }
-//            else
-//            {
-//                orderService.pay(orderid,price,0);
-//            }
+            if( orderid=="" || price=="" )
+            {
+                //orderService.pay(null,null,1);
+            }
+            else
+            {
+                //orderService.pay(orderid,price,0);
+                tradeService.RechargeUpdate(orderid,1, DateExample.getLocalTimeFormat());
+            }
 
         } else {
             System.out.println("通知签名验证失败");
