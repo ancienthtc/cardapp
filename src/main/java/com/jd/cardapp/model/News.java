@@ -3,6 +3,12 @@ package com.jd.cardapp.model;
 import java.util.Date;
 
 public class News {
+
+    public final static int international_type = 0; //国际资讯
+    public final static int internal_type = 1;  //国内资讯
+    public final static int business_type = 2;  //商务资讯
+    public final static int exhibition_type = 3;    //会展资讯
+
     private Integer id;
 
     private String title;

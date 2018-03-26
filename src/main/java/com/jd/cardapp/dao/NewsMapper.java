@@ -27,4 +27,6 @@ public interface NewsMapper {
     int updateByPrimaryKeySelective(News record);
 
     int updateByPrimaryKey(News record);
+
+    List<News> getNewsList(@Param("key") String key[], @Param("begin") String begin, @Param("end") String end);
 }

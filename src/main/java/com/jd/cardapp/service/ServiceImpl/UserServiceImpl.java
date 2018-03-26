@@ -259,6 +259,7 @@ public class UserServiceImpl implements UserService{
         UserFileExample userFileExample = new UserFileExample();
         UserFileExample.Criteria criteria = userFileExample.createCriteria();
         criteria.andTypeEqualTo(type);
+        criteria.andStateEqualTo(1);
         userFileExample.setOrderByClause("createtime DESC");
         List<UserFile> userFiles = userFileMapper.selectByExample(userFileExample);
         PageInfo<UserFile> result = new PageInfo<>(userFiles);

@@ -256,4 +256,22 @@
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getNewsList" resultType="com.jd.cardapp.model.News">
+    select
+    <include refid="Base_Column_List" />
+    from t_news
+    <trim prefix="where" prefixOverrides="and|or">
+      <if test="key!=null">
+        (
+        <foreach collection="key" item="item" index="index"  separator="OR">
+          title LIKE CONCAT('%',#{item},'%')
+          OR author LIKE CONCAT('%',#{item},'%')
+        </foreach>
+        )
+      </if>
+    </trim>
+    ORDER BY createtime DESC
+  </select>
+
 </mapper>

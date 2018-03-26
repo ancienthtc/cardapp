@@ -36,42 +36,42 @@ public class CardAppApplicationTests {
 	@Test
 	public void contextLoads() {
 
-		System.out.println( myCustomConfig.getUpload() );
+		//System.out.println( myCustomConfig.getUpload() );
 
 	}
 
 	@Test
 	public void test1()
 	{
-		JSON.toJSONString( loginService.admin_login("super","123") );
+		//JSON.toJSONString( loginService.admin_login("super","123") );
 	}
 
 	@Test
 	public void test2()
 	{
-		String s=JSON.toJSONString( userService.getUserList("A B",1,10,"2018-03-13","2018-03-14") );
-		System.out.println(s);
+//		String s=JSON.toJSONString( userService.getUserList("A B",1,10,"2018-03-13","2018-03-14") );
+//		System.out.println(s);
 	}
 
 	@Test
 	public void test3()
 	{
-		System.out.println( JSON.toJSON( tradeService.rechargeList(1,10,null,null) ) );
+		//System.out.println( JSON.toJSON( tradeService.rechargeList(1,10,null,null) ) );
 	}
 
 	@Test
 	public void test4()
 	{
-		SmsVariableDemo demo = new SmsVariableDemo();
-		boolean b=demo.SendMessage("13771973232","2467","5");
-		System.out.println(b);
+//		SmsVariableDemo demo = new SmsVariableDemo();
+//		boolean b=demo.SendMessage("13771973232","2467","5");
+//		System.out.println(b);
 	}
 
 	@Test
 	public void test5()
 	{
-		Card card = cardService.getDetail(1);
-		System.out.println( JSON.toJSON(card) );
+//		Card card = cardService.getDetail(1);
+//		System.out.println( JSON.toJSON(card) );
 	}
 
 	@Test

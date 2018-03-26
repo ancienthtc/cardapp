@@ -91,6 +91,7 @@ public class AdminController {
 
 
     //主题
+    //列表
     @AdminCheck
     @RequestMapping("/mIssue.php")
     public String toIssueManagerList()
@@ -98,6 +99,7 @@ public class AdminController {
         return "back/issue-list";
     }
 
+    //待审核
     @AdminCheck
     @RequestMapping("/mIssueWait.php")
     public String toIssueManagerWait()
@@ -105,11 +107,26 @@ public class AdminController {
         return "back/issue-wait-list";
     }
 
+    //已取消
     @AdminCheck
     @RequestMapping("/mIssueCancel.php")
     public String toIssueManagerCancel()
     {
         return "back/issue-cancel-list";
+    }
+
+    //推广
+    //轮播图管理
+    @RequestMapping("/carousel.php")
+    public String toCarousel()
+    {
+        return "back/Carousel-figure";
+    }
+
+    @RequestMapping("/news.php")
+    public String toNewsList()
+    {
+        return "back/news-list";
     }
 
 }
