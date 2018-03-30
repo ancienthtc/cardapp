@@ -3,10 +3,7 @@ package com.jd.cardapp;
 import com.alibaba.fastjson.JSON;
 import com.jd.cardapp.config.MyCustomConfig;
 import com.jd.cardapp.model.Card;
-import com.jd.cardapp.service.CardService;
-import com.jd.cardapp.service.LoginService;
-import com.jd.cardapp.service.TradeService;
-import com.jd.cardapp.service.UserService;
+import com.jd.cardapp.service.*;
 import com.jd.cardapp.util.api.message.SmsVariableDemo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,6 +29,9 @@ public class CardAppApplicationTests {
 
 	@Autowired
 	private CardService cardService;
+
+	@Autowired
+	private NewsService newsService;
 
 	@Test
 	public void contextLoads() {
@@ -77,7 +77,7 @@ public class CardAppApplicationTests {
 	@Test
 	public void test6()
 	{
-
+		System.out.println( JSON.toJSON(newsService.getNewsPages(null,null,null) ) );
 	}
 
 }

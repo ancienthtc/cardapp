@@ -41,7 +41,7 @@
     </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l"><a href="javascript:;" onclick="datadel()"
                                                                class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a
-            href="javascript:;" onclick="member_add('添加用户','member-add.html','','510')"
+            href="javascript:;" onclick="member_add('添加资讯','/news/newsAdd.php','','700')"
             class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a></span> <span
             class="r">共有数据：<strong>88</strong> 条</span></div>
     <div class="mt-20">
@@ -198,8 +198,8 @@
             var end = $("#dateman").val();
             var keys = $("#search").val();
 
-            var url = "/ / ";
-            var info = {begin:begin,end:end,keys:keys,status:1}
+            var url = "/news/newsList";
+            var info = {begin:begin,end:end,keys:keys};
             send_post(url,info);//初始化
         });
 
@@ -208,8 +208,8 @@
             var end = $("#logmax").val();
             var keys = $("#search").val();
 
-            var url = "/ / ";
-            var info = {begin:begin,end:end,keys:keys,status:1}
+            var url = "/news/newsList";
+            var info = {begin:begin,end:end,keys:keys};
             send_post(url,info);
         });
 
@@ -253,7 +253,7 @@
                 //html += '<i class="Hui-iconfont">&#xe6de;</i></a>';
                 html += '<a style="text-decoration:none" class="ml-5 detail" fid="'+row.id+'" href="javascript:;" title="详情">';
                 html += '<i class="Hui-iconfont">&#xe6df;</i></a>';
-                html += '<a style="text-decoration:none" class="ml-5 cancel" fid="'+row.id+'" href="javascript:;" title="取消">';
+                html += '<a style="text-decoration:none" class="ml-5 del" fid="'+row.id+'" href="javascript:;" title="删除">';
                 html += '<i class="Hui-iconfont">&#xe6e2;</i></a>';
                 html += '</td>';
                 html += '</tr>';
@@ -295,8 +295,8 @@
             }
             else
             {
-                var url = "/user/issueList";
-                var info = {begin:begin,end:end,keys:keys,pageNo:pageNo,pageSize:10,status:1}
+                var url = "/news/newsList";
+                var info = {begin:begin,end:end,keys:keys,pageNo:pageNo,pageSize:10};
                 send_post(url,info);
             }
         });
@@ -315,8 +315,8 @@
             }
             else
             {
-                var url = "/user/issueList";
-                var info = {begin:begin,end:end,keys:keys,pageNo:pageNo,pageSize:10,status:1}
+                var url = "/news/newsList";
+                var info = {begin:begin,end:end,keys:keys,pageNo:pageNo,pageSize:10};
                 send_post(url,info);
             }
 
@@ -336,70 +336,70 @@
             }
             else
             {
-                var url = "/user/issueList";
-                var info = {begin:begin,end:end,keys:keys,pageNo:No,pageSize:10,status:1}
+                var url = "/news/newsList";
+                var info = {begin:begin,end:end,keys:keys,pageNo:pageNo,pageSize:10};
                 send_post(url,info);
             }
         });
 
-        $(".cancel").click(function () {
-            var id = $(this).attr("fid");
-            //取消
-            $.ajax({
-                url: "/user/issue.do",
-                type: 'post',
-                dataType: 'json',
-                data: { id: id,status:2 },
-                success: function (data) {
-                    if(data==true)
-                    {
-                        var begin = $("#logmin").val();
-                        var end = $("#logmax").val();
-                        var keys = $("#search").val();
-
-                        var url = "/user/issueList";
-                        var info = {begin:begin,end:end,keys:keys,status:1}
-                        send_post(url,info);
-                    }
-                    else
-                    {
-                        alert("审核失败");
-                    }
-                },
-                error: function () {
-                    alert('服务器繁忙..请稍后重试！');
-                }
-            });
-        });
+        // $(".cancel").click(function () {
+        //     var id = $(this).attr("fid");
+        //     //取消
+        //     $.ajax({
+        //         url: "/user/issue.do",
+        //         type: 'post',
+        //         dataType: 'json',
+        //         data: { id: id,status:2 },
+        //         success: function (data) {
+        //             if(data==true)
+        //             {
+        //                 var begin = $("#logmin").val();
+        //                 var end = $("#logmax").val();
+        //                 var keys = $("#search").val();
+        //
+        //                 var url = "/news/newsList";
+        //                 var info = {begin:begin,end:end,keys:keys};
+        //                 send_post(url,info);
+        //             }
+        //             else
+        //             {
+        //                 alert("审核失败");
+        //             }
+        //         },
+        //         error: function () {
+        //             alert('服务器繁忙..请稍后重试！');
+        //         }
+        //     });
+        // });
 
         $(".detail").click(function () {
             var id = $(this).attr("fid");
             //window.href = "/user/getFileDetail.php?id="+id;
-            window.open("/user/getFileDetail.php?id="+id);
+            window.open("/news/newsDetail.php?id="+id);
         });
 
-        $(".sure").click(function () {
+        $(".del").click(function () {
             var id = $(this).attr("fid");
             //取消
             $.ajax({
-                url: "/user/issue.do",
+                url: "/news/del.do",
                 type: 'post',
                 dataType: 'json',
-                data: { id: id,status:1 },
+                data: { id: id },
                 success: function (data) {
                     if(data==true)
                     {
-                        var begin = $("#logmin").val();
-                        var end = $("#logmax").val();
+                        var begin = $("#datemin").val();
+                        var end = $("#dateman").val();
                         var keys = $("#search").val();
 
-                        var url = "/user/issueList";
-                        var info = {begin:begin,end:end,keys:keys,status:1}
-                        send_post(url,info);
+                        var url = "/news/newsList";
+                        var info = {begin:begin,end:end,keys:keys};
+                        send_post(url,info);//初始化
                     }
                     else
                     {
-                        alert("审核失败");
+                        alert("删除失败");
                     }
                 },
                 error: function () {

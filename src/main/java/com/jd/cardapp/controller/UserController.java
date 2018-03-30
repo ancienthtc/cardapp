@@ -7,11 +7,8 @@ import com.github.pagehelper.PageInfo;
 import com.jd.cardapp.common.GlobalExceptionHandler;
 import com.jd.cardapp.common.UserCheck;
 import com.jd.cardapp.config.MyCustomConfig;
-import com.jd.cardapp.model.Admin;
+import com.jd.cardapp.model.*;
 import com.jd.cardapp.model.Advance.DataTablePageUtil;
-import com.jd.cardapp.model.Buy;
-import com.jd.cardapp.model.User;
-import com.jd.cardapp.model.UserFile;
 import com.jd.cardapp.service.CardService;
 import com.jd.cardapp.service.UserService;
 import com.jd.cardapp.util.date.DateExample;
@@ -401,6 +398,29 @@ public class UserController {
 
         return JSON.toJSONString( userService.usertGetRequestByType(type,pageNo,pageSize) );
     }
+
+
+    //留言
+    //留言提交
+    @RequestMapping("/messageAdd.do")
+    @ResponseBody
+    public String messageSubmit(HttpSession session,Message message)
+    {
+//        User user = (User) session.getAttribute("user");
+//        if( user == null )
+//        {
+//            return null;
+//        }
+        if( userService.MessageAdd(message) > 0 )
+        {
+            return "true";
+        }
+        return "false";
+    }
+
+
+    //留言查询
+
 
 
     /*管理员*/

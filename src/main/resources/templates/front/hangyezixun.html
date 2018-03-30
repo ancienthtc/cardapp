@@ -14,6 +14,7 @@
     <body>
         <div th:include="front/header"></div>
         <div class="banner1"></div>
+        <input type="hidden" th:value="${type}" id="choose">
         <div class="xtxx">
             <div class="xtxx_top">
                 <div class="xtxx_tit"><p><a href="">新闻中心</a>&nbsp;>&nbsp;<a href="">行业资讯</a></p></div>
@@ -70,16 +71,19 @@
 
                             </ul>
                         </div>
-                        <div class="dede_pages">
-                            <ul class="pagelist">
-                                <li><a href="#">首页</a></li>
-                                <li><a href="#">1</a></li>
-                                <li class="thisclass"><a href="#">2</a></li>
-                                <li><a href="#">下一页</a>
-                                <li>
-                            </ul>
-                        </div>
+
+
                     </div>
+                    <div class="dede_pages">
+                        <ul class="pagelist">
+                            <li><a href="#">首页</a></li>
+                            <li><a href="#">1</a></li>
+                            <li class="thisclass"><a href="#">2</a></li>
+                            <li><a href="#">下一页</a>
+                            <li>
+                        </ul>
+                    </div>
+
                     <div class="hyzx_tp">
                         <ul>
                             <li><a href="http://www.cstexhong.com"><img src="../Content/images/20.png"/></a></li>
@@ -87,7 +91,8 @@
                            
                         </ul>
                     </div>
-
+                    <input type="hidden" id="pageNo" value="1">
+                    <input type="hidden" id="pages" value="1">
 
                 </div>
             </div>
@@ -97,4 +102,154 @@
 </html>
 <script type="text/javascript">
 		$(".nav li h3 a").eq(3).css("color","#000");
+</script>
+
+<script>
+
+    $(function () {
+        //判断页面
+        var pagetype = $("choose").val();
+        var pageNo = $("#pageNo").val();
+        var url = "/news//newsInfo";
+        if(pagetype==-1)
+        {
+            var info = {pageNo:pageNo,pageSize:20,type:null}
+        }
+        else
+        {
+            var info = {type:pagetype,pageSize:20,type:pagetype}
+        }
+        send_post(url,info);
+    });
+
+
+    function send_post(url, info) {
+        $.post(url,info,function (data) {
+            var tb = $(".hyzx_nr");
+            tb.empty();
+            var html = '';
+            var v = 0;
+            html += '<div class="nrbox">';
+            html += '<ul>';
+            $.each(data.list,function(i,row){
+
+                if( v<  Math.ceil((i+1)/5) )
+                {
+                    v = Math.ceil(i/5);
+                    html += '</ul>';
+                    html += '</div>';
+                    html += '<div class="nrbox">';
+                    html += '<ul>';
+                }
+
+                if( row.createtime!="" && row.createtime!=undefined )
+                {
+                    /*将时间戳转化为日期*/
+                    var time = new Date(row.createtime);
+                    row.createtime = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
+                }else{
+                    row.createtime="";
+                }
+
+                html += '<li><span class="fr">'+row.createtime+'</span><a href="/news/detail.php/'+row.id+'">'+row.title+'</a></li>';
+                html += '';
+
+            });
+            html += '</ul>';
+            html += '</div>';
+            tb.html(html);
+
+            $("#pageNo").val(data.pageNum);
+            $("#pages").val(data.pages);
+
+            var pg = $(".dede_pages");
+            pg.empty();
+            var html2 = '<ul class="pagelist">';
+            html2 += '<li class="pre"><a href="javascript:;">上一页</a></li>';
+
+            for( var i=1;i<=data.pages;i++ )
+            {
+                if(i==data.pageNum)
+                {
+                    html2 += '<li class="thisclass pg" ><a href="javascript:;">'+i+'</a></li>';
+                }
+                else
+                {
+                    html2 += '<li class="pg" pgs="'+i+'"><a href="javascript:;">'+i+'</a></li>';
+                }
+            }
+            html2 += '<li class="next"><a href="javascript:;">下一页</a> <li>';
+            html2 += '</ul>';
+            pg.html(html2);
+            after();
+        },"json");
+    }
+
+    function after() {
+
+        $(".next").click(function () {
+            var pagetype = $("choose").val();
+            var pageNo = $("#pageNo").val();
+            var pages = $("#pages").val();
+            pageNo = parseInt(pageNo) + 1;
+            if(pageNo>pages)
+            {
+                return;
+            }
+            var url = "/news/newsInfo";
+            if(pagetype==-1)
+            {
+                var info = {pageNo:pageNo,pageSize:20,type:null}
+            }
+            else
+            {
+                var info = {type:pagetype,pageSize:20,type:pagetype}
+            }
+            send_post(url,info);
+        });
+
+        $(".pre").click(function () {
+            var pagetype = $("choose").val();
+            var pageNo = $("#pageNo").val();
+            pageNo = parseInt(pageNo) - 1;
+            if(pageNo<=0)
+            {
+                return;
+            }
+            var url = "/news/newsInfo";
+            if(pagetype==-1)
+            {
+                var info = {pageNo:pageNo,pageSize:20,type:null}
+            }
+            else
+            {
+                var info = {type:pagetype,pageSize:20,type:pagetype}
+            }
+            send_post(url,info);
+        });
+
+        $(".pg").click(function () {
+            var pagetype = $("choose").val();
+            var pageNo = $(this).attr("pgs");
+            if(pageNo==null || typeof(pageNo) == "undefined")
+            {
+                return;
+            }
+
+            var url = "/news/newsInfo";
+            if(pagetype==-1)
+            {
+                var info = {pageNo:pageNo,pageSize:20,type:null}
+            }
+            else
+            {
+                var info = {type:pagetype,pageSize:20,type:pagetype}
+            }
+            send_post(url,info);
+        });
+
+
+    };
+
+
 </script>

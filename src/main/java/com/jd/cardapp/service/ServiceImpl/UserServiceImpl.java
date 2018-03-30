@@ -3,10 +3,7 @@ package com.jd.cardapp.service.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jd.cardapp.config.MyCustomConfig;
-import com.jd.cardapp.dao.BuyMapper;
-import com.jd.cardapp.dao.IncomeMapper;
-import com.jd.cardapp.dao.UserFileMapper;
-import com.jd.cardapp.dao.UserMapper;
+import com.jd.cardapp.dao.*;
 import com.jd.cardapp.model.*;
 import com.jd.cardapp.service.UserService;
 import com.jd.cardapp.util.date.DateExample;
@@ -34,6 +31,9 @@ public class UserServiceImpl implements UserService{
 
     @Resource
     private UserFileMapper userFileMapper;
+
+    @Resource
+    private MessageMapper messageMapper;
 
     @Autowired
     private MyCustomConfig config;
@@ -160,7 +160,7 @@ public class UserServiceImpl implements UserService{
         String folderPath = config.getUpload()+config.getFilefolder()+uid+"//";
         String filename = tag + DateExample.getTimestamp()+".html";
 
-        System.out.println( html );
+        //System.out.println( html );
         try {
             File saveDir = new File(folderPath);
             if (!saveDir.exists() && !saveDir.isDirectory()) {
@@ -265,4 +265,11 @@ public class UserServiceImpl implements UserService{
         PageInfo<UserFile> result = new PageInfo<>(userFiles);
         return result;
     }
+
+    @Override
+    public int MessageAdd(Message message) {
+        message.setCreatetime(DateExample.getNowTimeByDate());
+        return messageMapper.insertSelective(message);
+    }
+
 }

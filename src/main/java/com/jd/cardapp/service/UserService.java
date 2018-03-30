@@ -1,10 +1,7 @@
 package com.jd.cardapp.service;
 
 import com.github.pagehelper.PageInfo;
-import com.jd.cardapp.model.Buy;
-import com.jd.cardapp.model.Income;
-import com.jd.cardapp.model.User;
-import com.jd.cardapp.model.UserFile;
+import com.jd.cardapp.model.*;
 
 import java.util.List;
 
@@ -39,4 +36,5 @@ public interface UserService {
 
     PageInfo<UserFile> usertGetRequestByType(Integer type,Integer pageNo , Integer pageSize);
 
+    int MessageAdd(Message message);
 }

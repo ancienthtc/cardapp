@@ -17,6 +17,8 @@ public class MyCustomConfig {
 
     private String filefolder;
 
+    private String newsfolder;
+
     public String getUpload() {
         return upload;
     }
@@ -47,5 +49,13 @@ public class MyCustomConfig {
 
     public void setFilefolder(String filefolder) {
         this.filefolder = filefolder;
+    }
+
+    public String getNewsfolder() {
+        return newsfolder;
+    }
+
+    public void setNewsfolder(String newsfolder) {
+        this.newsfolder = newsfolder;
     }
 }
