@@ -304,4 +304,29 @@
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="messageList" resultType="com.jd.cardapp.model.Message">
+    select
+    <include refid="Base_Column_List" />
+    from t_message
+    <trim prefix="where" prefixOverrides="and|or">
+      <if test="key!=null">
+        (
+        <foreach collection="key" item="item" index="index"  separator="OR">
+          `name` LIKE CONCAT('%',#{item},'%')
+          OR tel LIKE CONCAT('%',#{item},'%')
+          OR company LIKE CONCAT('%',#{item},'%')
+        </foreach>
+        )
+      </if>
+      <if test="type==0">
+        AND replytime is null AND reply is NULL
+      </if>
+      <if test="type==1">
+        AND replytime is not null AND reply is not NULL
+      </if>
+    </trim>
+    ORDER BY createtime DESC
+  </select>
+
 </mapper>

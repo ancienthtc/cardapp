@@ -27,4 +27,6 @@ public interface MessageMapper {
     int updateByPrimaryKeySelective(Message record);
 
     int updateByPrimaryKey(Message record);
+
+    List<Message> messageList(@Param("key") String key[], @Param("begin") String begin, @Param("end") String end ,@Param("type") Integer type );
 }

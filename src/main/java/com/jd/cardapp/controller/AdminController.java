@@ -1,14 +1,19 @@
 package com.jd.cardapp.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.jd.cardapp.common.AdminCheck;
 import com.jd.cardapp.model.Card;
+import com.jd.cardapp.model.Message;
 import com.jd.cardapp.service.CardService;
+import com.jd.cardapp.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @Controller
@@ -17,6 +22,9 @@ public class AdminController {
 
     @Autowired
     private CardService cardService;
+
+    @Autowired
+    private MessageService messageService;
 
     //首页
     @AdminCheck
@@ -114,6 +122,103 @@ public class AdminController {
     {
         return "back/issue-cancel-list";
     }
+
+
+    //留言
+    //未回复页面
+    @AdminCheck
+    @RequestMapping("/messageNo.php")
+    public String toMessageNo()
+    {
+        return "back/message-no-list";
+    }
+
+    //未回复列表数据
+    @RequestMapping("/messageNoList")
+    @ResponseBody
+    public String MessageNoList(HttpSession session, String keys, Integer pageNo, Integer pageSize, String begin, String end)
+    {
+        if( session.getAttribute("admin") == null )
+        {
+            return null;
+        }
+        return JSON.toJSONString( messageService.allMessageList(keys,pageNo,pageSize,begin,end,0) );
+    }
+
+    //已回复页面
+    @AdminCheck
+    @RequestMapping("/messageYes.php")
+    public String toMessageYes()
+    {
+        return "back/message-yes-list";
+    }
+
+    //已回复列表数据
+    @RequestMapping("/messageYesList")
+    @ResponseBody
+    public String MessageYesList(HttpSession session, String keys, Integer pageNo, Integer pageSize, String begin, String end)
+    {
+        if( session.getAttribute("admin") == null )
+        {
+            return null;
+        }
+        return JSON.toJSONString( messageService.allMessageList(keys,pageNo,pageSize,begin,end,1) );
+    }
+
+    //进入留言查看
+    @AdminCheck
+    @RequestMapping("/messageDetail.php")
+    public String toMessageDetail(Integer mid,Map<String,Object> m)
+    {
+        Message message = messageService.getMessage(mid);
+        m.put("message",message);
+        return "back/message-detail";
+    }
+
+    //进入留言回复
+    @AdminCheck
+    @RequestMapping("/reply.php")
+    public String toReplyPage(Integer mid,Map<String,Object> m)
+    {
+        Message message = messageService.getMessage(mid);
+        //System.out.println(JSON.toJSONString(m));
+        m.put("message",message);
+        return "back/message-reply";
+    }
+
+    //留言删除
+    @RequestMapping("/del.do")
+    @ResponseBody
+    public String messageDel(HttpSession session,Integer id)
+    {
+        if( session.getAttribute("admin") == null )
+        {
+            return "false";
+        }
+        if( messageService.messageDel(id) >0 )
+        {
+            return "true";
+        }
+        return "false";
+    }
+
+    //回复提交
+    @RequestMapping("/reply.do")
+    @ResponseBody
+    public String getReply(Message message)
+    {
+        if(messageService.messageReply(message) > 0 )
+        {
+            return "回复成功";
+        }
+        //return "redirect:/admin/messageNo.php";
+        return "回复失败";
+    }
+
+
+    //报告
+
+
 
     //推广
     //轮播图管理

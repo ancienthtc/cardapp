@@ -10,6 +10,7 @@ import com.jd.cardapp.config.MyCustomConfig;
 import com.jd.cardapp.model.*;
 import com.jd.cardapp.model.Advance.DataTablePageUtil;
 import com.jd.cardapp.service.CardService;
+import com.jd.cardapp.service.MessageService;
 import com.jd.cardapp.service.UserService;
 import com.jd.cardapp.util.date.DateExample;
 import org.slf4j.Logger;
@@ -49,6 +50,9 @@ public class UserController {
 
     @Autowired
     private CardService cardService;
+
+    @Autowired
+    private MessageService messageService;
 
     @Autowired
     private MyCustomConfig config;
@@ -226,6 +230,21 @@ public class UserController {
 
         return "front/buy_detail";
     }
+
+    /**
+     * 个人中心-我的数据-我的留言
+     * @return
+     */
+    @RequestMapping("/myMessage.php")
+    public String toMyDataMessage()
+    {
+
+
+
+        return "front/message-search";
+    }
+
+
 
     /**
      * 供需平台
@@ -411,7 +430,7 @@ public class UserController {
 //        {
 //            return null;
 //        }
-        if( userService.MessageAdd(message) > 0 )
+        if( messageService.MessageAdd(message) > 0 )
         {
             return "true";
         }
@@ -420,7 +439,12 @@ public class UserController {
 
 
     //留言查询
-
+    @RequestMapping("/messageSearch")
+    @ResponseBody
+    public String userMessageList(Integer pageNo , Integer pageSize,String name,String tel)
+    {
+        return JSON.toJSONString( messageService.userMessageList(pageNo,pageSize,name,tel) );
+    }
 
 
     /*管理员*/

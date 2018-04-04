@@ -93,7 +93,15 @@
                 html += '<li>';
                 html += '<em bid="'+row.id+'" class="details" >';
 
-                html += '名片购买';
+                if(row.type == 0)
+                {
+                    html += '名片购买';
+                }
+                else
+                {
+                    html += '报告购买';
+                }
+
 
                 html += '</em>';
                 html += '<i>';

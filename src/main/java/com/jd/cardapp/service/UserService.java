@@ -36,5 +36,5 @@ public interface UserService {
 
     PageInfo<UserFile> usertGetRequestByType(Integer type,Integer pageNo , Integer pageSize);
 
-    int MessageAdd(Message message);
+
 }

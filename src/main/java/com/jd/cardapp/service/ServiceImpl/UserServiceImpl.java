@@ -32,8 +32,6 @@ public class UserServiceImpl implements UserService{
     @Resource
     private UserFileMapper userFileMapper;
 
-    @Resource
-    private MessageMapper messageMapper;
 
     @Autowired
     private MyCustomConfig config;
@@ -266,10 +264,6 @@ public class UserServiceImpl implements UserService{
         return result;
     }
 
-    @Override
-    public int MessageAdd(Message message) {
-        message.setCreatetime(DateExample.getNowTimeByDate());
-        return messageMapper.insertSelective(message);
-    }
+
 
 }

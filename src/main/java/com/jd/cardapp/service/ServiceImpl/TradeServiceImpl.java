@@ -81,11 +81,15 @@ public class TradeServiceImpl implements TradeService {
     }
 
     @Override
-    public Buy checkBuy(Integer uid, Integer cid) {
+    public Buy checkBuy(Integer uid, Integer cid) { //todo: 待修改
         BuyExample buyExample = new BuyExample();
         BuyExample.Criteria criteria = buyExample.createCriteria();
         criteria.andCardEqualTo(cid);
         criteria.andUserEqualTo(uid);
+
+        //
+        criteria.andTypeEqualTo(0); //新!
+
         List<Buy> buys = buyMapper.selectByExample(buyExample);
         if(buys.size()>0)
         {
@@ -153,8 +157,9 @@ public class TradeServiceImpl implements TradeService {
                         userMapper.updateByPrimaryKeySelective(addAccount);
                     }
 
-
+                    //todo:待修改
                     buy.setDetail(JSON.toJSONString(card,filter));
+                    buy.setType(0); //新!
                     buy.setCard(cid);
                     buy.setUser(uid);
                     buy.setPay(card.getBuy());

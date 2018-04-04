@@ -7,6 +7,8 @@ public class Buy {
 
     private Integer state;
 
+    private Integer type;
+
     private Double pay;
 
     private String detail;
@@ -39,6 +41,14 @@ public class Buy {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public Double getPay() {

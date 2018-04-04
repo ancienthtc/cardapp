@@ -94,7 +94,7 @@ public class CardController {
         }
         //收费
         //判断是否有权限
-        Buy buy = tradeService.checkBuy(user.getId(),cid);
+        Buy buy = tradeService.checkBuy(user.getId(),cid);  //todo: 待修改
         if(buy!=null)
         {
             m.put("address1","/image/buy/"+user.getId()+"?filename="+buy.getPic1());
