@@ -26,4 +26,9 @@ public interface TradeService {
     Recharge createOrder(Recharge recharge,Integer uid,Double price);
 
     int RechargeUpdate(String sequence,Integer status,Timestamp paytime);
+
+    //检查用户是否购买
+    Buy checkReport(Integer uid,Integer gid);
+
+    Map<String,Object> userBuyReport(Integer uid,Integer gid);
 }

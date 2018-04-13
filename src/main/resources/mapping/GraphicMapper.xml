@@ -3,6 +3,7 @@
 <mapper namespace="com.jd.cardapp.dao.GraphicMapper" >
   <resultMap id="BaseResultMap" type="com.jd.cardapp.model.Graphic" >
     <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="filename" property="filename" jdbcType="VARCHAR" />
     <result column="folder" property="folder" jdbcType="VARCHAR" />
     <result column="type" property="type" jdbcType="INTEGER" />
@@ -73,8 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, filename, folder, type, pay, contributor, download, introduce, score, detail, 
-    createtime
+    id, title, filename, folder, type, pay, contributor, download, introduce, score,
+    detail, createtime
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jd.cardapp.model.GraphicExample" >
     select
@@ -92,7 +93,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_graphic
     where id = #{id,jdbcType=INTEGER}
@@ -108,20 +109,23 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.jd.cardapp.model.Graphic" >
-    insert into t_graphic (id, filename, folder, 
-      type, pay, contributor, 
-      download, introduce, score, 
-      detail, createtime)
-    values (#{id,jdbcType=INTEGER}, #{filename,jdbcType=VARCHAR}, #{folder,jdbcType=VARCHAR}, 
-      #{type,jdbcType=INTEGER}, #{pay,jdbcType=DOUBLE}, #{contributor,jdbcType=VARCHAR}, 
-      #{download,jdbcType=INTEGER}, #{introduce,jdbcType=VARCHAR}, #{score,jdbcType=INTEGER}, 
-      #{detail,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP})
+    insert into t_graphic (id, title, filename,
+    folder, type, pay, contributor,
+    download, introduce, score,
+    detail, createtime)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{filename,jdbcType=VARCHAR},
+    #{folder,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{pay,jdbcType=DOUBLE}, #{contributor,jdbcType=VARCHAR},
+    #{download,jdbcType=INTEGER}, #{introduce,jdbcType=VARCHAR}, #{score,jdbcType=INTEGER},
+    #{detail,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.jd.cardapp.model.Graphic" >
     insert into t_graphic
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
+      </if>
+      <if test="title != null" >
+        title,
       </if>
       <if test="filename != null" >
         filename,
@@ -157,6 +161,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
       </if>
       <if test="filename != null" >
         #{filename,jdbcType=VARCHAR},
@@ -202,6 +209,9 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
       <if test="record.filename != null" >
         filename = #{record.filename,jdbcType=VARCHAR},
       </if>
@@ -240,16 +250,17 @@
   <update id="updateByExample" parameterType="map" >
     update t_graphic
     set id = #{record.id,jdbcType=INTEGER},
-      filename = #{record.filename,jdbcType=VARCHAR},
-      folder = #{record.folder,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=INTEGER},
-      pay = #{record.pay,jdbcType=DOUBLE},
-      contributor = #{record.contributor,jdbcType=VARCHAR},
-      download = #{record.download,jdbcType=INTEGER},
-      introduce = #{record.introduce,jdbcType=VARCHAR},
-      score = #{record.score,jdbcType=INTEGER},
-      detail = #{record.detail,jdbcType=VARCHAR},
-      createtime = #{record.createtime,jdbcType=TIMESTAMP}
+    title = #{record.title,jdbcType=VARCHAR},
+    filename = #{record.filename,jdbcType=VARCHAR},
+    folder = #{record.folder,jdbcType=VARCHAR},
+    type = #{record.type,jdbcType=INTEGER},
+    pay = #{record.pay,jdbcType=DOUBLE},
+    contributor = #{record.contributor,jdbcType=VARCHAR},
+    download = #{record.download,jdbcType=INTEGER},
+    introduce = #{record.introduce,jdbcType=VARCHAR},
+    score = #{record.score,jdbcType=INTEGER},
+    detail = #{record.detail,jdbcType=VARCHAR},
+    createtime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -257,6 +268,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.jd.cardapp.model.Graphic" >
     update t_graphic
     <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
       <if test="filename != null" >
         filename = #{filename,jdbcType=VARCHAR},
       </if>
@@ -292,7 +306,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.jd.cardapp.model.Graphic" >
     update t_graphic
-    set filename = #{filename,jdbcType=VARCHAR},
+    set title = #{title,jdbcType=VARCHAR},
+      filename = #{filename,jdbcType=VARCHAR},
       folder = #{folder,jdbcType=VARCHAR},
       type = #{type,jdbcType=INTEGER},
       pay = #{pay,jdbcType=DOUBLE},
@@ -304,4 +319,33 @@
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getGraphicList" resultType="com.jd.cardapp.model.Graphic">
+    select
+    <include refid="Base_Column_List" />
+    from t_graphic
+    <trim prefix="where" prefixOverrides="and|or">
+      <if test="key!=null">
+        (
+        <foreach collection="key" item="item" index="index"  separator="OR">
+          title LIKE CONCAT('%',#{item},'%')
+          OR contributor LIKE CONCAT('%',#{item},'%')
+        </foreach>
+        )
+      </if>
+      <choose>
+        <when test=" (begin!=null and end==null) or (begin!='' and end=='') ">
+          AND createtime >= #{begin,jdbcType=VARCHAR}
+        </when>
+        <when test=" (end!=null and begin==null) or (end!='' and begin=='') ">
+          AND #{end,jdbcType=VARCHAR} >= createtime
+        </when>
+        <when test=" (begin!=null and end!=null) and (begin!='' and end!='') ">
+          AND createtime >= #{begin,jdbcType=VARCHAR} AND #{end,jdbcType=VARCHAR} >= createtime
+        </when>
+      </choose>
+    </trim>
+    ORDER BY createtime DESC
+  </select>
+
 </mapper>

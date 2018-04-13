@@ -755,6 +755,66 @@ public class BuyExample {
             return (Criteria) this;
         }
 
+        public Criteria andGraphicIsNull() {
+            addCriterion("graphic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicIsNotNull() {
+            addCriterion("graphic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicEqualTo(Integer value) {
+            addCriterion("graphic =", value, "graphic");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicNotEqualTo(Integer value) {
+            addCriterion("graphic <>", value, "graphic");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicGreaterThan(Integer value) {
+            addCriterion("graphic >", value, "graphic");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicGreaterThanOrEqualTo(Integer value) {
+            addCriterion("graphic >=", value, "graphic");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicLessThan(Integer value) {
+            addCriterion("graphic <", value, "graphic");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicLessThanOrEqualTo(Integer value) {
+            addCriterion("graphic <=", value, "graphic");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicIn(List<Integer> values) {
+            addCriterion("graphic in", values, "graphic");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicNotIn(List<Integer> values) {
+            addCriterion("graphic not in", values, "graphic");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicBetween(Integer value1, Integer value2) {
+            addCriterion("graphic between", value1, value2, "graphic");
+            return (Criteria) this;
+        }
+
+        public Criteria andGraphicNotBetween(Integer value1, Integer value2) {
+            addCriterion("graphic not between", value1, value2, "graphic");
+            return (Criteria) this;
+        }
+
         public Criteria andUserIsNull() {
             addCriterion("user is null");
             return (Criteria) this;

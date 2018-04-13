@@ -11,6 +11,8 @@ public class Picture {
 
     private Integer type;
 
+    private String title;
+
     private String href;
 
     private String detail;
@@ -47,6 +49,14 @@ public class Picture {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
     }
 
     public String getHref() {

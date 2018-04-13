@@ -42,6 +42,9 @@ public class TradeServiceImpl implements TradeService {
     @Resource
     private IncomeMapper incomeMapper;
 
+    @Resource
+    private GraphicMapper graphicMapper;
+
     @Autowired
     private ImageService imageService;
 
@@ -268,5 +271,103 @@ public class TradeServiceImpl implements TradeService {
         user.setBalance( user.getBalance() + recharge.getAmount() );
         int j = userMapper.updateByPrimaryKey(user);
         return i+j;
+    }
+
+    @Override
+    public Buy checkReport(Integer uid, Integer gid) {
+        BuyExample buyExample = new BuyExample();
+        BuyExample.Criteria criteria = buyExample.createCriteria();
+        criteria.andGraphicEqualTo(gid);
+        criteria.andUserEqualTo(uid);
+
+        //
+        criteria.andTypeEqualTo(1); //新!
+
+        List<Buy> buys = buyMapper.selectByExample(buyExample);
+        if(buys.size()>0)
+        {
+            return buys.get(0);
+        }
+        return null;
+    }
+
+    @Override
+    @Transactional
+    public Map<String, Object> userBuyReport(Integer uid, Integer gid) {
+        Map<String,Object> m = new HashMap<>();
+
+        try {
+            User user = userMapper.selectByPrimaryKey(uid);
+            Graphic graphic = graphicMapper.selectByPrimaryKey(gid);
+            if(graphic.getPay()>user.getBalance())
+            {
+                m.put("status",1);
+                m.put("msg","余额不足");
+                throw new Exception();
+            }
+            else
+            {
+                //用户扣除余额
+                user.setBalance( user.getBalance()-graphic.getPay() );
+
+                Buy buy = new Buy();
+                //复制目标
+                String sourceFolder = graphic.getFolder();
+                String sourceFile = graphic.getFilename();
+                String targetPath = config.getUpload() + config.getUserfolder() + uid + "//";
+                String targetFile = graphic.getTitle()+sourceFile.substring(sourceFile.lastIndexOf("."));
+                if( imageService.fileCopy(sourceFolder,sourceFile,targetPath,targetFile) )
+                {
+                    buy.setDetail( JSON.toJSONString(graphic) );
+                    buy.setType(1); //新!
+                    buy.setGraphic(gid);
+                    buy.setUser(uid);
+                    buy.setPay(graphic.getPay());
+                    buy.setCreatetime(DateExample.getNowTimeByDate());
+                    buy.setFolder1(targetPath);
+                    buy.setPic1(targetFile);
+                    buy.setState(0);
+                    int i=buyMapper.insertSelective(buy);
+
+                    //用户更新
+                    user.setUpdatetime(DateExample.getNowTimeByDate());
+                    int j = userMapper.updateByPrimaryKeySelective(user);
+
+                    //更新下载次数
+                    graphic.setDownload( graphic.getDownload()+1 );
+                    int g = graphicMapper.updateByPrimaryKeySelective(graphic);
+
+
+                    if( i>0 && j>0 && g>0)
+                    {
+                        m.put("status",0);
+                        m.put("msg","购买成功");
+                        return m;
+                    }
+                    else
+                    {
+                        m.put("status",3);
+                        m.put("msg","部分更新失败");
+                        throw new Exception();
+                    }
+                }
+                else
+                {
+                    m.put("status",2);
+                    m.put("msg","文件复制失败");
+                    throw new Exception();
+                }
+
+            }
+
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            return m;
+        }
+        //m.put("status",3);
+        //m.put("msg","购买失败");
+        //return m;
     }
 }

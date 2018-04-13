@@ -27,4 +27,6 @@ public interface PictureMapper {
     int updateByPrimaryKeySelective(Picture record);
 
     int updateByPrimaryKey(Picture record);
+
+    List<Picture> getPictureList(@Param("key") String key[], @Param("begin") String begin, @Param("end") String end,@Param("type") Integer type);
 }

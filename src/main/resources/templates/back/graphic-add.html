@@ -1,0 +1,141 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="Bookmark" href="/back//favicon.ico" >
+    <link rel="Shortcut Icon" href="/back//favicon.ico" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/back/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="/back/lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/back/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/back/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/back/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/back/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/back/static/h-ui.admin/css/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/back/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <style>
+
+        .shangchuan{
+            background:#00A1DF ;
+        }
+        .a1{
+            float: left;
+            width: 50px;
+            height: 30px;
+            display: block;
+            line-height: 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 0 20px;
+            color: #fff;
+        }
+
+        .queding{
+            border: 1px solid red;
+
+            background: red;
+        }
+        .quxiao{
+background:#00A1DF ;
+            border: 1px solid #00A1DF;
+
+        }
+
+    </style>
+</head>
+<body>
+<article class="page-container">
+    <form action="/admin/graphicAdd.do" method="post" class="form form-horizontal" id="form-article-add form1" enctype="multipart/form-data">
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>标题：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <!--<span >xxxxxxxxxxxxxxxxxxxxxxx</span>-->
+                <input type="text" name="title">
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>贡献者：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <!--<span >xxxxxxxxxxxxxxxxxxxxxxx</span>-->
+                <input type="text" name="contributor">
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">简介</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <!--<span >xxxxxxxxxxxxxxxxxxxxxxx</span>-->
+                <input type="text" name="introduce">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">价格*：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="number"  name="pay" class="input-text Wdate">  (填写大于1)
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">评分*：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="number" name="score" class="input-text Wdate"> (填写0-5分)
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">文件上传：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="file" name="file"  class="wenjian"/>
+                <!--<input type="button" id="btnsubmit" value=" 上 传 " class="shangchuan" />-->
+
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"></label>
+            <div class="formControls col-xs-8 col-sm-9 clearfix ">
+                <a class="a1 quxiao" href="/admin/graphic.php">取消</a>
+                <input class="a1 quxiao" type="submit" id="btnsubmit" value="确定">
+                <!--<button class="a1 quxiao">取消</button>-->
+                <!--<button class="a1 queding">确定</button>-->
+
+           </div>
+        </div>
+    </form>
+        <!--<script src="/public/js/jquery-3.1.1.js" ></script>-->
+        <!--<script src="/public/js/form.js" ></script>-->
+
+        <!--<script type="text/javascript">-->
+            <!--$(function () {-->
+                <!--$("#btnsubmit").click(function () {-->
+                    <!--$("#form1").ajaxSubmit({-->
+                        <!--success: function (data) {-->
+                            <!--alert(data);-->
+                        <!--},-->
+                        <!--error: function (error) { alert(error); },-->
+                        <!--url: '/admin/graphicAdd.do', /*设置post提交到的页面*/-->
+                        <!--type: "post", /*设置表单以post方法提交*/-->
+                        <!--dataType: "json" /*设置返回值类型为文本*/-->
+                    <!--});-->
+                <!--});-->
+            <!--});-->
+        <!--</script>-->
+</article>
+</body>
+</html>

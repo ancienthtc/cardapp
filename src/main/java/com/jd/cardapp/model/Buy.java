@@ -23,6 +23,8 @@ public class Buy {
 
     private Integer card;
 
+    private Integer graphic;
+
     private Integer user;
 
     private Date createtime;
@@ -105,6 +107,14 @@ public class Buy {
 
     public void setCard(Integer card) {
         this.card = card;
+    }
+
+    public Integer getGraphic() {
+        return graphic;
+    }
+
+    public void setGraphic(Integer graphic) {
+        this.graphic = graphic;
     }
 
     public Integer getUser() {

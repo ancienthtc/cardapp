@@ -5,6 +5,8 @@ import java.util.Date;
 public class Graphic {
     private Integer id;
 
+    private String title;
+
     private String filename;
 
     private String folder;
@@ -31,6 +33,14 @@ public class Graphic {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
     }
 
     public String getFilename() {

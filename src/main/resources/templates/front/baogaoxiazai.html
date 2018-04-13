@@ -5,9 +5,11 @@
         <title>纺织名片宝</title>
         <link rel="stylesheet" href="/front/Content/commons.css">
         <link href="/front/Content/style.css" rel="stylesheet" type="text/css"/>
-        <script type="text/javascript" src="/front/Scripts/jquery1.42.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
         <script type="text/javascript" src="/front/Scripts/index.js"></script>
+
+        <script src="/public/js/layer/layer.js"></script>
 
     </head>
 
@@ -46,37 +48,50 @@
                             <p>匹配<a href="">防止腹帐行业分析报告</a>的文章共计13篇（由用户发布，经本站审核以下信息有效，所有下载看该文档，付费概不退款）</p>
                         </div>
                         <div class="ssnr" style="float:right">
-                            <input name="" type="text" class="wby4"/><input name="" type="submit" class="btn3"
-                                                                            value="搜索"/>
+                            <input name="" type="text" class="wby4"/>
+                            <input name="" type="button" class="btn3" value="搜索"/>
                         </div>
                     </div>
-                    <div class="xzbox">
-                        <h2><span class="fr">质量<em>4.5</em>分</span><a href=""><i>2017</i>纺织服装行业分析报告<i>_图文</i></a></h2>
-                        <p>
-                            介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
-                        <h4><span>2017-09-07</span>|<span>共34页</span>|<span>0次下载</span>|<span>￥188.00</span>|<span>贡献者：刘小呆</span>
-                        </h4>
-                    </div>
-                    <div class="xzbox">
-                        <h2><span class="fr">质量<em>4.5</em>分</span><a href=""><i>2017</i>纺织服装行业分析报告<i>_图文</i></a></h2>
-                        <p>
-                            介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
-                        <h4><span>2017-09-07</span>|<span>共34页</span>|<span>0次下载</span>|<span>￥188.00</span>|<span>贡献者：刘小呆</span>
-                        </h4>
-                    </div>
-                    <div class="xzbox">
-                        <h2><span class="fr">质量<em>4.5</em>分</span><a href=""><i>2017</i>纺织服装行业分析报告<i>_图文</i></a></h2>
-                        <p>
-                            介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
-                        <h4><span>2017-09-07</span>|<span>共34页</span>|<span>0次下载</span>|<span>￥188.00</span>|<span>贡献者：刘小呆</span>
-                        </h4>
-                    </div>
-                    <div class="xzbox">
-                        <h2><span class="fr">质量<em>4.5</em>分</span><a href=""><i>2017</i>纺织服装行业分析报告<i>_图文</i></a></h2>
-                        <p>
-                            介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
-                        <h4><span>2017-09-07</span>|<span>共34页</span>|<span>0次下载</span>|<span>￥188.00</span>|<span>贡献者：刘小呆</span>
-                        </h4>
+
+                    <div id="tbody">
+                        <div class="xzbox">
+                            <h2>
+                                <span class="fr">质量<em>4.5</em>分</span>
+                                <a href=""><i>2017</i>纺织服装行业分析报告<i>_图文</i></a>
+                            </h2>
+                            <p>
+                                介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
+                            </p>
+                            <h4>
+                                <span>2017-09-07</span>|
+                                <span>共34页</span>|
+                                <span>0次下载</span>|
+                                <span>￥188.00</span>|
+                                <span>贡献者：刘小呆</span>
+                            </h4>
+                        </div>
+
+                        <div class="xzbox">
+                            <h2><span class="fr">质量<em>4.5</em>分</span><a href=""><i>2017</i>纺织服装行业分析报告<i>_图文</i></a></h2>
+                            <p>
+                                介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
+                            <h4><span>2017-09-07</span>|<span>共34页</span>|<span>0次下载</span>|<span>￥188.00</span>|<span>贡献者：刘小呆</span>
+                            </h4>
+                        </div>
+                        <div class="xzbox">
+                            <h2><span class="fr">质量<em>4.5</em>分</span><a href=""><i>2017</i>纺织服装行业分析报告<i>_图文</i></a></h2>
+                            <p>
+                                介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
+                            <h4><span>2017-09-07</span>|<span>共34页</span>|<span>0次下载</span>|<span>￥188.00</span>|<span>贡献者：刘小呆</span>
+                            </h4>
+                        </div>
+                        <div class="xzbox">
+                            <h2><span class="fr">质量<em>4.5</em>分</span><a href=""><i>2017</i>纺织服装行业分析报告<i>_图文</i></a></h2>
+                            <p>
+                                介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
+                            <h4><span>2017-09-07</span>|<span>共34页</span>|<span>0次下载</span>|<span>￥188.00</span>|<span>贡献者：刘小呆</span>
+                            </h4>
+                        </div>
                     </div>
 
                 </div>
@@ -89,6 +104,8 @@
                         <li>
                     </ul>
                 </div>
+                <input type="hidden" id="pageNo" value="1">
+                <input type="hidden" id="pages" value="1">
             </div>
         </div>
         </div>
@@ -96,3 +113,217 @@
 
     </body>
 </html>
+<script>
+
+    $(function () {
+        //判断页面
+        var pageNo = $("#pageNo").val();
+        var url = "/user/graphicList";
+        var info = {pageNo:pageNo,pageSize:8}
+        send_post(url,info);
+
+
+        //搜索
+        $(".btn3").click(function () {
+            var url = "/user/graphicList";
+            var key = $(".wby4").val();
+            var info = {pageNo:pageNo,pageSize:8,keys:key}
+
+            send_post(url,info);
+        });
+    });
+
+
+    function send_post(url, info) {
+        $.post(url,info,function (data) {
+            var tb = $("#tbody");
+            tb.empty();
+            var html = '';
+            $.each(data.list,function(i,row){
+                html += '<div class="xzbox">';
+                html += '<h2>';
+                html += '<span class="fr">质量<em>'+row.score+'</em>分</span>';
+
+                var time;
+                if( row.createtime!="" && row.createtime!=undefined )
+                {
+                    /*将时间戳转化为日期*/
+                    time = new Date(row.createtime);
+                    row.createtime = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
+                }else{
+                    row.createtime="";
+                }
+
+                html += '<a gid="'+row.id+'" class="download"><i>'+time.getFullYear()+'</i>'+row.title+'<i>_图文</i></a>';
+                html += '</h2>';
+                html += '<p>'+row.introduce+'</p>';
+                html += '<h4>';
+
+
+
+                html += '<span>'+row.createtime+'</span>|';
+                html += '<span>'+row.download+'次下载</span>|';
+                html += '<span>￥'+row.pay+'</span>|';
+                html += '<span>贡献者：'+row.contributor+'</span>';
+                html += '</h4>';
+
+                html += '</div>';
+            });
+            tb.html(html);
+
+            $("#pageNo").val(data.pageNum);
+            $("#pages").val(data.pages);
+
+            var pg = $(".dede_pages");
+            pg.empty();
+            var html2 = '<ul class="pagelist">';
+            html2 += '<li class="pre"><a href="javascript:;">上一页</a></li>';
+
+            for( var i=1;i<=data.pages;i++ )
+            {
+                if(i==data.pageNum)
+                {
+                    html2 += '<li class="thisclass pg" ><a href="javascript:;">'+i+'</a></li>';
+                }
+                else
+                {
+                    html2 += '<li class="pg" pgs="'+i+'"><a href="javascript:;">'+i+'</a></li>';
+                }
+            }
+            html2 += '<li class="next"><a href="javascript:;">下一页</a> <li>';
+            html2 += '</ul>';
+            pg.html(html2);
+            after();
+        },"json");
+    }
+
+    function after() {
+        // $('.btn5.free').on('click', function(){//免费
+        //     var cid = $(this).attr("cid");
+        //     layer.open({
+        //         type: 2,
+        //         title: '名片',
+        //         maxmin: true,
+        //         shadeClose: true, //点击遮罩关闭层
+        //         area : ['640px' , '395px'],
+        //         content: '/card/cardPic.php?cid='+cid
+        //     });
+        // });
+        $('.download').click(function () {//付费
+            var gid = $(this).attr("gid");
+            $.ajax({
+                url: "/user/reportCheck.do",
+                type: 'post',
+                dataType: 'text',
+                data: {id:gid},
+                success: function (data) {
+                    var jsondata = $.parseJSON(data);
+                    //alert(jsondata + "/" + jsondata.status);
+                    if( jsondata.status==0 )
+                    {
+                        //
+                        // layer.open({
+                        //     type: 2,
+                        //     title: '报告',
+                        //     maxmin: true,
+                        //     shadeClose: true, //点击遮罩关闭层
+                        //     area : ['640px' , '395px'],
+                        //     content: '/card/cardPic.php?cid='+cid
+                        // });
+                        window.open("/user/pdfDownload?id="+gid);
+                    }
+                    else
+                    {
+                        if( jsondata.status == 1 )
+                        {
+                            window.location.href = "/login/login.php";
+                        }
+                        else
+                        {
+                            //跳转购买
+                            layer.msg('确定购买?', {
+                                time: 0 //不自动关闭
+                                ,btn: ['买', '再等等']
+                                ,yes: function(index){
+                                    layer.close(index);
+                                    //购买
+                                    $.post("/trade/buyReport",{gid:gid},function(result){
+                                        if( result.status==0 )
+                                        {
+                                            // layer.open({
+                                            //     type: 2,
+                                            //     title: '名片',
+                                            //     maxmin: true,
+                                            //     shadeClose: true, //点击遮罩关闭层
+                                            //     area : ['640px' , '395px'],
+                                            //     content: '/card/cardPic.php?cid='+cid
+                                            // });
+                                            window.open("/user/pdfDownload?id="+gid);
+                                        }
+                                        else
+                                        {
+                                            layer.msg(result.msg);
+                                        }
+                                    },"json");
+                                }
+                            });
+                        }
+                    }
+                },
+                error: function () {
+                    alert('服务器繁忙..请稍后重试！');
+                }
+            });
+
+
+        });
+
+
+        $(".next").click(function () {
+            var pageNo = $("#pageNo").val();
+            var pages = $("#pages").val();
+            pageNo = parseInt(pageNo) + 1;
+            if(pageNo>pages)
+            {
+                return;
+            }
+
+            var url = "/user/graphicList";
+            var key = $(".wby4").val();
+            var info = {pageNo:pageNo,pageSize:8,keys:key}
+
+            send_post(url,info);
+        });
+
+        $(".pre").click(function () {
+            var pageNo = $("#pageNo").val();
+            pageNo = parseInt(pageNo) - 1;
+            if(pageNo<=0)
+            {
+                return;
+            }
+            var url = "/user/graphicList";
+            var key = $(".wby4").val();
+            var info = {pageNo:pageNo,pageSize:8,keys:key}
+
+            send_post(url,info);
+        });
+
+        $(".pg").click(function () {
+            var pageNo = $(this).attr("pgs");
+            if(pageNo==null || typeof(pageNo) == "undefined")
+            {
+                return;
+            }
+
+            var url = "/user/graphicList";
+            var key = $(".wby4").val();
+            var info = {pageNo:pageNo,pageSize:8,keys:key}
+
+            send_post(url,info);
+        });
+
+
+    };
+
+</script>

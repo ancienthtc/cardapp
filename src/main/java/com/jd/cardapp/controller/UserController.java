@@ -9,24 +9,22 @@ import com.jd.cardapp.common.UserCheck;
 import com.jd.cardapp.config.MyCustomConfig;
 import com.jd.cardapp.model.*;
 import com.jd.cardapp.model.Advance.DataTablePageUtil;
-import com.jd.cardapp.service.CardService;
-import com.jd.cardapp.service.MessageService;
-import com.jd.cardapp.service.UserService;
+import com.jd.cardapp.service.*;
 import com.jd.cardapp.util.date.DateExample;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,16 +53,41 @@ public class UserController {
     private MessageService messageService;
 
     @Autowired
+    private GraphicService graphicService;
+
+    @Autowired
+    private TradeService tradeService;
+
+    @Autowired
+    private ImageService imageService;
+
+    @Autowired
     private MyCustomConfig config;
 
     /* 页面跳转部分 */
     /**首页
      * @return
      */
-    @RequestMapping("/home.php")
-    public String toIndex() {
+    @RequestMapping(value = "/home.php" , produces = "text/html;charset=UTF-8;")
+    public String toIndex(Map<String,Object> m) {
         //加载首页图片
+        List<Picture> list0 = imageService.getPictureList(0);
+        List<Picture> list1 = imageService.getPictureList(1);
+        List<Picture> list2 = imageService.getPictureList(2);
+        List<Picture> list3 = imageService.getPictureList(3);
+        //轮播
+        m.put("pic0",list0);
+        //专业化服务
+        m.put("pic1",list1);
+        //行业细分
+        m.put("pic2",list2);
+        //企业展示
+        m.put("pic3",list3);
 
+        //length
+        m.put("length1",4-list1.size());
+        m.put("length2",list2.size());
+        m.put("length3",list3.size());
 
         return "front/index";
     }
@@ -270,6 +293,7 @@ public class UserController {
      * 数据服务--报告下载
      * @return
      */
+    @UserCheck
     @RequestMapping("/downReport.php")
     public String toDownloadReport()
     {
@@ -446,6 +470,126 @@ public class UserController {
         return JSON.toJSONString( messageService.userMessageList(pageNo,pageSize,name,tel) );
     }
 
+    //报告
+    //报告检查购买
+    @RequestMapping("/reportCheck.do")
+    @ResponseBody
+    public String graphicCheckBuy(HttpSession session,Integer id)
+    {
+        Map<String,Object> m = new HashMap<>();
+        User user = (User) session.getAttribute("user");
+        if(user==null)
+        {
+            m.put("msg","未登录");
+            m.put("status",1);
+            return JSON.toJSONString(m);
+        }
+        Graphic graphic = graphicService.getGraphic(id);
+        if(graphic==null)
+        {
+            m.put("msg","报告不存在");
+            m.put("status",2);
+            return JSON.toJSONString(m);
+        }
+        Buy buy = tradeService.checkReport(user.getId(),id);
+//        Card card = cardService.getDetail(cid);
+//        if(card.getBuy()==0)
+//        {
+//            m.put("msg","免费查看");
+//            m.put("status",0);
+//            return JSON.toJSONString(m);
+//        }
+        if( buy==null )
+        {
+            m.put("msg","尚未购买");
+            m.put("status",3);
+            return JSON.toJSONString(m);
+        }
+        else
+        {
+            m.put("msg","已购买");
+            m.put("status",0);
+            return JSON.toJSONString(m);
+        }
+    }
+
+    //用户报告下载
+    @RequestMapping(value="/pdfDownload", method= RequestMethod.GET)
+    public void getDownload(HttpSession session,Integer id, HttpServletRequest request, HttpServletResponse response)
+    {
+        //验证登录
+        User user = (User) session.getAttribute("user");
+        if( user == null )
+        {
+            return;
+        }
+
+
+        //验证购买
+        Buy buy = tradeService.checkReport(user.getId(),id);
+        if(buy==null)
+        {
+            return;
+        }
+
+        // Get your file stream from wherever.
+        String fullPath;
+        Graphic graphic = graphicService.getGraphic(id);
+        if(graphic!=null)
+        {
+            String sourceFile = graphic.getFilename();
+            String targetFile = graphic.getTitle()+sourceFile.substring(sourceFile.lastIndexOf("."));
+            fullPath = graphic.getFolder()+sourceFile;
+        }
+        else
+        {
+            fullPath = buy.getFolder1()+buy.getPic1();
+        }
+        File downloadFile = new File(fullPath);
+
+        ServletContext context = request.getServletContext();
+
+        // get MIME type of the file
+        String mimeType = context.getMimeType(fullPath);
+        if (mimeType == null) {
+            // set to binary type if MIME mapping not found
+            mimeType = "application/octet-stream";
+            System.out.println("context getMimeType is null");
+        }
+        System.out.println("MIME type: " + mimeType);
+
+        // set content attributes for the response
+        response.setContentType(mimeType);
+        response.setContentLength((int) downloadFile.length());
+
+        // set headers for the response
+        String headerKey = "Content-Disposition";
+        //String headerValue = String.format("attachment; filename=\"%s\"", downloadFile.getName());
+        //System.out.println( downloadFile.getName() );
+        String headerValue = String.format("attachment; filename=\"%s\"", downloadFile.getName());
+        response.setHeader(headerKey, headerValue);
+
+        // Copy the stream to the response's output stream.
+        try {
+            java.io.FileInputStream myStream = new FileInputStream(fullPath);
+            IOUtils.copy(myStream, response.getOutputStream());
+            response.flushBuffer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping("/graphicList")
+    @ResponseBody
+    public String graphicList(HttpSession session, String keys, Integer pageNo, Integer pageSize)
+    {
+        User user = (User) session.getAttribute("user");
+        if( user == null )
+        {
+            return null;
+        }
+        return JSON.toJSONString( graphicService.graphicList(keys,pageNo,pageSize,null,null) );
+    }
 
     /*管理员*/
     //获取用户列表

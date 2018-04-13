@@ -2,8 +2,10 @@ package com.jd.cardapp.controller;
 
 import com.jd.cardapp.config.MyCustomConfig;
 import com.jd.cardapp.model.Card;
+import com.jd.cardapp.model.Picture;
 import com.jd.cardapp.model.User;
 import com.jd.cardapp.service.CardService;
+import com.jd.cardapp.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,9 @@ public class ImageController {
 
     @Autowired
     private MyCustomConfig config;
+
+    @Autowired
+    private ImageService imageService;
 
     /**
      * @param request
@@ -79,6 +84,24 @@ public class ImageController {
         else
         {
             defaultShow(request, response);
+        }
+
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/show/{pid}")
+    public void getPicture(HttpServletRequest request, HttpServletResponse response,@PathVariable Integer pid)
+    {
+        String imagePath;
+        Picture picture = imageService.getPicture(pid);
+        if(picture==null)
+        {
+            defaultShow(request, response);
+        }
+        else
+        {
+            imagePath = picture.getFolder()+picture.getFilename();
+            OutPutAgain(imagePath,request,response,0);
         }
 
     }

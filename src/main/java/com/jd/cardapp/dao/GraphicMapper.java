@@ -27,4 +27,6 @@ public interface GraphicMapper {
     int updateByPrimaryKeySelective(Graphic record);
 
     int updateByPrimaryKey(Graphic record);
+
+    List<Graphic> getGraphicList(@Param("key") String key[], @Param("begin") String begin, @Param("end") String end);
 }

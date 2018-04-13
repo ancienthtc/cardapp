@@ -76,6 +76,22 @@ public class TradeController {
         return JSON.toJSONString(m);
     }
 
+    @RequestMapping("/buyReport")
+    @ResponseBody
+    public String UserBuyReport(HttpSession session,Integer gid)
+    {
+        Map<String,Object> m = new HashMap<>();
+        User user = (User) session.getAttribute("user");
+        if( user == null )
+        {
+            m.put("status",1);
+            m.put("msg","未登录");
+            return JSON.toJSONString(m);
+        }
+        m = tradeService.userBuyReport(user.getId(),gid);
+        return JSON.toJSONString(m);
+    }
+
     @UserCheck
     @RequestMapping("/wxPay")
     public String wxPay(HttpSession session,Double price)

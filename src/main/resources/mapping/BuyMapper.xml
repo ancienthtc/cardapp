@@ -12,6 +12,7 @@
     <result column="folder1" property="folder1" jdbcType="VARCHAR" />
     <result column="folder2" property="folder2" jdbcType="VARCHAR" />
     <result column="card" property="card" jdbcType="INTEGER" />
+    <result column="graphic" property="graphic" jdbcType="INTEGER" />
     <result column="user" property="user" jdbcType="INTEGER" />
     <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -74,7 +75,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, state, type, pay, detail, pic1, pic2, folder1, folder2, card, user, createtime
+    id, state, type, pay, detail, pic1, pic2, folder1, folder2, card, graphic, user,
+    createtime
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jd.cardapp.model.BuyExample" >
     select
@@ -109,13 +111,15 @@
   </delete>
   <insert id="insert" parameterType="com.jd.cardapp.model.Buy" >
     insert into t_buy (id, state, type,
-    pay, detail, pic1, pic2,
-    folder1, folder2, card,
-    user, createtime)
+      pay, detail, pic1, pic2,
+      folder1, folder2, card,
+      graphic, user, createtime
+      )
     values (#{id,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{type,jdbcType=INTEGER},
-    #{pay,jdbcType=DOUBLE}, #{detail,jdbcType=VARCHAR}, #{pic1,jdbcType=VARCHAR}, #{pic2,jdbcType=VARCHAR},
-    #{folder1,jdbcType=VARCHAR}, #{folder2,jdbcType=VARCHAR}, #{card,jdbcType=INTEGER},
-    #{user,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP})
+      #{pay,jdbcType=DOUBLE}, #{detail,jdbcType=VARCHAR}, #{pic1,jdbcType=VARCHAR}, #{pic2,jdbcType=VARCHAR},
+      #{folder1,jdbcType=VARCHAR}, #{folder2,jdbcType=VARCHAR}, #{card,jdbcType=INTEGER},
+      #{graphic,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.jd.cardapp.model.Buy" >
     insert into t_buy
@@ -149,6 +153,9 @@
       </if>
       <if test="card != null" >
         card,
+      </if>
+      <if test="graphic != null" >
+        graphic,
       </if>
       <if test="user != null" >
         user,
@@ -187,6 +194,9 @@
       </if>
       <if test="card != null" >
         #{card,jdbcType=INTEGER},
+      </if>
+      <if test="graphic != null" >
+        #{graphic,jdbcType=INTEGER},
       </if>
       <if test="user != null" >
         #{user,jdbcType=INTEGER},
@@ -235,6 +245,9 @@
       <if test="record.card != null" >
         card = #{record.card,jdbcType=INTEGER},
       </if>
+      <if test="record.graphic != null" >
+        graphic = #{record.graphic,jdbcType=INTEGER},
+      </if>
       <if test="record.user != null" >
         user = #{record.user,jdbcType=INTEGER},
       </if>
@@ -249,17 +262,18 @@
   <update id="updateByExample" parameterType="map" >
     update t_buy
     set id = #{record.id,jdbcType=INTEGER},
-    state = #{record.state,jdbcType=INTEGER},
-    type = #{record.type,jdbcType=INTEGER},
-    pay = #{record.pay,jdbcType=DOUBLE},
-    detail = #{record.detail,jdbcType=VARCHAR},
-    pic1 = #{record.pic1,jdbcType=VARCHAR},
-    pic2 = #{record.pic2,jdbcType=VARCHAR},
-    folder1 = #{record.folder1,jdbcType=VARCHAR},
-    folder2 = #{record.folder2,jdbcType=VARCHAR},
-    card = #{record.card,jdbcType=INTEGER},
-    user = #{record.user,jdbcType=INTEGER},
-    createtime = #{record.createtime,jdbcType=TIMESTAMP}
+      state = #{record.state,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=INTEGER},
+      pay = #{record.pay,jdbcType=DOUBLE},
+      detail = #{record.detail,jdbcType=VARCHAR},
+      pic1 = #{record.pic1,jdbcType=VARCHAR},
+      pic2 = #{record.pic2,jdbcType=VARCHAR},
+      folder1 = #{record.folder1,jdbcType=VARCHAR},
+      folder2 = #{record.folder2,jdbcType=VARCHAR},
+      card = #{record.card,jdbcType=INTEGER},
+      graphic = #{record.graphic,jdbcType=INTEGER},
+      user = #{record.user,jdbcType=INTEGER},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -294,6 +308,9 @@
       <if test="card != null" >
         card = #{card,jdbcType=INTEGER},
       </if>
+      <if test="graphic != null" >
+        graphic = #{graphic,jdbcType=INTEGER},
+      </if>
       <if test="user != null" >
         user = #{user,jdbcType=INTEGER},
       </if>
@@ -314,6 +331,7 @@
       folder1 = #{folder1,jdbcType=VARCHAR},
       folder2 = #{folder2,jdbcType=VARCHAR},
       card = #{card,jdbcType=INTEGER},
+      graphic = #{graphic,jdbcType=INTEGER},
       user = #{user,jdbcType=INTEGER},
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
