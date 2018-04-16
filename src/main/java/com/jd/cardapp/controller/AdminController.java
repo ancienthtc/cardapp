@@ -71,6 +71,12 @@ public class AdminController {
         return "back/user-recharge";
     }
 
+    @RequestMapping("/mWithdrawList.php")
+    public String toUserWithdrawList()
+    {
+        return "back/withdraw-list";
+    }
+
     //名片
 
     @RequestMapping("/mCard.php")
@@ -469,5 +475,6 @@ public class AdminController {
         }
         return JSON.toJSONString( imageService.pictureList(keys,pageNo,pageSize,begin,end,type) );
     }
+
 
 }

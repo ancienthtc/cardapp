@@ -74,11 +74,12 @@ public class TradeServiceImpl implements TradeService {
 
     //新申请提现
     @Override
-    public PageInfo<Withdraw> withdrawList(Integer pageNo, Integer pageSize, String begin, String end) {
+    public PageInfo<Withdraw> withdrawList(String keys,Integer pageNo, Integer pageSize, String begin, String end) {
         pageNo = pageNo == null ? 1:pageNo;
         pageSize = pageSize == null ? 10:pageSize;
         PageHelper.startPage(pageNo, pageSize);
-        List<Withdraw> withdrawList = withdrawMapper.getWithdrawList(begin,end);
+        String[] key=keys.split("\\s+");
+        List<Withdraw> withdrawList = withdrawMapper.getWithdrawList(key,begin,end);
         PageInfo<Withdraw> result = new PageInfo<>(withdrawList);
         return result;
     }
@@ -370,4 +371,92 @@ public class TradeServiceImpl implements TradeService {
         //m.put("msg","购买失败");
         //return m;
     }
+
+    @Override
+    @Transactional
+    public int WithdrawAdd(Withdraw withdraw) {
+        //state 提现状态  0-等待提现 1-提现完成 2-审核未通过
+        //applytime
+        try
+        {
+            if(withdraw.getAccount()==null || withdraw.getAname()==null || withdraw.getUser()==null)
+            {
+                throw new Exception();
+            }
+            //判断当前用户余额
+            User user = userMapper.selectByPrimaryKey(withdraw.getUser());
+            if( withdraw.getAmount() > user.getBalance() )
+            {
+                throw new Exception();
+            }
+
+            //更新账户
+            user.setBalance( user.getBalance() - withdraw.getAmount() );
+            //user.setUpdatetime(DateExample.getNowTimeByDate());
+            int i = userMapper.updateByPrimaryKeySelective(user);
+
+            //提现表
+            withdraw.setState(0);
+            withdraw.setApplytime(DateExample.getNowTimeByDate());
+            int j = withdrawMapper.insertSelective(withdraw);
+            if( i < 1 || j < 1 )
+            {
+                throw new Exception();
+            }
+            return j;
+        }
+        catch (Exception e)
+        {
+            return 0;
+        }
+
+    }
+
+    @Override
+    @Transactional
+    public int WithdrawSure(Integer wid) {
+        Withdraw withdraw = withdrawMapper.selectByPrimaryKey(wid);
+        withdraw.setState(1);
+        withdraw.setFinish(DateExample.getNowTimeByDate());
+        return withdrawMapper.updateByPrimaryKeySelective(withdraw);
+    }
+
+    @Override
+    @Transactional
+    public int WithdrawRefuse(Integer wid) {
+        Withdraw withdraw = withdrawMapper.selectByPrimaryKey(wid);
+        try {
+            if( withdraw==null )
+            {
+                throw new Exception();
+            }
+            //恢复数值
+            User user = userMapper.selectByPrimaryKey(withdraw.getUser());
+            user.setBalance( user.getBalance() + withdraw.getAmount() );
+            int i = userMapper.updateByPrimaryKeySelective(user);
+
+            withdraw.setState(2);
+            int j = withdrawMapper.updateByPrimaryKeySelective(withdraw);
+            if( i+j <= 1 )
+            {
+                throw new Exception();
+            }
+            return j;
+
+        }catch (Exception e)
+        {
+            return 0;
+        }
+    }
+
+    @Override
+    public int WithdrawDel(Integer wid) {
+        Withdraw withdraw = withdrawMapper.selectByPrimaryKey(wid);
+        if( withdraw.getState()==2 )
+        {
+            return withdrawMapper.deleteByPrimaryKey(wid);
+        }
+        return 0;
+    }
+
 }

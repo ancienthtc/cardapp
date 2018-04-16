@@ -33,56 +33,35 @@
                             <tr>
                                 <th>申请时间</th>
                                 <th>提现账号</th>
+                                <th>帐号姓名</th>
                                 <th class="w535">提现金额</th>
                                 <th>状态</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tbody">
+                            <!--
                             <tr>
                                 <td style="width: 300px;">2017-11-29  15：25</td>
                                 <td style="width: 380px">9999999999999999999999</td>
+                                <td>xxxxx</td>
                                 <td>50.00元</td>
                                 <td>到账</td>
                             </tr>
-                            <tr>
-                                <td style="width: 300px;">2017-11-29  15：25</td>
-                                <td style="width: 380px">9999999999999999999999</td>
-                                <td>50.00元</td>
-                                <td>到账</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 300px;">2017-11-29  15：25</td>
-                                <td style="width: 380px">9999999999999999999999</td>
-                                <td>50.00元</td>
-                                <td>到账</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 300px;">2017-11-29  15：25</td>
-                                <td style="width: 380px">9999999999999999999999</td>
-                                <td>50.00元</td>
-                                <td>到账</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 300px;">2017-11-29  15：25</td>
-                                <td style="width: 380px">9999999999999999999999</td>
-                                <td>50.00元</td>
-                                <td>到账</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 300px;">2017-11-29  15：25</td>
-                                <td style="width: 380px">9999999999999999999999</td>
-                                <td>50.00元</td>
-                                <td>到账</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 300px;">2017-11-29  15：25</td>
-                                <td style="width: 380px">9999999999999999999999</td>
-                                <td>50.00元</td>
-                                <td>到账</td>
-                            </tr>
+                            -->
                         </tbody>
                     </table>
                 </div>
+                <div class="dede_pages">
+                    <ul class="pagelist">
+                        <li><a href="#">上一页</a></li>
+                        <li><a href="#">1</a></li>
+                        <li class="thisclass"><a href="#">2</a></li>
+                        <li><a href="#">下一页</a>
+                        <li>
+                    </ul>
+                </div>
+                <input type="hidden" id="pageNo" value="1">
+                <input type="hidden" id="pages" value="1">
             </div>
             <!--<script type="text/javascript">
                 jQuery(".wdda_left").slide({
@@ -108,3 +87,136 @@
         <div th:include="front/footer"></div>
     </body>
 </html>
+
+<script>
+
+    $(function () {
+        //判断页面
+        var pageNo = $("#pageNo").val();
+        var url = "/user/userWithdrawList";
+        var info = {pageNo:pageNo,pageSize:10}
+        send_post(url,info);
+
+    });
+
+
+    function send_post(url, info) {
+        $.post(url,info,function (data) {
+            var tb = $("#tbody");
+            tb.empty();
+            var html = '';
+            $.each(data.list,function(i,row){
+
+                var time;
+                if( row.applytime!="" && row.applytime!=undefined )
+                {
+                    /*将时间戳转化为日期*/
+                    time = new Date(row.applytime);
+                    row.applytime = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
+                }else{
+                    row.applytime="";
+                }
+
+                html += '<tr>';
+                html += '<td style="width: 300px;">'+row.applytime+'</td>';
+                html += '<td style="width: 380px">'+row.amount+'</td>';
+                html += '<td>'+row.aname+'</td>';
+                html += '<td>'+row.amount+'</td>';
+
+                if(row.state==0)
+                {
+                    row.state = "等待审核";
+                }
+                else if(row.state==1)
+                {
+                    row.state = "提现完成";
+                }
+                else if(row.state==2)
+                {
+                    row.state = "审核未通过";
+                }
+                else
+                {
+                    row.state = "";
+                }
+
+                html += '<td>'+row.state+'</td>';
+                html += '</tr>';
+
+            });
+            tb.html(html);
+
+            $("#pageNo").val(data.pageNum);
+            $("#pages").val(data.pages);
+
+            var pg = $(".dede_pages");
+            pg.empty();
+            var html2 = '<ul class="pagelist">';
+            html2 += '<li class="pre"><a href="javascript:;">上一页</a></li>';
+
+            for( var i=1;i<=data.pages;i++ )
+            {
+                if(i==data.pageNum)
+                {
+                    html2 += '<li class="thisclass pg" ><a href="javascript:;">'+i+'</a></li>';
+                }
+                else
+                {
+                    html2 += '<li class="pg" pgs="'+i+'"><a href="javascript:;">'+i+'</a></li>';
+                }
+            }
+            html2 += '<li class="next"><a href="javascript:;">下一页</a> <li>';
+            html2 += '</ul>';
+            pg.html(html2);
+            after();
+        },"json");
+    }
+
+    function after() {
+
+        $(".next").click(function () {
+            var pageNo = $("#pageNo").val();
+            var pages = $("#pages").val();
+            pageNo = parseInt(pageNo) + 1;
+            if(pageNo>pages)
+            {
+                return;
+            }
+
+            var url = "/user/userWithdrawList";
+            var info = {pageNo:pageNo,pageSize:10}
+
+            send_post(url,info);
+        });
+
+        $(".pre").click(function () {
+            var pageNo = $("#pageNo").val();
+            pageNo = parseInt(pageNo) - 1;
+            if(pageNo<=0)
+            {
+                return;
+            }
+            var url = "/user/userWithdrawList";
+            var info = {pageNo:pageNo,pageSize:10}
+
+            send_post(url,info);
+        });
+
+        $(".pg").click(function () {
+            var pageNo = $(this).attr("pgs");
+            if(pageNo==null || typeof(pageNo) == "undefined")
+            {
+                return;
+            }
+
+            var url = "/user/userWithdrawList";
+            var info = {pageNo:pageNo,pageSize:10}
+
+            send_post(url,info);
+        });
+
+
+    };
+
+
+</script>

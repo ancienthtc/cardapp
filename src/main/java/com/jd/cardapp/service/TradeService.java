@@ -14,7 +14,7 @@ public interface TradeService {
     PageInfo<Recharge> rechargeList(Integer pageNo,Integer pageSize,String begin,String end);
 
     //新申请提现
-    PageInfo<Withdraw> withdrawList(Integer pageNo,Integer pageSize,String begin,String end);
+    PageInfo<Withdraw> withdrawList(String keys,Integer pageNo,Integer pageSize,String begin,String end);
 
     //查询用户是否购买名片
     Buy checkBuy(Integer uid,Integer cid);
@@ -31,4 +31,18 @@ public interface TradeService {
     Buy checkReport(Integer uid,Integer gid);
 
     Map<String,Object> userBuyReport(Integer uid,Integer gid);
+
+    //申请提现
+    int WithdrawAdd(Withdraw withdraw);
+
+    //确认提现
+    int WithdrawSure(Integer wid);
+
+    //拒绝提现
+    int WithdrawRefuse(Integer wid);
+
+    //提现记录删除
+    int WithdrawDel(Integer wid);
+
+
 }

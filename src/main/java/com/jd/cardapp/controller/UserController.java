@@ -137,8 +137,21 @@ public class UserController {
      */
     @UserCheck
     @RequestMapping("/withdraw.php")
-    public String toWithdraw()
+    public String toWithdraw(HttpSession session,Map<String,Object> m)
     {
+        User user = (User) session.getAttribute("user");
+        user = userService.getUserById(user.getId());
+        session.setAttribute("user",user);
+
+        m.put("user",user);
+        if(user.getBalance()<50)
+        {
+            m.put("limit",0);
+        }
+        else
+        {
+            m.put("limit",user.getBalance());
+        }
         return "front/shenqingtixian";
     }
 
@@ -209,7 +222,8 @@ public class UserController {
     @RequestMapping("/dataCenter.php")
     public String toMyDataCenter()
     {
-        return "front/wodeshuju";
+        //return "front/wodeshuju";
+        return "redirect:/user/myMessage.php";
     }
 
     /**
@@ -590,6 +604,62 @@ public class UserController {
         }
         return JSON.toJSONString( graphicService.graphicList(keys,pageNo,pageSize,null,null) );
     }
+
+
+    //提现
+    //提现提交
+    @RequestMapping("/withdrawAdd.do")
+    @ResponseBody
+    public String WithdrawAdd(HttpSession session,Withdraw withdraw)
+    {
+        User user = (User) session.getAttribute("user");
+        Map<String,Object> m = new HashMap<>();
+        if(user==null)
+        {
+            m.put("status",1);
+            m.put("msg","未登录");
+            return JSON.toJSONString(m);
+        }
+
+        if(user.getBalance()<50)
+        {
+            m.put("status",2);
+            m.put("msg","提现金额不足");
+            return JSON.toJSONString(m);
+        }
+        else
+        {
+            withdraw.setUser(user.getId());
+            if( tradeService.WithdrawAdd(withdraw) > 0 )
+            {
+                m.put("status",0);
+                m.put("msg","申请已提交");
+                return JSON.toJSONString(m);
+            }
+            else
+            {
+                m.put("status",3);
+                m.put("msg","提交失败");
+                return JSON.toJSONString(m);
+            }
+        }
+
+    }
+
+    //提现记录
+    @RequestMapping("/userWithdrawList")
+    @ResponseBody
+    public String getUserWithdrawList(HttpSession session,Integer pageNo,Integer pageSize)
+    {
+        User user = (User) session.getAttribute("user");
+        if( user == null )
+        {
+            return null;
+        }
+        return JSON.toJSONString( userService.userWithdrawList(user.getId(),pageNo,pageSize) );
+    }
+
+
 
     /*管理员*/
     //获取用户列表

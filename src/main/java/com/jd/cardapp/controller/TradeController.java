@@ -48,15 +48,64 @@ public class TradeController {
         return JSON.toJSONString( tradeService.rechargeList(pageNo,pageSize,begin,end),filter );
     }
 
+    //提现记录
     @RequestMapping("/withdrawList")
     @ResponseBody
-    public String getWithDrawList(HttpSession session, Integer pageNo , Integer pageSize, String begin , String end)
+    public String getWithDrawList(HttpSession session, String keys, Integer pageNo , Integer pageSize, String begin , String end)
     {
         if( session.getAttribute("admin") == null )
         {
             return null;
         }
-        return JSON.toJSONString( tradeService.withdrawList(pageNo,pageSize,begin,end),filter );
+        return JSON.toJSONString( tradeService.withdrawList(keys,pageNo,pageSize,begin,end),filter );
+    }
+
+    //提现记录删除
+    @RequestMapping("/withdrawDel.do")
+    @ResponseBody
+    public String withdrawDel(HttpSession session,Integer id)
+    {
+        if( session.getAttribute("admin") == null )
+        {
+            return null;
+        }
+        if( tradeService.WithdrawDel(id) > 0 )
+        {
+            return "true";
+        }
+        return "false";
+    }
+
+    //确认提现
+    @RequestMapping("/withdrawSure.do")
+    @ResponseBody
+    public String withdrawSure(HttpSession session,Integer id)
+    {
+        if( session.getAttribute("admin") == null )
+        {
+            return null;
+        }
+        if( tradeService.WithdrawSure(id) > 0)
+        {
+            return "true";
+        }
+        return "false";
+    }
+
+    //取消提现
+    @RequestMapping("/withdrawCancel.do")
+    @ResponseBody
+    public String withdrawCancel(HttpSession session,Integer id)
+    {
+        if( session.getAttribute("admin") == null )
+        {
+            return null;
+        }
+        if( tradeService.WithdrawRefuse(id) > 0)
+        {
+            return "true";
+        }
+        return "false";
     }
 
 
@@ -97,7 +146,7 @@ public class TradeController {
     public String wxPay(HttpSession session,Double price)
     {
         User user = (User) session.getAttribute("user");
-        if(price < 0.01)  //正式 50
+        if(price < 0.01)  //todo:正式 50
         {
             String url = "/user/recharge.php";
             String msg = "充值金额不得少于50";

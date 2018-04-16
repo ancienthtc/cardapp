@@ -30,14 +30,20 @@
                     </ul>
                 </div>
                 <div class="profit_right">
-                    <p><em>当前账户余额:</em> <i>0</i> 元</p>
-                    <p><em>可提现金额:</em> <i>0</i> 元</p>
-                    <p><em>提现金额:</em> <input type="text" style="height: 20px"> 元  ( ≥ 50元)</p>
-                    <p><em>支付宝开户姓名:</em> <input type="text" style="height: 20px; width: 260px;"></p>
-                    <p><em>支付宝账号:</em> <input type="text" style="height: 20px; width: 200px;"></p>
-                    <div class="apply  a globalLoginBtn">申请提现</di>
+                    <input type="hidden" id="all" th:attr="value=${user.getBalance()} ">
+                    <input type="hidden" id="limit" th:attr="value=${limit}">
+
+                    <p><em>当前账户余额:</em> <i th:text="${user.getBalance()}"></i> 元</p>
+                    <p><em>可提现金额:</em> <i th:text="${limit}"></i> 元</p>
+                    <p><em>提现金额:</em> <input id="money" type="text" style="height: 20px"> 元  ( ≥ 50元)</p>
+                    <p><em>支付宝开户姓名:</em> <input id="realname" type="text" style="height: 20px; width: 260px;"></p>
+                    <p><em>支付宝账号:</em> <input id="account" type="text" style="height: 20px; width: 200px;"></p>
+                    <div class="apply  a globalLoginBtn" id="sub">申请提现</di>
+
                 </div>
             </div>
+
+                <!--
 
                 <div class="modal fade" id="loginModal" style="display:none;">
 
@@ -93,6 +99,7 @@
                     </div>
 
                 </div>
+                -->
             <!--<script type="text/javascript">
                 jQuery(".wdda_left").slide({
                     type: "menu", //效果类型
@@ -122,7 +129,77 @@
                     });
                 });
             </script>
-            <script type="text/javascript" src="../Scripts/modal.js"></script>
-            <script type="text/javascript" src="../Scripts/script.js"></script>
+            <script type="text/javascript" src="/front/Scripts/modal.js"></script>
+            <script type="text/javascript" src="/front/Scripts/script.js"></script>
+        </div>
     </body>
 </html>
+
+<script>
+
+    $(function () {
+
+        $("#sub").click(function () {
+
+            var limit = $("#limit").attr("value");
+            var amount = $("#money").val();
+            var aname = $("#realname").val();
+            var account = $("#account").val();
+
+            if( aname.length<=1 || account.length<=2 )
+            {
+                alert("请填写完整!");
+                return;
+            }
+
+            if(limit > 0)
+            {
+                if( parseFloat(amount)  < 50 )
+                {
+                    alert("提现数量过少!");
+                    return;
+                }
+                if( parseFloat(amount) > parseFloat(limit) )
+                {
+                    alert("提现数量过多!");
+                    return;
+                }
+
+            }
+            else
+            {
+                alert("无法提现!");
+                return;
+            }
+
+            var info = {amount:amount,aname:aname,account:account};
+            $.ajax({
+                url: "/user/withdrawAdd.do",
+                type: 'post',
+                dataType: 'json',
+                data: info,
+                success: function (data) {
+                    if(data.status == 1)
+                    {
+                        alert(data.msg);
+                        window.location.href = "/login/login.php";
+                    }
+                    else
+                    {
+                        alert(data.msg);
+                        if(data.status == 0)
+                        {
+                            window.location.href = "/user/withdraw.php";
+                        }
+                    }
+                },
+                error: function () {
+                    alert('服务器繁忙..请稍后重试！');
+                }
+            });
+
+        });
+
+    });
+
+</script>

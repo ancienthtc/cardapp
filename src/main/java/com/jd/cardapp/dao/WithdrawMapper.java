@@ -28,5 +28,5 @@ public interface WithdrawMapper {
 
     int updateByPrimaryKey(Withdraw record);
 
-    List<Withdraw> getWithdrawList(@Param("begin") String begin, @Param("end") String end);
+    List<Withdraw> getWithdrawList(@Param("key") String key[],@Param("begin") String begin, @Param("end") String end);
 }

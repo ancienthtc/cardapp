@@ -262,6 +262,14 @@
     <include refid="Base_Column_List" />
     from t_withdraw
     <trim prefix="where" prefixOverrides="and|or">
+      <if test="key!=null">
+        (
+        <foreach collection="key" item="item" index="index"  separator="OR">
+          aname LIKE CONCAT('%',#{item},'%')
+          OR account LIKE CONCAT('%',#{item},'%')
+        </foreach>
+        )
+      </if>
       <choose>
         <when test=" (begin!=null and end==null) or (begin!='' and end=='') ">
           AND applytime >= #{begin,jdbcType=VARCHAR}
@@ -274,7 +282,7 @@
         </when>
       </choose>
     </trim>
-    ORDER BY  applytime
+    ORDER BY state , applytime
   </select>
 
 </mapper>

@@ -30,6 +30,9 @@ public class UserServiceImpl implements UserService{
     private BuyMapper buyMapper;
 
     @Resource
+    private WithdrawMapper withdrawMapper;
+
+    @Resource
     private UserFileMapper userFileMapper;
 
 
@@ -264,6 +267,16 @@ public class UserServiceImpl implements UserService{
         return result;
     }
 
-
-
+    @Override
+    public PageInfo<Withdraw> userWithdrawList(Integer uid, Integer pageNo, Integer pageSize) {
+        pageNo = pageNo == null ? 1:pageNo;
+        pageSize = pageSize == null ? 10:pageSize;
+        PageHelper.startPage(pageNo, pageSize);
+        WithdrawExample withdrawExample = new WithdrawExample();
+        WithdrawExample.Criteria criteria = withdrawExample.createCriteria();
+        criteria.andUserEqualTo(uid);
+        List<Withdraw> withdrawList = withdrawMapper.selectByExample(withdrawExample);
+        PageInfo<Withdraw> result = new PageInfo<>(withdrawList);
+        return result;
+    }
 }

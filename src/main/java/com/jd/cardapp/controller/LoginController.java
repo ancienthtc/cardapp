@@ -137,6 +137,7 @@ public class LoginController {
     }
 
     @RequestMapping("/reg.do")
+    @ResponseBody
     public String register(User user,String code,HttpSession session)
     {
         Map<String,Object> m = new HashMap<>();

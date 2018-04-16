@@ -26,6 +26,7 @@
             </p>
             <div>
                 <ul id="tbody">
+                    <!--
                     <li>
                         <em>购买记录购买记录购买记录购买记录</em>
                         <i>2017/11/5</i>
@@ -35,6 +36,7 @@
                     <li><em>购买记录购买记录购买记录购买记录</em><i>2017/11/5</i><span>50￥</span></li>
                     <li><em>购买记录购买记录购买记录购买记录</em><i>2017/11/5</i><span>50￥</span></li>
                     <li><em>购买记录购买记录购买记录购买记录</em><i>2017/11/5</i><span>50￥</span></li>
+                    -->
                 </ul>
                 <div class="dede_pages">
                     <ul class="pagelist">
@@ -91,14 +93,16 @@
             var html = '';
             $.each(data.list,function(i,row){
                 html += '<li>';
-                html += '<em bid="'+row.id+'" class="details" >';
+
 
                 if(row.type == 0)
                 {
+                    html += '<em bid="'+row.id+'" class="details" >';
                     html += '名片购买';
                 }
                 else
                 {
+                    html += '<em bid="'+row.id+'" class="details_" >';
                     html += '报告购买';
                 }
 
@@ -192,6 +196,11 @@
 
                 var bid = $(this).attr("bid");
                 window.location.href = "/user/buyRecordDetail.php?bid="+bid;
+            });
+
+            $(".details_").click(function () {
+                var bid = $(this).attr("bid");
+                window.open("/user/pdfDownload?id="+bid);
             });
 
     }

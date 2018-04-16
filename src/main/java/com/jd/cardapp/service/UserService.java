@@ -36,5 +36,5 @@ public interface UserService {
 
     PageInfo<UserFile> usertGetRequestByType(Integer type,Integer pageNo , Integer pageSize);
 
-
+    PageInfo<Withdraw> userWithdrawList(Integer uid,Integer pageNo , Integer pageSize);
 }

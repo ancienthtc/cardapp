@@ -15,7 +15,7 @@ public class TestString {
     public void test1()
     {
         Secret secret=new Secret();
-        String s="111111";
+        String s="1111";
         String d="123";
         System.out.println(Secret.enPass(s)+"   "+Secret.enPass(d));
         System.out.println(Secret.dePass(Secret.enPass(s))+"   "+Secret.dePass(Secret.enPass(d)) );
