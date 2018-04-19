@@ -208,8 +208,8 @@
           <div class="min">
               <div class="slides">
                   <ul class="slide-pic">
-                      <li class="current"><a href="#"><img alt="" src="../Content/images/a8.jpg" /></a></li>
-                      <li><a href="#"><img  alt=" " src="../Content/images/a211.jpg" /></a></li>
+                      <li class="current"><a href="#"><img alt="" src="/front/Content/images/a8.jpg" /></a></li>
+                      <li><a href="#"><img  alt=" " src="/front/Content/images/a211.jpg" /></a></li>
                   </ul>
                   <ul class="slide-li op">
                       <li class="current"></li>
@@ -267,6 +267,17 @@
             var html = '';
             $.each(data.list,function(i,row){
                 html += '<tr cid="'+row.id+'">';
+
+                if( row.createtime!="" && row.createtime!=undefined )
+                {
+                    /*将时间戳转化为日期*/
+                    var time = new Date(row.createtime);
+                    row.createtime = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate()
+                        + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+                }else{
+                    row.createtime="";
+                }
+
                 html += '<td bgcolor="#c2ebff"><div align="center">'+row.createtime+'</div></td>';
                 html += '<td bgcolor="#c2ebff"><div align="center">'+row.company+'</div></td>';
                 html += '<td bgcolor="#c2ebff"><div align="center">'+row.position1+'</div></td>';

@@ -24,14 +24,14 @@ public class TestString {
     @Test
     public void enpass()
     {
-        String s="asasbusj2lfk85hy";
+        String s="1111";
         System.out.println(Secret.enPass(s));
     }
 
     @Test
     public void depass()
     {
-        String s="fovtZnZPnPI";
+        String s="RhDeQ18P8mo";
         System.out.println(Secret.dePass(s));
     }
 

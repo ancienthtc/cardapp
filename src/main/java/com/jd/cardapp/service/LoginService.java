@@ -12,4 +12,6 @@ public interface LoginService {
 
     Admin admin_login(String admin,String pass);
 
+    //更新密码
+    int PasswordReset(String tel,String password);
 }

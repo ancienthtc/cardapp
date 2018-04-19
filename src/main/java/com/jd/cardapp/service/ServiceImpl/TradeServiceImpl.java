@@ -125,8 +125,9 @@ public class TradeServiceImpl implements TradeService {
             {
                 //收益
                 Income income = new Income();
-
+                //买家扣余额
                 user.setBalance( user.getBalance()-card.getBuy() );
+
                 Buy buy = new Buy();
                 String target = config.getUpload() + config.getUserfolder() + uid + "//";
                 String sourceFile1 = card.getPic1();
@@ -153,15 +154,17 @@ public class TradeServiceImpl implements TradeService {
                 }
                 if( b1||b2 )
                 {
+                    //名片所属帐户
                     User addAccount = userMapper.selectByPrimaryKey( card.getUser() );
-                    if( addAccount != null )
+                    if(addAccount==null)
                     {
-                        addAccount.setBalance( addAccount.getBalance() + income.getIncome());
-                        addAccount.setUpdatetime(DateExample.getNowTimeByDate());
-                        userMapper.updateByPrimaryKeySelective(addAccount);
+                        //上传用户不存在(用户注销时 应相应下架名片)
+                        throw new Exception();
                     }
 
+
                     //todo:待修改
+                    //购买记录
                     buy.setDetail(JSON.toJSONString(card,filter));
                     buy.setType(0); //新!
                     buy.setCard(cid);
@@ -181,6 +184,7 @@ public class TradeServiceImpl implements TradeService {
                     buy.setState(0);
                     int i=buyMapper.insertSelective(buy);
 
+                    //收益记录
                     income.setTime(DateExample.getNowTimeByDate());
                     income.setAll(card.getBuy());
                     income.setDivide(card.getBuy()*0.4);
@@ -190,8 +194,14 @@ public class TradeServiceImpl implements TradeService {
                     income.setTarget(cid);
                     int j = incomeMapper.insertSelective(income);
 
+                    //买家
                     user.setUpdatetime(DateExample.getNowTimeByDate());
                     userMapper.updateByPrimaryKeySelective(user);
+
+                    //卖家
+                    addAccount.setBalance( addAccount.getBalance() + income.getIncome());
+                    addAccount.setUpdatetime(DateExample.getNowTimeByDate());
+                    userMapper.updateByPrimaryKeySelective(addAccount);
 
                     //更新card购买次数
                     card.setBuytimes( card.getBuytimes() + 1 );

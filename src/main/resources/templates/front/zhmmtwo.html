@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>纺织名片宝-修改密码</title>
+        <script type="text/javascript" src="/front/Scripts/jquery1.42.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+        <link rel="stylesheet" href="/front/Content/commons.css">
+        <link href="/front/Content/style.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="/front/Scripts/index.js"></script>
+    </head>
+
+    <body>
+    <div th:include="front/header"></div>
+        <div class="banner1"></div>
+        <div class="zhmm">
+            <h2>找回密码</h2>
+            <div class="zhmm_jd">
+
+                <ul>
+                    <li style="width:100px; padding-right:265px"><p>输入登录帐号</p><span>1</span></li>
+                    <li style="width:100px; padding-right:265px"><p>验证身份</p><span class="dqzt">2</span></li>
+                    <li style="width:100px; padding-right:265px"><p>修改密码</p><span>3</span></li>
+                    <li style="width:100px;"><p>完成</p><span>4</span></li>
+                </ul>
+                <div class="bjt"></div>
+            </div>
+            <div class="dlxq">
+                <ul>
+                    <li><span>手机号码</span><i > <label id="tel" th:attr="value=${tel}" style="font-size: 26px;" th:text="${tel}"></label> </i></li>
+                    <li><span>验证码</span>
+                        <i><input name="" type="text" class="wby2"/></i>
+                        <i><input name="" type="submit" class="btn2" value="发送手机验证码"/></i>
+                    </li>
+                    <li><input name="" type="button" class="btn1" value="下一步"/></li>
+                </ul>
+            </div>
+        </div>
+    <div th:include="front/footer"></div>
+
+    </body>
+</html>
+<script>
+
+    $(".btn2").click(function () {
+        var tel = $("#tel").attr("value");
+        //发送验证码
+        $.ajax({
+            url: "/login/sendCheck.do",
+            type: 'post',
+            dataType: 'json',
+            data: { tel: tel },
+            success: function (data) {
+                if(data==true)
+                {
+                    alert("发送成功");
+                }
+                else
+                {
+                    alert("发送失败");
+                }
+            },
+            error: function () {
+                alert('服务器繁忙..请稍后重试！');
+            }
+        });
+    });
+
+    $(".btn1").click(function () {
+        var tel = $("#tel").attr("value");
+        var code = $(".wby2").val();
+
+        $.ajax({
+            url: "/login/telCode.do",
+            type: 'post',
+            dataType: 'json',
+            data: { tel: tel , code:code },
+            success: function (data) {
+                if(data.status==0)
+                {
+                    window.location.href = "/login/findPass3.php?tel="+tel;
+                }
+                else
+                {
+                    alert(data.msg);
+                }
+            },
+            error: function () {
+                alert('服务器繁忙..请稍后重试！');
+            }
+        });
+
+    });
+
+
+
+</script>

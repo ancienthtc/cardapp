@@ -191,14 +191,14 @@
             if( cardmail.length<=0 || company.length<=0 || contact1.length<=0 || goods.length<=0 )
             {
                 alert("请填写完整");
-                return false;
+                return;
             }
 
             var agree = $('#agree').prop('checked');
             if( agree == false )
             {
                 alert("请同意协议");
-                return false;
+                return;
             }
 
             $("#subForm").ajaxSubmit({
@@ -221,13 +221,7 @@
 
                 },
                 success:function (date) {
-                    console.log(date.msg);
-                    alert("t"+date);
-                    // if(date=="true")
-                    //     alert("添加成功");
-                    // else
-                    //     alert("添加失败");
-                    //window.location.href = "/login/login.php";
+                    //console.log(date.msg);
                 },
                 error : function(data) {
                     console.log(date.msg);

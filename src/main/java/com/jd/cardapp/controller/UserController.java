@@ -307,7 +307,7 @@ public class UserController {
      * 数据服务--报告下载
      * @return
      */
-    @UserCheck
+    //@UserCheck
     @RequestMapping("/downReport.php")
     public String toDownloadReport()
     {
@@ -593,15 +593,16 @@ public class UserController {
         }
     }
 
+    //获取报告信息
     @RequestMapping("/graphicList")
     @ResponseBody
     public String graphicList(HttpSession session, String keys, Integer pageNo, Integer pageSize)
     {
-        User user = (User) session.getAttribute("user");
-        if( user == null )
-        {
-            return null;
-        }
+//        User user = (User) session.getAttribute("user");
+//        if( user == null )
+//        {
+//            return null;
+//        }
         return JSON.toJSONString( graphicService.graphicList(keys,pageNo,pageSize,null,null) );
     }
 

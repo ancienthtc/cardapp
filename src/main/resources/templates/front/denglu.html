@@ -19,9 +19,9 @@
                 <li><span>手机号码</span><i><input name="tel" type="text" class="wby1" placeholder="请输入您的手机号"/></i></li>
                 <li><span>登录密码</span><i><input name="pass" type="password" class="wby1"/></i></li>
                 <li><p>
-                    <!--
+
                     <a th:href="@{/login/findPass.php}" >忘记密码</a>
-                    -->
+
                     <a href="/login/register.php" class="fr">免费注册</a></p>
                 </li>
                 <li><i><input name="" type="button" class="btn1" value="登录"/></i></li>
@@ -46,7 +46,7 @@
                 }
                 else if(result == "false" || result==false)
                 {
-                    alert("登录失败");
+                    alert("帐户或密码错误!");
                 }
                 else
                 {

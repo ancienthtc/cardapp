@@ -28,14 +28,19 @@ public class IndexController {
         return "error";
     }
 
-    @RequestMapping("/info")
+    @RequestMapping(value = "/info", produces = "text/html;charset=UTF-8;")
     //@ResponseBody
     public String info(String message,String url,HttpServletResponse response)
     {
-        response.setContentType("text/html; charset=gbk");
+        //response.setContentType("text/html; charset=gbk");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
         try {
             PrintWriter out = response.getWriter();
             out.println("<html>");
+            out.println("<head>");
+            out.println("<meta charset='utf-8'>");
+            out.println("</head>");
             out.println("<body>");
             out.println("<script>");
             out.println("alert('"+message+"')");

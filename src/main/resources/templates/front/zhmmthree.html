@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='cn' xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>纺织名片宝-修改密码</title>
+        <script type="text/javascript" src="/front/Scripts/jquery1.42.min.js"></script>
+        <script type="text/javascript" src="/front/Scripts/jquery.SuperSlide.2.1.js"></script>
+        <link rel="stylesheet" href="/front/Content/commons.css">
+        <link href="/front/Content/style.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="/front/Scripts/index.js"></script>
+    </head>
+
+    <body>
+    <div th:include="front/header"></div>
+        <div class="banner1"></div>
+        <div class="zhmm">
+            <h2>找回密码</h2>
+            <div class="zhmm_jd">
+
+                <ul>
+                    <li style="width:100px; padding-right:265px"><p>输入登录帐号</p><span>1</span></li>
+                    <li style="width:100px; padding-right:265px"><p>验证身份</p><span>2</span></li>
+                    <li style="width:100px; padding-right:265px"><p>修改密码</p><span class="dqzt">3</span></li>
+                    <li style="width:100px;"><p>完成</p><span>4</span></li>
+                </ul>
+                <div class="bjt"></div>
+            </div>
+            <div class="dlxq">
+                <ul>
+                    <li><span>输入新密码</span><i><input name="" type="text" class="wby1" id="pass1" placeholder="输入新密码"/></i></li>
+                    <li><span>再输入一次</span><i><input name="" type="text" class="wby1" id="pass2" placeholder="再输入一遍"/></i>
+                    </li>
+                    <li><input name="" type="button" class="btn1" value="下一步"/></li>
+                </ul>
+            </div>
+        </div>
+    <div th:include="front/footer"></div>
+
+    </body>
+</html>
+<script>
+
+    $(".btn1").click(function () {
+        var pass = $("#pass1").val();
+        var pass_ = $("#pass2").val();
+
+        if(pass<4 || pass>15 || pass_<4 || pass_>15)
+        {
+            alert("长度4-14之间");
+            return;
+        }
+        else if( pass!=pass_ )
+        {
+            alert("两次密码不一致");
+            return;
+        }
+
+        $.ajax({
+            url: "/login/passReset.do",
+            type: 'post',
+            dataType: 'json',
+            data: { password: pass},
+            success: function (data) {
+                if(data == true)
+                {
+                    window.location.href = "/login/findPass4.php";
+                }
+                else
+                {
+                    alert("修改失败");
+                }
+            },
+            error: function () {
+                alert('服务器繁忙..请稍后重试！');
+            }
+        });
+
+    });
+
+</script>

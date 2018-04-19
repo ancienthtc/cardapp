@@ -157,11 +157,14 @@ public class WxScanPayController {
             if( orderid=="" || price=="" )
             {
                 //orderService.pay(null,null,1);
+                System.out.println("空orderid");
             }
             else
             {
                 //orderService.pay(orderid,price,0);
+                System.out.println("更新余额");
                 tradeService.RechargeUpdate(orderid,1, DateExample.getLocalTimeFormat());
+                System.out.println("更新余额结束");
             }
 
         } else {

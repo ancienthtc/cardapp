@@ -48,14 +48,130 @@ public class LoginController {
         return "front/zhuce";
     }
 
+    /* 忘记密码 */
     /**
-     * 忘记密码
+     * 忘记密码-第一步
      * @return
      */
     @RequestMapping("/findPass.php")
     public String toFindPass()
     {
         return "front/zhmmone";
+    }
+
+    /**
+     * 忘记密码-第二步
+     * @return
+     */
+    @RequestMapping("/findPass2.php")
+    public String toFindPass2(@RequestParam String tel,HttpSession session,Map<String,Object> m)
+    {
+        if( !userService.checkTelRepeat(tel) )
+        {
+            session.setAttribute("reset_tel",tel);
+            m.put("tel",tel);
+            return "front/zhmmtwo";
+        }
+        return "redirect:/login/findPass.php";
+    }
+
+    //短信验证码
+    @RequestMapping("/sendCheck.do")
+    @ResponseBody
+    public String sendCode1(@RequestParam String tel,HttpSession session)
+    {
+        SmsVariableDemo demo = new SmsVariableDemo();
+        String code= new GenerateString().getRandomString_Num(4);
+        session.setAttribute("textcode",code);
+        session.setMaxInactiveInterval(15 * 60);//session 15分钟时长
+        if(demo.SendMessage1(tel,code,"15") )
+        {
+            return "true";
+        }
+        return "false";
+    }
+
+    @RequestMapping("/telCode.do")
+    @ResponseBody
+    public String checkTelCode(@RequestParam String tel,@RequestParam String code,HttpSession session)
+    {
+        Map<String,Object> m = new HashMap<>();
+        String textcode=(String)session.getAttribute("textcode");
+        String reset_tel = (String) session.getAttribute("reset_tel");
+        if( !reset_tel.equals(tel) )
+        {
+            m.put("status",1);
+            m.put("msg","请勿更改手机");
+            return JSON.toJSONString(m);
+        }
+        if(code.equals(textcode) )
+        {
+            m.put("status",0);
+            m.put("msg","验证成功");
+            m.put("permit",tel);
+            session.setAttribute("step3",m);
+            return JSON.toJSONString(m);
+        }
+        else
+        {
+            m.put("status",2);
+            m.put("msg","验证码错误");
+            return JSON.toJSONString(m);
+        }
+    }
+
+    /**
+     * 忘记密码-第三步
+     * @return
+     */
+    @RequestMapping("/findPass3.php")
+    public String toFindPass3(@RequestParam String tel,HttpSession session)
+    {
+        Map<String,Object> map = (HashMap<String, Object>) session.getAttribute("step3");
+        String check_tel = map.get("permit").toString();
+        if(map==null )
+        {
+            return "redirect:/login/findPass.php";
+        }
+        else if( !( check_tel.equals(tel) ) )
+        {
+            return "redirect:/login/findPass2.php?tel="+tel;
+        }
+        return "front/zhmmthree";
+    }
+
+    @RequestMapping("/passReset.do")
+    @ResponseBody
+    public String ResetPassword(HttpSession session,@RequestParam String password)
+    {
+        //session: reset_tel,textcode,step3
+        Map<String,Object> map = (HashMap<String, Object>) session.getAttribute("step3");
+        String tel = map.get("permit").toString();
+        if( loginService.PasswordReset(tel,password) > 0 )
+        {
+            return "true";
+        }
+        return "false";
+    }
+
+    /**
+     * 忘记密码-第四步
+     * @return
+     */
+    @RequestMapping("/findPass4.php")
+    public String toFindPass4(HttpSession session)
+    {
+        if(session.getAttribute("step3")!=null)
+        {
+            session.removeAttribute("step3");
+            session.removeAttribute("reset_tel");
+            session.removeAttribute("textcode");
+        }
+        else
+        {
+            return "redirect:/login/findPass.php";
+        }
+        return "front/zhmmfour";
     }
 
     @RequestMapping("/alogin.php")

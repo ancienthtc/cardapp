@@ -92,6 +92,15 @@ public class CardController {
             m.put("pic2",card.getPic2());
             return "front/card-picture";
         }
+        //自己上传
+        if( card.getUser() == user.getId() )
+        {
+            m.put("address1","/image/cid?filename="+card.getPic1());
+            m.put("address2","/image/cid?filename="+card.getPic2());
+            m.put("pic1",card.getPic1());
+            m.put("pic2",card.getPic2());
+            return "front/card-picture";
+        }
         //收费
         //判断是否有权限
         Buy buy = tradeService.checkBuy(user.getId(),cid);  //todo: 待修改
@@ -175,6 +184,12 @@ public class CardController {
             m.put("status",0);
             return JSON.toJSONString(m);
         }
+        if(card.getUser()==user.getId())
+        {
+            m.put("msg","本人上传");
+            m.put("status",0);
+            return JSON.toJSONString(m);
+        }
         Buy buy = tradeService.checkBuy(user.getId(),cid);
         if( buy==null )
         {
@@ -220,8 +235,12 @@ public class CardController {
 
     @PostMapping("/sure.do")
     @ResponseBody
-    public String card_sure(@RequestParam Integer id)
+    public String card_sure(HttpSession session, @RequestParam Integer id)
     {
+        if( session.getAttribute("admin") == null )
+        {
+            return null;
+        }
         if (cardService.CardCheck(1,id)> 0)
         {
             return "true";
@@ -231,8 +250,12 @@ public class CardController {
 
     @PostMapping("/cancel.do")
     @ResponseBody
-    public String card_cancel(@RequestParam Integer id)
+    public String card_cancel(HttpSession session, @RequestParam Integer id)
     {
+        if( session.getAttribute("admin") == null )
+        {
+            return null;
+        }
         if (cardService.CardCheck(2,id)> 0)
         {
             return "true";
@@ -241,8 +264,13 @@ public class CardController {
     }
 
     @PostMapping("/reset.do")
-    public String card_reset(@RequestParam Integer id)
+    @ResponseBody
+    public String card_reset(HttpSession session, @RequestParam Integer id)
     {
+        if( session.getAttribute("admin") == null )
+        {
+            return null;
+        }
         if (cardService.CardCheck(0,id)> 0)
         {
             return "true";
@@ -251,9 +279,18 @@ public class CardController {
     }
 
     @PostMapping("/del.do")
-    public String card_delete(@RequestParam Integer id)
+    @ResponseBody
+    public String card_delete(HttpSession session, @RequestParam Integer id)
     {
-        return "";
+        if( session.getAttribute("admin") == null )
+        {
+            return null;
+        }
+        if( cardService.CardDel(id) > 0 )
+        {
+            return "true";
+        }
+        return "false";
     }
 
 }

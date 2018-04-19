@@ -5,6 +5,7 @@ import com.jd.cardapp.dao.UserMapper;
 import com.jd.cardapp.model.Admin;
 import com.jd.cardapp.model.AdminExample;
 import com.jd.cardapp.model.User;
+import com.jd.cardapp.model.UserExample;
 import com.jd.cardapp.service.LoginService;
 import com.jd.cardapp.util.password.Secret;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,4 +44,20 @@ public class LoginServiceImpl implements LoginService {
         }
         return null;
     }
+
+    @Override
+    public int PasswordReset(String tel, String password) {
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andTelEqualTo(tel);
+        List<User> users = userMapper.selectByExample(userExample);
+        if(users==null)
+        {
+            return 0;
+        }
+        User user = users.get(0);
+        user.setPassword( Secret.enPass(password) );
+        return userMapper.updateByPrimaryKeySelective(user);
+    }
+
 }
