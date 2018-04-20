@@ -2,6 +2,7 @@ package com.jd.cardapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -55,6 +56,12 @@ public class IndexController {
             return "redirect:/login/alogin";
         }
         return null;
+    }
+
+    @RequestMapping("/url")
+    public String ToWebPage(HttpServletResponse response,@RequestParam String url) throws Exception{
+        //System.out.println("ssss");
+        return "redirect:"+url;
     }
 
 }
